@@ -1,0 +1,183 @@
+import {memo} from 'react';
+import type {FC} from 'react';
+
+import resets from './_resets.module.css';
+import classes from './Portfolio.module.css';
+
+interface Props {
+    className?: string;
+}
+
+export const Portfolio: FC<Props> = memo(function Desktop() {
+    return (
+        <div className={`${resets.storybrainResets} ${classes.root}`}>
+            <div className={classes.introBackgroundShape}>
+                <div className={classes.greeting}>
+                    <p>Hi there! I’m Malik Heron</p>
+                </div>
+                <div className={classes.introduction}>
+                    <p>
+                        I'm a software developer and UX designer with a passion for developing Android apps.<br/>
+                        I'm always eager to learn and expand my knowledge in the field. Welcome to my<br/>
+                        portfolio where you can learn more about my skills and experience.
+                    </p>
+                </div>
+                <div className={classes.introSocials}>
+                    <div className={classes.linkedinIcon}>
+                        <i className="fa-brands fa-linkedin"></i>
+                    </div>
+                    <div className={classes.githubIcon}>
+                        <i className="fa-brands fa-github"></i>
+                    </div>
+                    <div className={classes.instagramIcon}>
+                        <i className="fa-brands fa-instagram"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div className={classes.featuredProjectsBackground}>
+                <div className={classes.featuredProjectsHeader}>Featured Projects</div>
+                <div className={classes.projectCards}>
+                    <div className={classes.projectCard1}>
+                        <div className={classes.icon18}></div>
+                    </div>
+                    <div className={classes.projectCard2}>
+                        <div className={classes.icon17}></div>
+                    </div>
+                    <div className={classes.projectCard3}>
+                        <div className={classes.icon16}></div>
+                    </div>
+                </div>
+            </div>
+
+            <div className={classes.aboutBackgroundShape}>
+                <div className={classes.aboutHeader}>About</div>
+                <div className={classes.aboutDescription}>
+                    <p>
+                        As a passionate problem-solver, I thrive on the challenge of crafting efficient and functional
+                        code. My <br/>goal is to create a seamless user experience through modern and visually appealing
+                        UI design. I believe <br/>that it’s the little details that keep users coming back to apps and
+                        websites time and time again. With <br/>experience in a variety of languages and tools, I’m
+                        always looking for new ways to work smarter and more <br/>efficiently. While my focus is
+                        currently on a few key areas, I’m excited to continue expanding my skills <br/>
+                        and knowledge in the future.
+                    </p>
+                </div>
+                <div className={classes.aboutOverviewShape}>
+                    <div className={classes.programmerIcon}></div>
+                    <div className={classes.aboutOverviewItems}>
+                        <div className={classes.languagesGroup}>
+                            <div className={classes.languages}>Languages</div>
+                            <div className={classes.column}>
+                                <div className={classes.itemBox}>C</div>
+                                <div className={classes.itemBox}>C++</div>
+                                <div className={classes.itemBox}>HTML</div>
+                                <div className={classes.itemBox}>Java</div>
+                            </div>
+                            <div className={classes.column}>
+                                <div className={classes.itemBox}>Kotlin</div>
+                                <div className={classes.itemBox}>Python</div>
+                                <div className={classes.itemBox}>SQL</div>
+                                <div className={classes.itemBox}>XML</div>
+                            </div>
+                        </div>
+
+                        <div className={classes.toolsGroup}>
+                            <div className={classes.tools}>Tools</div>
+                            <div className={classes.androidStudio}>Android Studio</div>
+                            <div className={classes.figma}>Figma</div>
+                            <div className={classes.github}>Github</div>
+                            <div className={classes.intellij}>Intellij</div>
+                            <div className={classes.pycharm}>Pycharm</div>
+                            <div className={classes.vSCode}>VS Code</div>
+                            <div className={classes.webstorm}>Webstorm</div>
+                        </div>
+
+                        <div className={classes.focusGroup}>
+                            <div className={classes.focus}>Focus</div>
+                            <div className={classes.mobileAppDevelopment}>Mobile App Development</div>
+                            <div className={classes.userInterfaceDesign}>User Interface Design</div>
+                            <div className={classes.userExperienceDesign}>User Experience Design</div>
+                            <div className={classes.webDevelopment}>Web Development</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div className={classes.contactsBackgroundShape}>
+                <div className={classes.contactHeader}>Let’s Get In Touch</div>
+                <div className={classes.contactSocials}>
+                    <div className={classes.linkedinIcon}>
+                        <i className="fa-brands fa-linkedin"></i>
+                    </div>
+                    <div className={classes.githubIcon}>
+                        <i className="fa-brands fa-github"></i>
+                    </div>
+                    <div className={classes.instagramIcon}>
+                        <i className="fa-brands fa-instagram"></i>
+                    </div>
+                </div>
+                <div className={classes.contactDescription}>
+                    <p>
+                        Feel free to send me a message, I look forward to <br/>working with you.
+                    </p>
+                </div>
+                <div className="contact">
+                    <form
+                        action="https://formsubmit.co/malik.heron2001@gmail.com"
+                        className={classes.contactForm}
+                        method="post"
+                    >
+                        <label htmlFor="name"></label>
+                        <input
+                            autoComplete="off"
+                            className={classes.name}
+                            name="Name"
+                            placeholder="Your name"
+                            required
+                            type="text"
+                        />
+                        <br/>
+
+                        <label htmlFor="email"></label>
+                        <input
+                            autoComplete="off"
+                            className={classes.email}
+                            name="Email Address"
+                            placeholder="Email address"
+                            required
+                            type="email"
+                        />
+                        <br/>
+
+                        <label htmlFor="message"></label>
+                        <textarea
+                            autoComplete="off"
+                            className={classes.message}
+                            name="Message"
+                            placeholder="Write something..."
+                            required
+                        ></textarea>
+                        <br/>
+
+                        <input name="_captcha" type="hidden" value="false"/>
+                        <input
+                            name="_next"
+                            type="hidden"
+                            value="https://malikheron.000webhostapp.com/html/submission.html"
+                        />
+                        <input className={classes.submit} id="submit" type="submit" value="Submit"/>
+                    </form>
+                </div>
+                <div className={classes.AllRightsReserved}>© All rights reserved</div>
+            </div>
+
+            <div className={classes.NavBarShape}>
+                <div className={classes.home}>Home</div>
+                <div className={classes.projects}>Projects</div>
+                <div className={classes.about}>About</div>
+                <div className={classes.contact}>Contact</div>
+            </div>
+        </div>
+    );
+});
