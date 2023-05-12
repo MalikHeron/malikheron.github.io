@@ -8,6 +8,8 @@ import 'font-awesome/css/font-awesome.min.css'
 import "@fontsource/kaushan-script";
 import "@fontsource/lilita-one";
 import "@fontsource/andika-new-basic";
+import "@fontsource/inter";
+import "@fortawesome/fontawesome-free/css/all.css";
 
 interface Props {
     className?: string;
