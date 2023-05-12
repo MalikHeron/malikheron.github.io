@@ -1,32 +1,16 @@
 .root {
-    position: absolute;
+    position: relative;
     width: 100vw;
-    height: 100vh;
+    height: auto;
     display: flex;
     flex-direction: column;
-    overflow-y: auto;
-    overflow-x: hidden;
-}
-
-::-webkit-scrollbar {
-    width: 5px;
-}
-
-::-webkit-scrollbar-track {
-    background: #000000;
-}
-
-::-webkit-scrollbar-thumb {
-    background: #ffffff;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: #ffffff;
 }
 
 .NavBarShape {
-    position: sticky;
-    top: 28px;
+    position: fixed;
+    margin-top: 28px;
+    left: 50%;
+    transform: translateX(-50%);
     width: auto;
     height: auto;
     padding: 5px;
@@ -34,10 +18,7 @@
     border-radius: 10px;
     background-color: #fff;
     display: table;
-    margin: 0 auto;
     align-items: center;
-    align-content: center;
-    justify-content: center;
     z-index: 99;
 }
 
@@ -46,8 +27,8 @@
     font-size: 18px;
     font-family: "Inter", system-ui;
     position: relative;
-    width: min-content;
-    height: min-content;
+    width: auto;
+    height: auto;
     white-space: nowrap;
     float: left;
     margin: 0 auto;
@@ -62,7 +43,6 @@
 
 .introBackgroundShape {
     position: relative;
-    margin-top: -56px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -118,7 +98,7 @@
 
 .featuredProjectsBackground {
     position: relative;
-    margin: 20px;
+    margin: 20px 20px 50px;
     width: auto;
     height: auto;
     display: flex;
@@ -181,6 +161,7 @@
 
 .aboutDescription {
     position: relative;
+    margin-top: 10px;
     color: #fff;
     font-size: 24px;
     font-family: "Andika New Basic", system-ui;
@@ -191,7 +172,7 @@
 
 .aboutOverviewShape {
     position: relative;
-    margin: 20px;
+    margin: 20px 20px 50px;
     width: auto;
     height: auto;
     display: flex;
@@ -203,8 +184,7 @@
 
 .programmerIcon {
     position: relative;
-    margin: 0 auto;
-    top: 50px;
+    margin-top: 50px;
     width: 137px;
     height: 116px;
     background-image: url('/public/assets/programmer.jpg');
@@ -215,7 +195,6 @@
 
 .aboutOverviewItems {
     position: relative;
-    top: 30px;
     width: auto;
     height: auto;
     display: table;
@@ -249,7 +228,7 @@
 
 .column {
     position: relative;
-    top: 20px;
+    margin-top: 20px;
     display: flex;
     flex-direction: column;
     height: auto;
@@ -292,7 +271,6 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    left: 0;
     width: 100vw;
     height: auto;
     background-color: #546c82;
@@ -381,7 +359,7 @@
 }
 
 .submit:active {
-    box-shadow: 0 5px #666;
+    box-shadow: 0 5px 4px 0 #00000040;
     transition-duration: 0.2s;
     transform: translateY(4px);
 }
@@ -420,8 +398,8 @@
     color: #fff;
     font-size: 18px;
     font-family: "Andika New Basic", system-ui;
-    width: min-content;
-    height: min-content;
+    width: auto;
+    height: auto;
     text-align: center;
     align-items: center;
     white-space: nowrap;
@@ -464,7 +442,7 @@
 .highlight {
     position: absolute;
     left: calc(50% - 173px);
-    top: 40px;
+    margin-top: 40px;
     width: 95px;
     height: 43px;
     border-radius: 8px;
@@ -479,4 +457,20 @@
 .links:hover {
     color: white;
     transition-delay: 100ms;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: #000000;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #ffffff;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #ffffff;
 }

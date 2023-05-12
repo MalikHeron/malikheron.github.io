@@ -9,13 +9,21 @@ interface Props {
 }
 
 export const Portfolio: FC<Props> = memo(function Desktop() {
+
+    const handleClick = (id: string) => {
+        const element = document.getElementById(id);
+        if (element) {
+            element.scrollIntoView({behavior: "smooth"});
+        }
+    }
+
     return (
-        <div className={`${resets.storybrainResets} ${classes.root}`}>
+        <div className={`${resets.storybrainResets} ${classes.root}`} id="home">
             <div className={classes.NavBarShape}>
-                <div className={classes.home}>Home</div>
-                <div className={classes.projects}>Projects</div>
-                <div className={classes.about}>About</div>
-                <div className={classes.contact}>Contact</div>
+                <div className={classes.home} onClick={() => handleClick("home")}>Home</div>
+                <div className={classes.projects} onClick={() => handleClick("projects")}>Projects</div>
+                <div className={classes.about} onClick={() => handleClick("about")}>About</div>
+                <div className={classes.contact} onClick={() => handleClick("contact")}>Contact</div>
             </div>
             <div className={classes.introBackgroundShape}>
                 <div className={classes.introSocials}>
@@ -47,7 +55,7 @@ export const Portfolio: FC<Props> = memo(function Desktop() {
                         portfolio where you can learn more about my skills and experience.
                     </p>
                 </div>
-                <div className={classes.featuredProjectsBackground}>
+                <div className={classes.featuredProjectsBackground} id="projects">
                     <div className={classes.featuredProjectsHeader}>Featured Projects</div>
                     <div className={classes.projectCards}>
                         <div className={classes.projectCard1}>
@@ -63,7 +71,7 @@ export const Portfolio: FC<Props> = memo(function Desktop() {
                 </div>
             </div>
 
-            <div className={classes.aboutBackgroundShape}>
+            <div className={classes.aboutBackgroundShape} id="about">
                 <div className={classes.aboutHeader}>About</div>
                 <div className={classes.aboutDescription}>
                     <p>
@@ -117,7 +125,7 @@ export const Portfolio: FC<Props> = memo(function Desktop() {
                 </div>
             </div>
 
-            <div className={classes.contactsBackgroundShape}>
+            <div className={classes.contactsBackgroundShape} id="contact">
                 <div className={classes.contactHeader}>Let’s Get In Touch</div>
                 <div className={classes.contactSocials}>
                     <div className={classes.linkedinIcon}>
@@ -195,6 +203,5 @@ export const Portfolio: FC<Props> = memo(function Desktop() {
                 <div className={classes.copyright}>© All rights reserved</div>
             </div>
         </div>
-    )
-        ;
+    );
 });
