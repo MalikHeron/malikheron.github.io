@@ -50,8 +50,8 @@
     align-items: center;
     width: 100vw;
     height: auto;
-    background-color: #546c82;
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 60%, white 40%);
+    background: rgb(84,108,130);
+    background: linear-gradient(180deg, rgba(84,108,130,1) 53%, rgba(255,255,255,1) 78%, rgba(84,108,130,1) 100%);
 }
 
 .introSocials {
@@ -157,14 +157,13 @@
     align-items: center;
     width: 100vw;
     height: auto;
-    background-color: #546c82;
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, white 50%);
-}
+    background: rgb(84,108,130);
+    background: linear-gradient(180deg, rgba(84,108,130,1) 52%, rgba(255,255,255,1) 88%, rgba(84,108,130,1) 100%);}
 
 .aboutDescription {
     position: relative;
     margin-top: 10px;
-    color: #fff;
+    color: white;
     font-size: 24px;
     font-family: "Andika New Basic", system-ui;
     width: auto;
