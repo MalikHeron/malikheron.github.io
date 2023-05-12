@@ -11,17 +11,13 @@ interface Props {
 export const Portfolio: FC<Props> = memo(function Desktop() {
     return (
         <div className={`${resets.storybrainResets} ${classes.root}`}>
+            <div className={classes.NavBarShape}>
+                <div className={classes.home}>Home</div>
+                <div className={classes.projects}>Projects</div>
+                <div className={classes.about}>About</div>
+                <div className={classes.contact}>Contact</div>
+            </div>
             <div className={classes.introBackgroundShape}>
-                <div className={classes.greeting}>
-                    <p>Hi there! I’m Malik Heron</p>
-                </div>
-                <div className={classes.introduction}>
-                    <p>
-                        I'm a software developer and UX designer with a passion for developing Android apps.<br/>
-                        I'm always eager to learn and expand my knowledge in the field. Welcome to my<br/>
-                        portfolio where you can learn more about my skills and experience.
-                    </p>
-                </div>
                 <div className={classes.introSocials}>
                     <div className={classes.linkedinIcon}>
                         <i className="fa-brands fa-linkedin"></i>
@@ -32,20 +28,32 @@ export const Portfolio: FC<Props> = memo(function Desktop() {
                     <div className={classes.instagramIcon}>
                         <i className="fa-brands fa-instagram"></i>
                     </div>
+                    <div className={classes.emailIcon}>
+                        <i className="fa-solid fa-envelope"></i>
+                    </div>
                 </div>
-            </div>
-
-            <div className={classes.featuredProjectsBackground}>
-                <div className={classes.featuredProjectsHeader}>Featured Projects</div>
-                <div className={classes.projectCards}>
-                    <div className={classes.projectCard1}>
-                        <div className={classes.icon18}></div>
-                    </div>
-                    <div className={classes.projectCard2}>
-                        <div className={classes.icon17}></div>
-                    </div>
-                    <div className={classes.projectCard3}>
-                        <div className={classes.icon16}></div>
+                <div className={classes.greeting}>
+                    <p>Hi there! I’m Malik Heron</p>
+                </div>
+                <div className={classes.introduction}>
+                    <p>
+                        I'm a software developer and UX designer with a passion for developing Android apps.<br/>
+                        I'm always eager to learn and expand my knowledge in the field. Welcome to my<br/>
+                        portfolio where you can learn more about my skills and experience.
+                    </p>
+                </div>
+                <div className={classes.featuredProjectsBackground}>
+                    <div className={classes.featuredProjectsHeader}>Featured Projects</div>
+                    <div className={classes.projectCards}>
+                        <div className={classes.projectCard1}>
+                            <div className={classes.icon18}></div>
+                        </div>
+                        <div className={classes.projectCard2}>
+                            <div className={classes.icon17}></div>
+                        </div>
+                        <div className={classes.projectCard3}>
+                            <div className={classes.icon16}></div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -68,20 +76,21 @@ export const Portfolio: FC<Props> = memo(function Desktop() {
                     <div className={classes.aboutOverviewItems}>
                         <div className={classes.languagesGroup}>
                             <div className={classes.languages}>Languages</div>
-                            <div className={classes.column}>
-                                <div className={classes.itemBox}>C</div>
-                                <div className={classes.itemBox}>C++</div>
-                                <div className={classes.itemBox}>HTML</div>
-                                <div className={classes.itemBox}>Java</div>
-                            </div>
-                            <div className={classes.column}>
-                                <div className={classes.itemBox}>Kotlin</div>
-                                <div className={classes.itemBox}>Python</div>
-                                <div className={classes.itemBox}>SQL</div>
-                                <div className={classes.itemBox}>XML</div>
+                            <div className={classes.columnGroup}>
+                                <div className={classes.column}>
+                                    <div className={classes.itemBox}>C</div>
+                                    <div className={classes.itemBox}>C++</div>
+                                    <div className={classes.itemBox}>HTML</div>
+                                    <div className={classes.itemBox}>Java</div>
+                                </div>
+                                <div className={classes.column}>
+                                    <div className={classes.itemBox}>Kotlin</div>
+                                    <div className={classes.itemBox}>Python</div>
+                                    <div className={classes.itemBox}>SQL</div>
+                                    <div className={classes.itemBox}>XML</div>
+                                </div>
                             </div>
                         </div>
-
                         <div className={classes.toolsGroup}>
                             <div className={classes.tools}>Tools</div>
                             <div className={classes.androidStudio}>Android Studio</div>
@@ -92,7 +101,6 @@ export const Portfolio: FC<Props> = memo(function Desktop() {
                             <div className={classes.vSCode}>VS Code</div>
                             <div className={classes.webstorm}>Webstorm</div>
                         </div>
-
                         <div className={classes.focusGroup}>
                             <div className={classes.focus}>Focus</div>
                             <div className={classes.mobileAppDevelopment}>Mobile App Development</div>
@@ -116,6 +124,9 @@ export const Portfolio: FC<Props> = memo(function Desktop() {
                     <div className={classes.instagramIcon}>
                         <i className="fa-brands fa-instagram"></i>
                     </div>
+                    <div className={classes.emailIcon}>
+                        <i className="fa-solid fa-envelope"></i>
+                    </div>
                 </div>
                 <div className={classes.contactDescription}>
                     <p>
@@ -128,27 +139,29 @@ export const Portfolio: FC<Props> = memo(function Desktop() {
                         className={classes.contactForm}
                         method="post"
                     >
-                        <label htmlFor="name"></label>
-                        <input
-                            autoComplete="off"
-                            className={classes.name}
-                            name="Name"
-                            placeholder="Your name"
-                            required
-                            type="text"
-                        />
-                        <br/>
+                        <div className={classes.nameEmail}>
+                            <label htmlFor="name"></label>
+                            <input
+                                autoComplete="off"
+                                className={classes.name}
+                                name="Name"
+                                placeholder="Your name"
+                                required
+                                type="text"
+                            />
+                            <br/>
 
-                        <label htmlFor="email"></label>
-                        <input
-                            autoComplete="off"
-                            className={classes.email}
-                            name="Email Address"
-                            placeholder="Email address"
-                            required
-                            type="email"
-                        />
-                        <br/>
+                            <label htmlFor="email"></label>
+                            <input
+                                autoComplete="off"
+                                className={classes.email}
+                                name="Email Address"
+                                placeholder="Email address"
+                                required
+                                type="email"
+                            />
+                            <br/>
+                        </div>
 
                         <label htmlFor="message"></label>
                         <textarea
@@ -169,14 +182,7 @@ export const Portfolio: FC<Props> = memo(function Desktop() {
                         <input className={classes.submit} id="submit" type="submit" value="Submit"/>
                     </form>
                 </div>
-                <div className={classes.AllRightsReserved}>© All rights reserved</div>
-            </div>
-
-            <div className={classes.NavBarShape}>
-                <div className={classes.home}>Home</div>
-                <div className={classes.projects}>Projects</div>
-                <div className={classes.about}>About</div>
-                <div className={classes.contact}>Contact</div>
+                <div className={classes.copyright}>© All rights reserved</div>
             </div>
         </div>
     );

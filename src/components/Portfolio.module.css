@@ -2,10 +2,26 @@
     position: absolute;
     width: 100vw;
     height: 100vh;
-    align-items: flex-start;
-    background-color: #fff;
+    display: flex;
+    flex-direction: column;
     overflow-y: auto;
     overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: #000000;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #ffffff;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #ffffff;
 }
 
 .NavBarShape {
@@ -17,11 +33,12 @@
     box-shadow: 2px 2px 10px 2px rgba(70, 70, 70, 0.8);
     border-radius: 10px;
     background-color: #fff;
-    margin: 0 auto;
     display: table;
+    margin: 0 auto;
     align-items: center;
     align-content: center;
     justify-content: center;
+    z-index: 99;
 }
 
 .home, .projects, .about, .contact {
@@ -35,97 +52,90 @@
     float: left;
     margin: 0 auto;
     padding: 10px;
+    cursor: pointer;
+}
+
+.home:hover, .projects:hover, .about:hover, .contact:hover {
+    color: #6686a1;
+    transition-delay: 100ms;
 }
 
 .introBackgroundShape {
-    position: absolute;
+    position: relative;
+    margin-top: -56px;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    left: 0;
-    top: 0;
     width: 100vw;
-    height: 500px;
+    height: auto;
     background-color: #546c82;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 60%, white 40%);
 }
 
-.greeting {
-    color: #fff;
-    font-size: 45px;
-    font-family: "Kaushan Script", cursive;
-    position: absolute;
+.introSocials {
+    position: relative;
+    margin-top: 35px;
+    margin-left: 80%;
     width: auto;
     height: auto;
-    margin-bottom: 16%;
-    text-align: center;
-    flex-direction: row;
+}
+
+.instagramIcon, .githubIcon, .linkedinIcon, .emailIcon {
+    font-size: 36px;
+    position: relative;
+    float: left;
+    margin: 0 auto;
+    padding: 8px;
+    cursor: pointer;
+}
+
+.instagramIcon:hover, .githubIcon:hover, .linkedinIcon:hover, .emailIcon:hover {
+    color: white;
+    transition-delay: 100ms;
 }
 
 .introduction {
     color: #fff;
     font-size: 24px;
     font-family: "Andika New Basic", system-ui;
-    position: absolute;
-    width: auto;
-    height: auto;
-    margin: 15% 18% 18%;
-    text-align: center;
-    flex-direction: row;
-}
-
-.introSocials {
-    position: absolute;
-    right: 100px;
-    top: 35px;
-    width: auto;
-    height: auto;
-    display: table;
-    align-items: center;
-    align-content: center;
-    justify-content: center;
-}
-
-.instagramIcon, .githubIcon, .linkedinIcon {
-    font-size: 36px;
     position: relative;
-    float: left;
-    margin: 0 auto;
-    padding: 10px;
+    width: auto;
+    height: auto;
+    text-align: center;
+}
+
+.greeting, .featuredProjectsHeader, .aboutHeader, .contactHeader {
+    color: #fff;
+    position: relative;
+    font-size: 40px;
+    margin-top: 20px;
+    font-family: "Lilita One", serif;
+    width: auto;
+    height: auto;
+    text-align: center;
+    text-shadow: 0 10px 4px #00000040;
+}
+
+.greeting {
+    font-size: 45px;
+    font-family: "Kaushan Script", cursive;
 }
 
 .featuredProjectsBackground {
-    position: absolute;
-    left: 50px;
-    right: 50px;
-    top: 320px;
+    position: relative;
+    margin: 20px;
     width: auto;
-    height: 530px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    align-content: center;
-    justify-content: center;
     border-radius: 20px;
-    overflow: hidden;
     background-color: #292121;
-}
-
-.featuredProjectsHeader, .aboutHeader, .contactHeader {
-    color: #fff;
-    position: absolute;
-    font-size: 40px;
-    font-family: "Lilita One", serif;
-    top: 20px;
-    width: min-content;
-    height: min-content;
-    text-align: center;
-    text-shadow: 0 10px 4px #00000040;
-    white-space: nowrap;
-    margin: 0 auto;
+    padding: 20px;
 }
 
 .projectCards {
     position: relative;
-    top: 20px;
-    margin: 0 auto;
     width: auto;
     height: auto;
     display: table;
@@ -136,14 +146,19 @@
 
 .projectCard1, .projectCard2, .projectCard3 {
     position: relative;
-    width: 400px;
-    height: 342px;
+    width: 250px;
+    height: 200px;
     border-radius: 20px;
     float: left;
     align-items: center;
     align-content: center;
     justify-content: center;
-    margin-right: 30px;
+    margin: 30px;
+    transition: all .2s ease-out;
+}
+
+.projectCard1:hover, .projectCard2:hover, .projectCard3:hover {
+    transform: scale(1.1);
 }
 
 .projectCard1 {
@@ -159,49 +174,42 @@
 }
 
 .aboutBackgroundShape {
-    position: absolute;
-    top: 900px;
+    position: relative;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    left: 0;
     width: 100vw;
-    height: 550px;
+    height: auto;
     background-color: #546c82;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, white 50%);
 }
 
 .aboutDescription {
-    position: absolute;
+    position: relative;
     color: #fff;
     font-size: 24px;
     font-family: "Andika New Basic", system-ui;
     width: auto;
     height: auto;
-    top: 80px;
     text-align: center;
-    flex-direction: row;
 }
 
 .aboutOverviewShape {
-    position: absolute;
-    left: 50px;
-    right: 50px;
-    top: 350px;
+    position: relative;
+    margin: 20px;
     width: auto;
-    height: 600px;
+    height: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
-    align-content: center;
-    justify-content: center;
     border-radius: 20px;
-    overflow: hidden;
     background-color: #292121;
 }
 
 .programmerIcon {
     position: relative;
-    top: 20px;
+    margin: 0 auto;
+    top: 50px;
     width: 137px;
     height: 116px;
     background-image: url('public/assets/programmer.jpg');
@@ -217,21 +225,23 @@
     height: auto;
     display: table;
     align-items: center;
-    align-content: center;
-    justify-content: center;
 }
 
 .languagesGroup, .toolsGroup, .focusGroup {
     position: relative;
     float: left;
     padding: 40px;
+    margin: 20px;
     width: auto;
     height: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
-    align-content: center;
-    justify-content: center;
+}
+
+.columnGroup {
+    display: flex;
+    flex-direction: row;
 }
 
 .languages, .tools, .focus {
@@ -245,7 +255,8 @@
 .column {
     position: relative;
     top: 20px;
-    flex: 80%;
+    display: flex;
+    flex-direction: column;
     height: auto;
 }
 
@@ -273,56 +284,101 @@
     font-size: 24px;
     padding: 5px;
     margin: 5px;
+    transition: all .2s ease-in-out;
+}
+
+.itemBox:hover {
+    transform: scale(1.1);
 }
 
 .contactsBackgroundShape {
-    position: absolute;
-    top: 1900px;
+    position: relative;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     left: 0;
     width: 100vw;
-    height: 600px;
+    height: auto;
     background-color: #546c82;
 }
 
 .contactSocials {
-    position: absolute;
-    top: 70px;
+    position: relative;
+    margin: 5px;
     width: auto;
     height: auto;
     display: table;
-    margin: 0 auto;
     justify-content: center;
 }
 
 .contactDescription {
+    position: relative;
     color: #fff;
     font-size: 24px;
-    top: 110px;
     font-family: "Andika New Basic", system-ui;
-    position: absolute;
     width: auto;
     height: auto;
     text-align: center;
 }
 
 .contactForm {
-    position: absolute;
+    position: relative;
+    width: auto;
+    height: auto;
     border: 1px;
     display: table;
-    flex-direction: column;
+    align-items: center;
+}
+
+.name, .email, .message {
+    font-size: 14px;
+    font-family: "Andika New Basic", system-ui;
+}
+
+.nameEmail {
     margin: 0 auto;
+    width: auto;
+    height: auto;
+    display: flex;
+}
+
+.name, .email {
+    position: relative;
+    float: left;
+    width: 250px;
+    height: 50px;
+    margin: 10px 5px 10px 5px;
+    padding: 8px;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 5px 4px 0 #00000040;
+}
+
+.message {
+    position: relative;
+    width: 510px;
+    height: 250px;
+    margin: 0 auto;
+    padding: 8px;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 5px 4px 0 #00000040;
 }
 
 .submit {
+    font-size: 14px;
+    width: 200px;
+    height: auto;
     background-color: #329680;
     color: #175c58;
-    padding: 12px 20px;
+    padding: 20px;
+    margin: 0 auto;
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    text-align: center;
+    justify-content: center;
 }
 
 .submit:hover {
@@ -333,44 +389,6 @@
     box-shadow: 0 5px #666;
     transition-duration: 0.2s;
     transform: translateY(4px);
-}
-
-.name {
-    position: relative;
-    width: 500px;
-    height: 50px;
-    border-radius: 5px;
-    background-color: #fff;
-    box-shadow: 0 5px 4px 0 #00000040;
-}
-
-.email {
-    position: relative;
-    width: 500px;
-    height: 50px;
-    border-radius: 5px;
-    background-color: #fff;
-    box-shadow: 0 5px 4px 0 #00000040;
-}
-
-.message {
-    position: relative;
-    width: 500px;
-    height: 250px;
-    border-radius: 5px;
-    background-color: #fff;
-    box-shadow: 0 5px 4px 0 #00000040;
-}
-
-.submit-shape {
-    width: 700px;
-    height: auto;
-    background: #EDEDED;
-    padding: 5em;
-    border-radius: 5px 5px 5px 5px;
-    box-shadow: 5px 5px 5px #CCC;
-    position: relative;
-    text-align: center;
 }
 
 .submit-button {
@@ -386,12 +404,24 @@
     position: relative;
 }
 
+.submit-shape {
+    width: 1000px;
+    height: auto;
+    margin: 0 auto;
+    background: #EDEDED;
+    padding: 5em;
+    border-radius: 5px 5px 5px 5px;
+    box-shadow: 5px 5px 5px #CCC;
+    position: relative;
+    text-align: center;
+}
+
 .submit-button:active {
     box-shadow: 0 5px #666;
     transform: translateY(6px);
 }
 
-.AllRightsReserved {
+.copyright {
     color: #fff;
     font-size: 18px;
     font-family: "Andika New Basic", system-ui;
@@ -400,13 +430,14 @@
     text-align: center;
     align-items: center;
     white-space: nowrap;
+    margin: 20px;
     flex-direction: column;
 }
 
 .icon16 {
     position: absolute;
-    width: 166px;
-    height: 242px;
+    width: 86px;
+    height: 142px;
     background-image: url('public/assets/konnect.jpg');
     background-position: center;
     background-repeat: no-repeat;
@@ -415,8 +446,8 @@
 
 .icon17 {
     position: absolute;
-    width: 221px;
-    height: 219px;
+    width: 151px;
+    height: 149px;
     border-radius: 40px;
     background-image: url('public/assets/download_calculator.jpg');
     background-position: center;
@@ -426,8 +457,8 @@
 
 .icon18 {
     position: absolute;
-    width: 209px;
-    height: 213px;
+    width: 139px;
+    height: 143px;
     border-radius: 40px;
     background-image: url('/public/assets/best_tv.jpg');
     background-position: center;
