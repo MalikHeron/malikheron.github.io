@@ -89,11 +89,6 @@
     cursor: pointer;
 }
 
-.instagramIcon:hover, .githubIcon:hover, .linkedinIcon:hover, .emailIcon:hover {
-    color: white;
-    transition-delay: 100ms;
-}
-
 .introduction {
     color: #fff;
     font-size: 24px;
@@ -475,4 +470,13 @@
     border-radius: 8px;
     background-color: #d3d3d3;
     transform: translateX(-50%);
+}
+
+.links {
+    color: black;
+}
+
+.links:hover {
+    color: white;
+    transition-delay: 100ms;
 }

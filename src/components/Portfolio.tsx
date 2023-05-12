@@ -20,16 +20,21 @@ export const Portfolio: FC<Props> = memo(function Desktop() {
             <div className={classes.introBackgroundShape}>
                 <div className={classes.introSocials}>
                     <div className={classes.linkedinIcon}>
-                        <i className="fa-brands fa-linkedin"></i>
+                        <a className={classes.links} href="https://www.linkedin.com/in/malik-heron-18b961158/"
+                           target="_blank"><i className="fa-brands fa-linkedin"></i></a>
                     </div>
                     <div className={classes.githubIcon}>
-                        <i className="fa-brands fa-github"></i>
+                        <a className={classes.links} href="https://github.com/MalikHeron" target="_blank"><i
+                            className="fa-brands fa-github"></i></a>
                     </div>
                     <div className={classes.instagramIcon}>
-                        <i className="fa-brands fa-instagram"></i>
+                        <a className={classes.links} href="https://www.instagram.com/malik_heron/?hl=en"
+                           target="_blank"><i
+                            className="fa-brands fa-instagram"></i></a>
                     </div>
                     <div className={classes.emailIcon}>
-                        <i className="fa-solid fa-envelope"></i>
+                        <a className={classes.links} href="mailto:malik.heron2001@gmail.com" target="_blank"><i
+                            className="fa-solid fa-envelope"></i></a>
                     </div>
                 </div>
                 <div className={classes.greeting}>
@@ -116,16 +121,21 @@ export const Portfolio: FC<Props> = memo(function Desktop() {
                 <div className={classes.contactHeader}>Let’s Get In Touch</div>
                 <div className={classes.contactSocials}>
                     <div className={classes.linkedinIcon}>
-                        <i className="fa-brands fa-linkedin"></i>
+                        <a className={classes.links} href="https://www.linkedin.com/in/malik-heron-18b961158/"
+                           target="_blank"><i className="fa-brands fa-linkedin"></i></a>
                     </div>
                     <div className={classes.githubIcon}>
-                        <i className="fa-brands fa-github"></i>
+                        <a className={classes.links} href="https://github.com/MalikHeron" target="_blank"><i
+                            className="fa-brands fa-github"></i></a>
                     </div>
                     <div className={classes.instagramIcon}>
-                        <i className="fa-brands fa-instagram"></i>
+                        <a className={classes.links} href="https://www.instagram.com/malik_heron/?hl=en"
+                           target="_blank"><i
+                            className="fa-brands fa-instagram"></i></a>
                     </div>
                     <div className={classes.emailIcon}>
-                        <i className="fa-solid fa-envelope"></i>
+                        <a className={classes.links} href="mailto:malik.heron2001@gmail.com" target="_blank"><i
+                            className="fa-solid fa-envelope"></i></a>
                     </div>
                 </div>
                 <div className={classes.contactDescription}>
@@ -185,5 +195,6 @@ export const Portfolio: FC<Props> = memo(function Desktop() {
                 <div className={classes.copyright}>© All rights reserved</div>
             </div>
         </div>
-    );
+    )
+        ;
 });
