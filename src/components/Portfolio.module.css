@@ -10,6 +10,7 @@
     --blue-color-rgb: rgb(84, 108, 130);
     --blue-color: #546c82;
     --gray-color: #d3d3d3;
+    --green-color: #329680;
 }
 
 .navBarContainer {
@@ -135,7 +136,8 @@
     position: relative;
     width: auto;
     height: auto;
-    display: table;
+    display: flex;
+    flex-direction: row;
     align-items: center;
     align-content: center;
     justify-content: center;
@@ -146,16 +148,89 @@
     width: 250px;
     height: 200px;
     border-radius: 20px;
-    float: left;
-    align-items: center;
     align-content: center;
+    align-items: center;
     justify-content: center;
+    justify-items: center;
     margin: 30px;
     transition: all .2s ease-out;
 }
 
 .projectCard:hover {
     transform: scale(1.1);
+}
+
+.projectCard:hover .cardDetails {
+    display: flex;
+}
+
+.cardDetails {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.icon {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.cardDetails {
+    display: none;
+    border-radius: 20px;
+    width: 250px;
+    height: 200px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    animation: fadeInAnimation ease 0.5s;
+    background-color: var(--blue-color);
+}
+
+.cardTitle, .cardTags, .cardButton {
+    margin: 5px;
+}
+
+.cardTitle {
+    font-size: 16px;
+    color: white;
+    position: relative;
+    font-family: "Andika New Basic", system-ui;
+}
+
+.cardTags {
+    display: flex;
+    align-content: center;
+    flex-wrap: wrap;
+    grid-gap: 12px;
+    gap: 12px;
+}
+
+.cardTag {
+    list-style: none;
+    background-color: #fff;
+    color: #0d0f13;
+    padding: 4px 12px;
+    border-radius: 30px;
+    font-size: 14px;
+}
+
+.cardButton {
+    color: #fff;
+    background-color: var(--green-color);
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    font-size: 14px;
+    transition-duration: 0.2s;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.cardButton:active {
+
 }
 
 .aboutContainer {
@@ -343,7 +418,7 @@
     font-size: 16px;
     width: 200px;
     height: auto;
-    background-color: #329680;
+    background-color: var(--green-color);
     color: #fff;
     padding: 20px;
     margin: 0 auto;
@@ -371,13 +446,6 @@
     white-space: nowrap;
     margin: 20px;
     flex-direction: column;
-}
-
-.icon {
-    position: absolute;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
 }
 
 .programmerIcon {
@@ -410,4 +478,13 @@
 
 ::-webkit-scrollbar-thumb:hover {
     background: #ffffff;
+}
+
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }

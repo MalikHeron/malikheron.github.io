@@ -118,6 +118,17 @@ export const Portfolio: FC<Props> = () => {
                                      height: "143px"
                                  }}>
                             </div>
+                            <div className={classes.cardDetails}>
+                                <div className={classes.cardTitle}>Best TV Mobile App</div>
+                                <ul className={classes.cardTags}>
+                                    <li className={classes.cardTag}>Billing</li>
+                                    <li className={classes.cardTag}>Communication</li>
+                                    <li className={classes.cardTag}>Firebase</li>
+                                    <li className={classes.cardTag}>Kotlin</li>
+                                    <li className={classes.cardTag}>Maps</li>
+                                </ul>
+                                <button className={classes.cardButton}>View Project</button>
+                            </div>
                         </div>
                         <div className={classes.projectCard} style={{backgroundColor: "#ee2323"}}>
                             <div className={classes.icon}
@@ -127,6 +138,14 @@ export const Portfolio: FC<Props> = () => {
                                      height: "149px"
                                  }}>
                             </div>
+                            <div className={classes.cardDetails}>
+                                <div className={classes.cardTitle}>Download Time Calculator App</div>
+                                <ul className={classes.cardTags}>
+                                    <li className={classes.cardTag}>Calculation</li>
+                                    <li className={classes.cardTag}>Estimates</li>
+                                </ul>
+                                <button className={classes.cardButton}>View Project</button>
+                            </div>
                         </div>
                         <div className={classes.projectCard} style={{backgroundColor: "#ffc555"}}>
                             <div className={classes.icon}
@@ -135,6 +154,15 @@ export const Portfolio: FC<Props> = () => {
                                      width: "86px",
                                      height: "142px"
                                  }}>
+                            </div>
+                            <div className={classes.cardDetails}>
+                                <div className={classes.cardTitle}>Konnect Mobile App</div>
+                                <ul className={classes.cardTags}>
+                                    <li className={classes.cardTag}>Communication</li>
+                                    <li className={classes.cardTag}>Firebase</li>
+                                    <li className={classes.cardTag}>Kotlin</li>
+                                </ul>
+                                <button className={classes.cardButton}>View Project</button>
                             </div>
                         </div>
                     </div>
