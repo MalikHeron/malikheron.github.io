@@ -11,11 +11,19 @@ interface Props {
 export const Portfolio: FC<Props> = () => {
 
     useEffect(() => {
-        function isElementInView(id: string) {
+        function isAboutInView(id: string) {
             const element = document.querySelector(`#${id}`) as HTMLElement;
             const rect = element.getBoundingClientRect();
 
             return rect.top <= 0 && rect.bottom >= 0;
+        }
+
+        function isProjectsInView(id: string) {
+            const element = document.querySelector(`#${id}`) as HTMLElement;
+            const rect = element.getBoundingClientRect();
+            console.log(rect.bottom)
+            console.log(`windowScrollY = ${window.scrollY}`)
+            return rect.top < 0 && rect.bottom > -56;
         }
 
         function isContactInView(id: string) {
@@ -27,8 +35,8 @@ export const Portfolio: FC<Props> = () => {
 
         window.onload = () => {
             window.addEventListener('scroll', () => {
-                const projects = isElementInView('projects');
-                const about = isElementInView('about');
+                const projects = isProjectsInView('projects');
+                const about = isAboutInView('about');
                 const contact = isContactInView('contact');
 
                 const homeHighlight = document.querySelector('#homeHighlight') as HTMLElement;
@@ -36,9 +44,10 @@ export const Portfolio: FC<Props> = () => {
                 const aboutHighlight = document.querySelector('#aboutHighlight') as HTMLElement;
                 const contactHighlight = document.querySelector('#contactHighlight') as HTMLElement;
 
-                homeHighlight.style.backgroundColor = window.scrollY == 0 ? '#d3d3d3' : 'white';
+                homeHighlight.style.backgroundColor = window.scrollY >= 0 && window.scrollY < 500 &&
+                !projects && !about && !contact ? '#d3d3d3' : 'white';
                 projectsHighlight.style.backgroundColor = projects ? '#d3d3d3' : 'white';
-                aboutHighlight.style.backgroundColor = about ? '#d3d3d3' : 'white';
+                aboutHighlight.style.backgroundColor = about && !projects ? '#d3d3d3' : 'white';
                 contactHighlight.style.backgroundColor = contact ? '#d3d3d3' : 'white';
                 if (contact) {
                     aboutHighlight.style.backgroundColor = 'white';
