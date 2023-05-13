@@ -113,13 +113,16 @@ export const Portfolio: FC<Props> = () => {
                     <div className={classes.featuredProjectsHeader}>Featured Projects</div>
                     <div className={classes.projectCards}>
                         <div className={classes.projectCard1}>
-                            <div className={classes.icon18}></div>
+                            <img className={`${classes.icon1} ${classes.icon}`} src={'/assets/best_tv.jpg'}
+                                 alt="Best TV"></img>
                         </div>
                         <div className={classes.projectCard2}>
-                            <div className={classes.icon17}></div>
+                            <img className={`${classes.icon2} ${classes.icon}`} src={'/assets/download_calculator.jpg'}
+                                 alt="DLT Calculator"></img>
                         </div>
                         <div className={classes.projectCard3}>
-                            <div className={classes.icon16}></div>
+                            <img className={`${classes.icon3} ${classes.icon}`} src={'/assets/konnect.jpg'}
+                                 alt="Konnect"></img>
                         </div>
                     </div>
                 </div>
@@ -139,7 +142,8 @@ export const Portfolio: FC<Props> = () => {
                     </p>
                 </div>
                 <div className={classes.aboutOverviewShape}>
-                    <div className={classes.programmerIcon}></div>
+                    <img className={`${classes.programmerIcon} ${classes.icon}`} src={'/assets/programmer.jpg'}
+                         alt="Programmer"></img>
                     <div className={classes.aboutOverviewItems}>
                         <div className={classes.languagesGroup}>
                             <div className={classes.languages}>Languages</div>

@@ -8,6 +8,7 @@
     overflow-y: auto;
 
     --blue-color: rgb(84, 108, 130); /*#546c82*/
+    --gray-color: #d3d3d3;
 }
 
 .navBarShape {
@@ -199,17 +200,6 @@
     background-color: #292121;
 }
 
-.programmerIcon {
-    position: relative;
-    margin-top: 50px;
-    width: 137px;
-    height: 116px;
-    background-image: url('/public/assets/programmer.jpg');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
 .aboutOverviewItems {
     position: relative;
     width: auto;
@@ -391,36 +381,33 @@
     flex-direction: column;
 }
 
-.icon16 {
+.icon {
     position: absolute;
-    width: 86px;
-    height: 142px;
-    background-image: url('/public/assets/konnect.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
-.icon17 {
-    position: absolute;
-    width: 151px;
-    height: 149px;
-    border-radius: 40px;
-    background-image: url('/public/assets/download_calculator.jpg');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-.icon18 {
-    position: absolute;
+.icon1 {
     width: 139px;
     height: 143px;
-    border-radius: 40px;
-    background-image: url('/public/assets/best_tv.jpg');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+}
+
+.icon2 {
+    width: 151px;
+    height: 149px;
+}
+
+.icon3 {
+    width: 86px;
+    height: 142px;
+}
+
+.programmerIcon {
+    position: relative;
+    margin-top: 50px;
+    width: 137px;
+    height: 116px;
 }
 
 .links {
