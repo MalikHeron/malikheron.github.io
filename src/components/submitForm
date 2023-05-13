@@ -1,0 +1,83 @@
+<div id="modal" className={classes.modal}>
+                    <div className={classes.modalContent}>
+                        <div className={classes.submitHeader}>Form submitted</div>
+                        <div className={classes.submitDescription}>
+                            <p>Thank you for getting in contact!<br/>
+                                I'll get back to you as soon as possible.
+                            </p>
+                        </div>
+                        <button className={classes.closeButton} id="close"
+                                onClick={() => handleClick("close")}>Close
+                        </button>
+                    </div>
+                </div>
+
+.modal {
+    display: none;
+    flex-direction: row;
+    position: fixed;
+    align-items: center;
+    z-index: 2;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modalContent {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    align-items: center;
+    width: fit-content;
+    height: fit-content;
+    border-radius: 20px;
+    background-color: --blue-color;
+    padding: 20px;
+    border: 1px solid #888;
+}
+
+.submitHeader {
+    color: #fff;
+    position: relative;
+    font-size: 40px;
+    margin: 20px;
+    font-family: "Lilita One", serif;
+    width: auto;
+    height: auto;
+    text-align: center;
+    text-shadow: 0 10px 4px #00000040;
+}
+
+.submitDescription {
+    position: relative;
+    color: #fff;
+    font-size: 24px;
+    font-family: "Andika New Basic", system-ui;
+    width: auto;
+    height: auto;
+    text-align: center;
+}
+
+.closeButton {
+    width: fit-content;
+    height: fit-content;
+    margin: 10px;
+    color: white;
+    background-color: #329680;
+    border: none;
+    padding: .8em .8em;
+    border-radius: 5px 5px 5px 5px;
+    text-align: center;
+    font-size: 18px;
+    transition-duration: 0.2s;
+    cursor: pointer;
+    position: relative;
+}
+
+.closeButton:active {
+    box-shadow: 0 5px 4px 0 #00000040;
+    transform: translateY(6px);
+}

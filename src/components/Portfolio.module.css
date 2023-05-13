@@ -6,9 +6,11 @@
     flex-direction: column;
     overflow-x: hidden;
     overflow-y: auto;
+
+    --blue-color: rgb(84, 108, 130); /*#546c82*/
 }
 
-.NavBarShape {
+.navBarShape {
     position: fixed;
     margin-top: 28px;
     left: 50%;
@@ -21,7 +23,17 @@
     background-color: #fff;
     display: table;
     align-items: center;
-    z-index: 99;
+    z-index: 1;
+}
+
+.homeHighlight, .projectsHighlight, .aboutHighlight, .contactHighlight {
+    position: relative;
+    width: auto;
+    height: auto;
+    margin: 3px;
+    float: left;
+    padding: 10px;
+    border-radius: 8px;
 }
 
 .home, .projects, .about, .contact {
@@ -31,10 +43,8 @@
     position: relative;
     width: auto;
     height: auto;
-    white-space: nowrap;
     float: left;
     margin: 0 auto;
-    padding: 10px;
     cursor: pointer;
 }
 
@@ -50,8 +60,8 @@
     align-items: center;
     width: 100vw;
     height: auto;
-    background: rgb(84,108,130);
-    background: linear-gradient(180deg, rgba(84,108,130,1) 53%, rgba(255,255,255,1) 78%, rgba(84,108,130,1) 100%);
+    background: var(--blue-color);
+    background: linear-gradient(180deg, rgba(84, 108, 130, 1) 53%, rgba(255, 255, 255, 1) 78%, rgba(84, 108, 130, 1) 100%);
 }
 
 .introSocials {
@@ -157,8 +167,10 @@
     align-items: center;
     width: 100vw;
     height: auto;
-    background: rgb(84,108,130);
-    background: linear-gradient(180deg, rgba(84,108,130,1) 52%, rgba(255,255,255,1) 88%, rgba(84,108,130,1) 100%);}
+    justify-content: center;
+    background: var(--blue-color);
+    background: linear-gradient(180deg, rgba(84, 108, 130, 1) 52%, rgba(255, 255, 255, 1) 88%, rgba(84, 108, 130, 1) 100%);
+}
 
 .aboutDescription {
     position: relative;
@@ -274,12 +286,12 @@
     justify-content: center;
     width: 100vw;
     height: auto;
-    background-color: #546c82;
+    background-color: var(--blue-color);
 }
 
 .contactSocials {
     position: relative;
-    margin: 5px;
+    margin-top: 20px;
     width: auto;
     height: auto;
     display: table;
@@ -288,6 +300,7 @@
 
 .contactDescription {
     position: relative;
+    margin: 10px;
     color: #fff;
     font-size: 24px;
     font-family: "Andika New Basic", system-ui;
@@ -341,11 +354,11 @@
 }
 
 .submit {
-    font-size: 14px;
+    font-size: 16px;
     width: 200px;
     height: auto;
     background-color: #329680;
-    color: #175c58;
+    color: #fff;
     padding: 20px;
     margin: 0 auto;
     border: none;
@@ -355,44 +368,10 @@
     justify-content: center;
 }
 
-.submit:hover {
-    color: white;
-}
-
 .submit:active {
     box-shadow: 0 5px 4px 0 #00000040;
     transition-duration: 0.2s;
     transform: translateY(4px);
-}
-
-.submit-button {
-    color: white;
-    background-color: #329680;
-    border: none;
-    padding: .8em .8em;
-    border-radius: 5px 5px 5px 5px;
-    text-align: center;
-    font-size: 14px;
-    transition-duration: 0.2s;
-    cursor: pointer;
-    position: relative;
-}
-
-.submit-shape {
-    width: 1000px;
-    height: auto;
-    margin: 0 auto;
-    background: #EDEDED;
-    padding: 5em;
-    border-radius: 5px 5px 5px 5px;
-    box-shadow: 5px 5px 5px #CCC;
-    position: relative;
-    text-align: center;
-}
-
-.submit-button:active {
-    box-shadow: 0 5px #666;
-    transform: translateY(6px);
 }
 
 .copyright {
@@ -438,17 +417,6 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-}
-
-.highlight {
-    position: absolute;
-    left: calc(50% - 173px);
-    margin-top: 40px;
-    width: 95px;
-    height: 43px;
-    border-radius: 8px;
-    background-color: #d3d3d3;
-    transform: translateX(-50%);
 }
 
 .links {

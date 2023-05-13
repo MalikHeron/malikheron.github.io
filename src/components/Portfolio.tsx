@@ -1,4 +1,4 @@
-import {memo} from 'react';
+import React, {useEffect} from 'react';
 import type {FC} from 'react';
 
 import resets from './_resets.module.css';
@@ -8,7 +8,44 @@ interface Props {
     className?: string;
 }
 
-export const Portfolio: FC<Props> = memo(function Desktop() {
+export const Portfolio: FC<Props> = () => {
+
+    useEffect(() => {
+        function isElementInView(id: string) {
+            const element = document.querySelector(`#${id}`) as HTMLElement;
+            const rect = element.getBoundingClientRect();
+
+            return rect.top <= 0 && rect.bottom >= 0;
+        }
+
+        function isContactInView(id: string) {
+            const element = document.querySelector(`#${id}`) as HTMLElement;
+            const rect = element.getBoundingClientRect();
+
+            return rect.top < 90 && rect.bottom > 0;
+        }
+
+        window.onload = () => {
+            window.addEventListener('scroll', () => {
+                const projects = isElementInView('projects');
+                const about = isElementInView('about');
+                const contact = isContactInView('contact');
+
+                const homeHighlight = document.querySelector('#homeHighlight') as HTMLElement;
+                const projectsHighlight = document.querySelector('#projectsHighlight') as HTMLElement;
+                const aboutHighlight = document.querySelector('#aboutHighlight') as HTMLElement;
+                const contactHighlight = document.querySelector('#contactHighlight') as HTMLElement;
+
+                homeHighlight.style.backgroundColor = window.scrollY == 0 ? '#d3d3d3' : 'white';
+                projectsHighlight.style.backgroundColor = projects ? '#d3d3d3' : 'white';
+                aboutHighlight.style.backgroundColor = about ? '#d3d3d3' : 'white';
+                contactHighlight.style.backgroundColor = contact ? '#d3d3d3' : 'white';
+                if (contact) {
+                    aboutHighlight.style.backgroundColor = 'white';
+                }
+            });
+        }
+    }, []);
 
     const handleClick = (id: string) => {
         const element = document.getElementById(id);
@@ -19,11 +56,19 @@ export const Portfolio: FC<Props> = memo(function Desktop() {
 
     return (
         <div className={`${resets.storybrainResets} ${classes.root}`} id="home">
-            <div className={classes.NavBarShape}>
-                <div className={classes.home} onClick={() => handleClick("home")}>Home</div>
-                <div className={classes.projects} onClick={() => handleClick("projects")}>Projects</div>
-                <div className={classes.about} onClick={() => handleClick("about")}>About</div>
-                <div className={classes.contact} onClick={() => handleClick("contact")}>Contact</div>
+            <div className={classes.navBarShape}>
+                <div id="homeHighlight" className={classes.homeHighlight}>
+                    <div className={classes.home} onClick={() => handleClick("home")}>Home</div>
+                </div>
+                <div id="projectsHighlight" className={classes.projectsHighlight}>
+                    <div className={classes.projects} onClick={() => handleClick("projects")}>Projects</div>
+                </div>
+                <div id="aboutHighlight" className={classes.aboutHighlight}>
+                    <div className={classes.about} onClick={() => handleClick("about")}>About</div>
+                </div>
+                <div id="contactHighlight" className={classes.contactHighlight}>
+                    <div className={classes.contact} onClick={() => handleClick("contact")}>Contact</div>
+                </div>
             </div>
             <div className={classes.introBackgroundShape}>
                 <div className={classes.introSocials}>
@@ -191,12 +236,7 @@ export const Portfolio: FC<Props> = memo(function Desktop() {
                         ></textarea>
                         <br/>
 
-                        <input name="_captcha" type="hidden" value="false"/>
-                        <input
-                            name="_next"
-                            type="hidden"
-                            value="https://malikheron.000webhostapp.com/html/submission.html"
-                        />
+                        <input name="_captcha" type="hidden" value="true"/>
                         <input className={classes.submit} id="submit" type="submit" value="Submit"/>
                     </form>
                 </div>
@@ -204,4 +244,4 @@ export const Portfolio: FC<Props> = memo(function Desktop() {
             </div>
         </div>
     );
-});
+};
