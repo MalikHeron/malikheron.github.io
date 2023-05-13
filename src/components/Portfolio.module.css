@@ -131,7 +131,7 @@
     padding: 20px;
 }
 
-.projectCards {
+.projectCardGroup {
     position: relative;
     width: auto;
     height: auto;
@@ -141,7 +141,7 @@
     justify-content: center;
 }
 
-.projectCard1, .projectCard2, .projectCard3 {
+.projectCard {
     position: relative;
     width: 250px;
     height: 200px;
@@ -154,20 +154,8 @@
     transition: all .2s ease-out;
 }
 
-.projectCard1:hover, .projectCard2:hover, .projectCard3:hover {
+.projectCard:hover {
     transform: scale(1.1);
-}
-
-.projectCard1 {
-    background-color: #fff;
-}
-
-.projectCard2 {
-    background-color: #ee2323;
-}
-
-.projectCard3 {
-    background-color: #ffc555;
 }
 
 .aboutContainer {
@@ -230,7 +218,7 @@
     flex-direction: row;
 }
 
-.languages, .tools, .focus {
+.languagesHeader, .toolsHeader, .focusHeader {
     color: #fff;
     font-size: 28px;
     position: relative;
@@ -246,8 +234,7 @@
     height: auto;
 }
 
-.vSCode, .webstorm, .pycharm, .intellij, .github, .androidStudio, .figma,
-.mobileAppDevelopment, .userInterfaceDesign, .userExperienceDesign, .webDevelopment {
+.overviewItem {
     color: #fff;
     font-family: "Andika New Basic", system-ui;
     font-size: 24px;
@@ -391,21 +378,6 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-}
-
-.icon1 {
-    width: 139px;
-    height: 143px;
-}
-
-.icon2 {
-    width: 151px;
-    height: 149px;
-}
-
-.icon3 {
-    width: 86px;
-    height: 142px;
 }
 
 .programmerIcon {

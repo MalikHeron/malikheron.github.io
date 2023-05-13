@@ -109,18 +109,33 @@ export const Portfolio: FC<Props> = () => {
                 </div>
                 <div className={classes.projectsBackground} id="projects">
                     <div className={classes.projectsHeader}>Featured Projects</div>
-                    <div className={classes.projectCards}>
-                        <div className={classes.projectCard1}>
-                            <img className={`${classes.icon1} ${classes.icon}`} src={'/assets/best_tv.jpg'}
-                                 alt="Best TV"></img>
+                    <div className={classes.projectCardGroup}>
+                        <div className={classes.projectCard} style={{backgroundColor: "#fff"}}>
+                            <div className={classes.icon}
+                                 style={{
+                                     backgroundImage: "url(/assets/best_tv.jpg)",
+                                     width: "139px",
+                                     height: "143px"
+                                 }}>
+                            </div>
                         </div>
-                        <div className={classes.projectCard2}>
-                            <img className={`${classes.icon2} ${classes.icon}`} src={'/assets/download_calculator.jpg'}
-                                 alt="DLT Calculator"></img>
+                        <div className={classes.projectCard} style={{backgroundColor: "#ee2323"}}>
+                            <div className={classes.icon}
+                                 style={{
+                                     backgroundImage: "url(/assets/download_calculator.jpg)",
+                                     width: "151px",
+                                     height: "149px"
+                                 }}>
+                            </div>
                         </div>
-                        <div className={classes.projectCard3}>
-                            <img className={`${classes.icon3} ${classes.icon}`} src={'/assets/konnect.jpg'}
-                                 alt="Konnect"></img>
+                        <div className={classes.projectCard} style={{backgroundColor: "#ffc555"}}>
+                            <div className={classes.icon}
+                                 style={{
+                                     backgroundImage: "url(/assets/konnect.jpg)",
+                                     width: "86px",
+                                     height: "142px"
+                                 }}>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -144,7 +159,7 @@ export const Portfolio: FC<Props> = () => {
                          alt="Programmer"></img>
                     <div className={classes.aboutOverviewItems}>
                         <div className={classes.languagesGroup}>
-                            <div className={classes.languages}>Languages</div>
+                            <div className={classes.languagesHeader}>Languages</div>
                             <div className={classes.columnGroup}>
                                 <div className={classes.column}>
                                     <div className={classes.itemBox}>C</div>
@@ -161,21 +176,21 @@ export const Portfolio: FC<Props> = () => {
                             </div>
                         </div>
                         <div className={classes.toolsGroup}>
-                            <div className={classes.tools}>Tools</div>
-                            <div className={classes.androidStudio}>Android Studio</div>
-                            <div className={classes.figma}>Figma</div>
-                            <div className={classes.github}>Github</div>
-                            <div className={classes.intellij}>Intellij</div>
-                            <div className={classes.pycharm}>Pycharm</div>
-                            <div className={classes.vSCode}>VS Code</div>
-                            <div className={classes.webstorm}>Webstorm</div>
+                            <div className={classes.toolsHeader}>Tools</div>
+                            <div className={classes.overviewItem}>Android Studio</div>
+                            <div className={classes.overviewItem}>Figma</div>
+                            <div className={classes.overviewItem}>Github</div>
+                            <div className={classes.overviewItem}>Intellij</div>
+                            <div className={classes.overviewItem}>Pycharm</div>
+                            <div className={classes.overviewItem}>VS Code</div>
+                            <div className={classes.overviewItem}>Webstorm</div>
                         </div>
                         <div className={classes.focusGroup}>
-                            <div className={classes.focus}>Focus</div>
-                            <div className={classes.mobileAppDevelopment}>Mobile App Development</div>
-                            <div className={classes.userInterfaceDesign}>User Interface Design</div>
-                            <div className={classes.userExperienceDesign}>User Experience Design</div>
-                            <div className={classes.webDevelopment}>Web Development</div>
+                            <div className={classes.focusHeader}>Focus</div>
+                            <div className={classes.overviewItem}>Mobile App Development</div>
+                            <div className={classes.overviewItem}>User Interface Design</div>
+                            <div className={classes.overviewItem}>User Experience Design</div>
+                            <div className={classes.overviewItem}>Web Development</div>
                         </div>
                     </div>
                 </div>
