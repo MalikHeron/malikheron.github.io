@@ -11,6 +11,7 @@
     --blue-color: #546c82;
     --gray-color: #d3d3d3;
     --green-color: #329680;
+    --semi-transparent: rgba(0, 0, 0, 0.4);
 }
 
 .navBarContainer {
@@ -185,7 +186,7 @@
     align-items: center;
     justify-content: center;
     animation: fadeInAnimation ease 0.5s;
-    background-color: var(--blue-color);
+    background-color: var(--semi-transparent);
 }
 
 .cardTitle, .cardTags, .cardButton {
