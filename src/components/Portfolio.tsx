@@ -11,30 +11,32 @@ interface Props {
 export const Portfolio: FC<Props> = () => {
 
     useEffect(() => {
-        function isAboutInView(id: string) {
-            const element = document.querySelector(`#${id}`) as HTMLElement;
-            const rect = element.getBoundingClientRect();
 
-            return rect.top <= 0 && rect.bottom >= 0;
+        function isHomeInView() {
+            return window.scrollY < 315.79998779296875;
         }
 
         function isProjectsInView(id: string) {
             const element = document.querySelector(`#${id}`) as HTMLElement;
             const rect = element.getBoundingClientRect();
-            console.log(rect.bottom)
-            console.log(`windowScrollY = ${window.scrollY}`)
-            return rect.top < 0 && rect.bottom > -56;
+            return rect.top <= 0 && rect.bottom >= -49;
+        }
+
+        function isAboutInView(id: string) {
+            const element = document.querySelector(`#${id}`) as HTMLElement;
+            const rect = element.getBoundingClientRect();
+            return rect.top <= 0 && rect.bottom > 68.5999755859375;
         }
 
         function isContactInView(id: string) {
             const element = document.querySelector(`#${id}`) as HTMLElement;
             const rect = element.getBoundingClientRect();
-
-            return rect.top < 90 && rect.bottom > 0;
+            return rect.top <= 68.5999984741211 && rect.bottom <= 775.8000106811523;
         }
 
         window.onload = () => {
             window.addEventListener('scroll', () => {
+                const home = isHomeInView();
                 const projects = isProjectsInView('projects');
                 const about = isAboutInView('about');
                 const contact = isContactInView('contact');
@@ -44,14 +46,10 @@ export const Portfolio: FC<Props> = () => {
                 const aboutHighlight = document.querySelector('#aboutHighlight') as HTMLElement;
                 const contactHighlight = document.querySelector('#contactHighlight') as HTMLElement;
 
-                homeHighlight.style.backgroundColor = window.scrollY >= 0 && window.scrollY < 500 &&
-                !projects && !about && !contact ? '#d3d3d3' : 'white';
+                homeHighlight.style.backgroundColor = home ? '#d3d3d3' : 'white';
                 projectsHighlight.style.backgroundColor = projects ? '#d3d3d3' : 'white';
-                aboutHighlight.style.backgroundColor = about && !projects ? '#d3d3d3' : 'white';
+                aboutHighlight.style.backgroundColor = about ? '#d3d3d3' : 'white';
                 contactHighlight.style.backgroundColor = contact ? '#d3d3d3' : 'white';
-                if (contact) {
-                    aboutHighlight.style.backgroundColor = 'white';
-                }
             });
         }
     }, []);
@@ -65,7 +63,7 @@ export const Portfolio: FC<Props> = () => {
 
     return (
         <div className={`${resets.storybrainResets} ${classes.root}`} id="home">
-            <div className={classes.navBarShape}>
+            <div className={classes.navBarContainer}>
                 <div id="homeHighlight" className={classes.homeHighlight}>
                     <div className={classes.home} onClick={() => handleClick("home")}>Home</div>
                 </div>
@@ -79,7 +77,7 @@ export const Portfolio: FC<Props> = () => {
                     <div className={classes.contact} onClick={() => handleClick("contact")}>Contact</div>
                 </div>
             </div>
-            <div className={classes.introBackgroundShape}>
+            <div className={classes.introContainer}>
                 <div className={classes.introSocials}>
                     <div className={classes.linkedinIcon}>
                         <a className={classes.links} href="https://www.linkedin.com/in/malik-heron-18b961158/"
@@ -109,8 +107,8 @@ export const Portfolio: FC<Props> = () => {
                         portfolio where you can learn more about my skills and experience.
                     </p>
                 </div>
-                <div className={classes.featuredProjectsBackground} id="projects">
-                    <div className={classes.featuredProjectsHeader}>Featured Projects</div>
+                <div className={classes.projectsBackground} id="projects">
+                    <div className={classes.projectsHeader}>Featured Projects</div>
                     <div className={classes.projectCards}>
                         <div className={classes.projectCard1}>
                             <img className={`${classes.icon1} ${classes.icon}`} src={'/assets/best_tv.jpg'}
@@ -128,7 +126,7 @@ export const Portfolio: FC<Props> = () => {
                 </div>
             </div>
 
-            <div className={classes.aboutBackgroundShape} id="about">
+            <div className={classes.aboutContainer} id="about">
                 <div className={classes.aboutHeader}>About</div>
                 <div className={classes.aboutDescription}>
                     <p>
@@ -141,7 +139,7 @@ export const Portfolio: FC<Props> = () => {
                         and knowledge in the future.
                     </p>
                 </div>
-                <div className={classes.aboutOverviewShape}>
+                <div className={classes.aboutOverviewContainer}>
                     <img className={`${classes.programmerIcon} ${classes.icon}`} src={'/assets/programmer.jpg'}
                          alt="Programmer"></img>
                     <div className={classes.aboutOverviewItems}>
@@ -183,7 +181,7 @@ export const Portfolio: FC<Props> = () => {
                 </div>
             </div>
 
-            <div className={classes.contactsBackgroundShape} id="contact">
+            <div className={classes.contactsContainer} id="contact">
                 <div className={classes.contactHeader}>Let’s Get In Touch</div>
                 <div className={classes.contactSocials}>
                     <div className={classes.linkedinIcon}>

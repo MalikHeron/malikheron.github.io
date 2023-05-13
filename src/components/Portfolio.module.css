@@ -7,11 +7,12 @@
     overflow-x: hidden;
     overflow-y: auto;
 
-    --blue-color: rgb(84, 108, 130); /*#546c82*/
+    --blue-color-rgb: rgb(84, 108, 130);
+    --blue-color: #546c82;
     --gray-color: #d3d3d3;
 }
 
-.navBarShape {
+.navBarContainer {
     position: fixed;
     margin-top: 28px;
     left: 50%;
@@ -37,6 +38,10 @@
     border-radius: 8px;
 }
 
+.homeHighlight {
+    background-color: var(--gray-color);
+}
+
 .home, .projects, .about, .contact {
     color: #000;
     font-size: 18px;
@@ -54,7 +59,7 @@
     transition-delay: 100ms;
 }
 
-.introBackgroundShape {
+.introContainer {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -92,7 +97,7 @@
     text-align: center;
 }
 
-.greeting, .featuredProjectsHeader, .aboutHeader, .contactHeader {
+.greeting, .projectsHeader, .aboutHeader, .contactHeader {
     color: #fff;
     position: relative;
     font-size: 40px;
@@ -113,7 +118,7 @@
     font-family: "Kaushan Script", cursive;
 }
 
-.featuredProjectsBackground {
+.projectsBackground {
     position: relative;
     margin: 20px 20px 50px;
     width: auto;
@@ -165,7 +170,7 @@
     background-color: #ffc555;
 }
 
-.aboutBackgroundShape {
+.aboutContainer {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -188,7 +193,7 @@
     text-align: center;
 }
 
-.aboutOverviewShape {
+.aboutOverviewContainer {
     position: relative;
     margin: 20px 20px 50px;
     width: auto;
@@ -272,7 +277,7 @@
     transform: scale(1.1);
 }
 
-.contactsBackgroundShape {
+.contactsContainer {
     position: relative;
     display: flex;
     flex-direction: column;
