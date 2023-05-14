@@ -1,0 +1,49 @@
+.instagramIcon, .githubIcon, .linkedinIcon, .emailIcon {
+    font-size: 36px;
+    position: relative;
+    float: left;
+    margin: 0 auto;
+    padding: 8px;
+    cursor: pointer;
+}
+
+.links {
+    color: black;
+}
+
+.links:hover {
+    color: white;
+    transition-delay: 100ms;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .instagramIcon, .githubIcon, .linkedinIcon, .emailIcon {
+        font-size: 24px;
+        padding: 0 8px 0;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) and (max-width: 924px) {
+    .instagramIcon, .githubIcon, .linkedinIcon, .emailIcon {
+        font-size: 24px;
+        padding: 8px;
+    }
+}
+
+/* Medium devices (landscape tablets, 924px and up) */
+@media only screen and (min-width: 924px) and (max-width: 997px) {
+    .instagramIcon, .githubIcon, .linkedinIcon, .emailIcon {
+        font-size: 30px;
+        padding: 8px;
+    }
+}
+
+/* Large devices (laptops/desktops, 997px and up) */
+@media only screen and (min-width: 997px) and (max-width: 1200px) {
+    .instagramIcon, .githubIcon, .linkedinIcon, .emailIcon {
+        font-size: 30px;
+        padding: 8px;
+    }
+}

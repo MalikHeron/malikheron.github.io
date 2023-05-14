@@ -1,0 +1,369 @@
+.container {
+    position: relative;
+    margin: 20px 20px 50px;
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 20px;
+    background-color: #292121;
+    padding: 20px;
+}
+
+.cardGroup {
+    position: relative;
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+}
+
+.card {
+    position: relative;
+    width: 250px;
+    height: 200px;
+    border-radius: 20px;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    margin: 30px;
+    transition: all .2s ease-out;
+}
+
+.card:hover {
+    transform: scale(1.1);
+}
+
+.card:hover .cardDetails {
+    display: flex;
+}
+
+.cardDetails {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.icon {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.icon1 {
+    background-image: url('/assets/best_tv.jpg');
+    width: 139px;
+    height: 143px;
+}
+
+.icon2 {
+    background-image: url('/assets/download_calculator.jpg');
+    width: 151px;
+    height: 149px;
+}
+
+.icon3 {
+    background-image: url('/assets/konnect.jpg');
+    width: 86px;
+    height: 142px;
+}
+
+.cardDetails {
+    display: none;
+    border-radius: 20px;
+    width: 250px;
+    height: 200px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    animation: fadeInAnimation ease 0.5s;
+    background-color: var(--semi-transparent);
+}
+
+.cardTitle, .cardTags, .cardButton {
+    margin: 5px;
+}
+
+.cardTitle {
+    font-size: 16px;
+    color: white;
+    position: relative;
+    font-family: "Andika New Basic", system-ui;
+}
+
+.cardTags {
+    display: flex;
+    align-content: center;
+    flex-wrap: wrap;
+    grid-gap: 12px;
+    gap: 12px;
+}
+
+.cardTag {
+    list-style: none;
+    background-color: #fff;
+    color: #0d0f13;
+    padding: 4px 12px;
+    border-radius: 30px;
+    font-size: 14px;
+}
+
+.cardButton {
+    color: #fff;
+    background-color: var(--green-color);
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    font-size: 14px;
+    transition-duration: 0.2s;
+    cursor: pointer;
+}
+
+.cardButton:hover {
+    -moz-box-shadow: 0 0 5px #00000040;
+    -webkit-box-shadow: 0 0 5px #00000040;
+    box-shadow: 0 0 5px #00000040;
+}
+
+.cardButton:active {
+    box-shadow: 0 5px 4px 0 #00000040;
+    transition-duration: 0.2s;
+    transform: translateY(4px);
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .container, .cardGroup {
+        flex-direction: column;
+    }
+
+    .card, .cardDetails {
+        width: 155px;
+        height: 105px;
+    }
+
+    .icon1 {
+        width: 79px;
+        height: 83px;
+    }
+
+    .icon2 {
+        width: 101px;
+        height: 89px;
+    }
+
+    .icon3 {
+        width: 56px;
+        height: 92px;
+    }
+
+    .cardTitle, .cardTags, .cardButton {
+        margin: 2px;
+    }
+
+    .cardTitle {
+        font-size: 10px;
+    }
+
+    .cardTags {
+        grid-gap: 6px;
+        gap: 6px;
+    }
+
+    .cardTag {
+        list-style: none;
+        padding: 1px 6px;
+        font-size: 10px;
+    }
+
+    .cardButton {
+        padding: 5px;
+        font-size: 10px;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) and (max-width: 924px) {
+    .card, .cardDetails {
+        width: 155px;
+        height: 105px;
+    }
+
+    .icon1 {
+        width: 79px;
+        height: 83px;
+    }
+
+    .icon2 {
+        width: 101px;
+        height: 89px;
+    }
+
+    .icon3 {
+        width: 56px;
+        height: 92px;
+    }
+
+    .cardTitle, .cardTags, .cardButton {
+        margin: 2px;
+    }
+
+    .cardTitle {
+        font-size: 10px;
+    }
+
+    .cardTags {
+        grid-gap: 4px;
+        gap: 4px;
+    }
+
+    .cardTag {
+        padding: 2px 6px;
+        font-size: 10px;
+    }
+
+    .cardButton {
+        padding: 6px;
+        font-size: 10px;
+    }
+}
+
+/* Medium devices (landscape tablets, 924px and up) */
+@media only screen and (min-width: 924px) and (max-width: 997px) {
+    .container {
+        margin: 20px 20px 50px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
+
+    .cardGroup {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        align-content: center;
+        justify-content: center;
+    }
+
+    .card {
+        width: 200px;
+        height: 150px;
+        border-radius: 20px;
+        align-content: center;
+        align-items: center;
+        justify-content: center;
+        justify-items: center;
+        margin: 30px;
+    }
+
+    .card:hover .cardDetails {
+        display: flex;
+    }
+
+    .icon1 {
+        width: 119px;
+        height: 123px;
+    }
+
+    .icon2 {
+        width: 131px;
+        height: 129px;
+    }
+
+    .icon3 {
+        width: 66px;
+        height: 122px;
+    }
+
+    .cardDetails {
+        display: none;
+        width: 200px;
+        height: 150px;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .cardTitle, .cardTags, .cardButton {
+        margin: 5px;
+    }
+
+    .cardTitle {
+        font-size: 16px;
+    }
+
+    .cardTags {
+        display: flex;
+        align-content: center;
+        flex-wrap: wrap;
+        grid-gap: 12px;
+        gap: 12px;
+    }
+
+    .cardTag {
+        list-style: none;
+        padding: 4px 12px;
+        border-radius: 30px;
+        font-size: 14px;
+    }
+
+    .cardButton {
+        border-radius: 10px;
+        padding: 10px;
+        text-align: center;
+        font-size: 14px;
+    }
+}
+
+/* Large devices (laptops/desktops, 997px and up) */
+@media only screen and (min-width: 997px) and (max-width: 1200px) {
+    .card, .cardDetails {
+        width: 190px;
+        height: 140px;
+    }
+
+    .icon1 {
+        width: 109px;
+        height: 113px;
+    }
+
+    .icon2 {
+        width: 121px;
+        height: 119px;
+    }
+
+    .icon3 {
+        width: 56px;
+        height: 112px;
+    }
+
+    .cardTitle, .cardTags, .cardButton {
+        margin: 3px;
+    }
+
+    .cardTitle {
+        font-size: 12px;
+    }
+
+    .cardTags {
+        grid-gap: 10px;
+        gap: 10px;
+    }
+
+    .cardTag {
+        padding: 4px 8px;
+        font-size: 10px;
+    }
+
+    .cardButton {
+        padding: 10px;
+        font-size: 10px;
+    }
+}

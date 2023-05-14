@@ -1,9 +1,11 @@
 import {memo} from 'react';
 import type {FC} from 'react';
+import {BrowserRouter, Routes, Route} from 'react-router-dom';
 
-import classes from './App.module.css';
-import resets from './components/_resets.module.css';
-import {Portfolio} from './components/Portfolio';
+import resets from './components/stylesheets/resets.module.css';
+import {Index} from './components';
+import {BtcApp} from './components/projects/btc-app';
+import {DltApp} from "./components/projects/dlt-app";
 import 'font-awesome/css/font-awesome.min.css'
 import "@fontsource/kaushan-script";
 import "@fontsource/lilita-one";
@@ -17,8 +19,15 @@ interface Props {
 
 export const App: FC<Props> = memo(function App() {
     return (
-        <div className={`${resets.storybrainResets} ${classes.root}`}>
-            <Portfolio/>
+        <div className={resets.storybrainResets}>
+            <BrowserRouter>
+                <Routes>
+                    <Route path="/" element={<Index/>}/>
+                    <Route path="/projects/best-tv-app" element={<BtcApp/>}/>
+                    <Route path="/projects/dlt-calculator-app" element={<DltApp/>}/>
+                    <Route path="/projects/konnect-app" element={<BtcApp/>}/>
+                </Routes>
+            </BrowserRouter>
         </div>
     );
 });
