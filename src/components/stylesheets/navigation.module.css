@@ -37,6 +37,10 @@
     background-color: var(--gray-color);
 }
 
+.active .home, .active .projects, .active .about, .active .contact {
+    font-weight: bold;
+}
+
 .home, .projects, .about, .contact {
     color: #000;
     font-size: 18px;

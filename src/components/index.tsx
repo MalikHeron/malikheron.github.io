@@ -50,6 +50,11 @@ export const Index: FC<Props> = () => {
         };
     }, []);
 
+    window.onload = () => {
+        const homeHighlight = document.getElementById("homeHighlight") as HTMLElement;
+        homeHighlight.classList.add(navigate.active);
+    }
+
     const handleClick = (id: string) => {
         const element = document.getElementById(id);
         if (element) {
@@ -75,7 +80,7 @@ export const Index: FC<Props> = () => {
                     </div>
                 </div>
             </nav>
-            <div className={intro.container} id="home">
+            <section className={intro.container} id="home">
                 <div className={intro.socials}>
                     <div className={socials.linkedinIcon}>
                         <a className={socials.links} href="https://www.linkedin.com/in/malik-heron-18b961158/"
@@ -153,7 +158,7 @@ export const Index: FC<Props> = () => {
                         </div>
                     </div>
                 </section>
-            </div>
+            </section>
 
             <section className={about.container} id="about">
                 <div className={text.aboutHeader}>About</div>
