@@ -54,7 +54,18 @@
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) and (max-width: 924px) {
+@media only screen and (min-width: 600px) and (max-width: 750px) {
+    .socials {
+        display: none;
+    }
+
+    .description {
+        font-size: 16px;
+    }
+}
+
+/* Medium devices (landscape tablets, 750px and up) */
+@media only screen and (min-width: 750px) and (max-width: 924px) {
     .socials {
         margin-left: 70%;
     }

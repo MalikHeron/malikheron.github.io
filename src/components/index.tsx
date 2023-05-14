@@ -18,47 +18,35 @@ interface Props {
 
 export const Index: FC<Props> = () => {
     useEffect(() => {
-        window.onload = () => {
-            window.addEventListener('scroll', handleScroll);
-            window.addEventListener('touchmove', handleScroll);
+        const handleScroll = () => {
+            const projects = document.getElementById("projects") as HTMLElement;
+            const about = document.getElementById("about") as HTMLElement;
 
-            function handleScroll() {
-                const home = document.querySelector('#home');
-                const projects = document.querySelector('#projects');
-                const about = document.querySelector('#about');
-                const contact = document.querySelector('#contact');
+            const homeHighlight = document.getElementById("homeHighlight") as HTMLElement;
+            const projectsHighlight = document.getElementById("projectsHighlight") as HTMLElement;
+            const aboutHighlight = document.getElementById("aboutHighlight") as HTMLElement;
+            const contactHighlight = document.getElementById("contactHighlight") as HTMLElement;
 
-                const observer = new IntersectionObserver(entries => {
-                    console.log(`inside`)
-                    entries.forEach(entry => {
-                        console.log(`checking`)
-                        if (entry.isIntersecting) {
-                            const id = entry.target.id;
-                            const highlight = document.querySelector(`#${id}Highlight`);
-                            const highlightElement = document.getElementById(`${id}Highlight`) as HTMLElement;
-                            if (highlight instanceof Element) {
-                                highlight.classList.add('active');
-                                highlightElement.style.backgroundColor = '#d3d3d3';
-                                console.log(`active`)
-                            }
-                        } else {
-                            const id = entry.target.id;
-                            const highlight = document.querySelector(`#${id}Highlight`);
-                            const highlightElement = document.getElementById(`${id}Highlight`) as HTMLElement;
-                            if (highlight instanceof Element) {
-                                highlight.classList.remove('active');
-                                highlightElement.style.backgroundColor = 'white';
-                            }
-                        }
-                    });
-                }, {threshold: 0.5});
+            homeHighlight.classList.remove(navigate.active);
+            projectsHighlight.classList.remove(navigate.active);
+            aboutHighlight.classList.remove(navigate.active);
+            contactHighlight.classList.remove(navigate.active);
 
-                [home, projects, about, contact].forEach(element => {
-                    if (element instanceof Element) {
-                        observer.observe(element);
-                    }
-                });
+            if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 50) {
+                contactHighlight.classList.add(navigate.active);
+            } else if (window.scrollY >= about.offsetTop - 4) {
+                aboutHighlight.classList.add(navigate.active);
+            } else if (window.scrollY >= projects.offsetTop - 4) {
+                projectsHighlight.classList.add(navigate.active);
+            } else {
+                homeHighlight.classList.add(navigate.active);
             }
+        };
+
+        window.addEventListener("scroll", handleScroll);
+
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
         };
     }, []);
 
@@ -70,7 +58,7 @@ export const Index: FC<Props> = () => {
     }
 
     return (
-        <div className={navigate.root} id="home">
+        <div className={navigate.root}>
             <nav className={navigate.container}>
                 <div id="homeHighlight" className={navigate.homeHighlight}>
                     <div className={navigate.home} onClick={() => handleClick("home")}>Home</div>
@@ -87,7 +75,7 @@ export const Index: FC<Props> = () => {
                     </div>
                 </div>
             </nav>
-            <section className={intro.container}>
+            <div className={intro.container} id="home">
                 <div className={intro.socials}>
                     <div className={socials.linkedinIcon}>
                         <a className={socials.links} href="https://www.linkedin.com/in/malik-heron-18b961158/"
@@ -107,15 +95,17 @@ export const Index: FC<Props> = () => {
                             className="fa-solid fa-envelope"></i></a>
                     </div>
                 </div>
-                <div className={text.greeting}>
-                    <p>Hi there! I’m Malik Heron</p>
-                </div>
-                <div className={intro.description}>
-                    I'm a software developer and UX designer with a passion for developing Android apps.
-                    I'm always eager to learn and expand my knowledge in the field. Welcome to my
-                    portfolio where you can learn more about my skills and experience.
-                </div>
-                <div className={projects.container} id="projects">
+                <main className={intro.container} style={{background: "var(--blue-color)"}}>
+                    <div className={text.greeting}>
+                        <p>Hi there! I’m Malik Heron</p>
+                    </div>
+                    <div className={intro.description}>
+                        I'm a software developer and UX designer with a passion for developing Android apps.
+                        I'm always eager to learn and expand my knowledge in the field. Welcome to my
+                        portfolio where you can learn more about my skills and experience.
+                    </div>
+                </main>
+                <section className={projects.container} id="projects">
                     <div className={text.projectsHeader}>Featured Projects</div>
                     <div className={projects.cardGroup}>
                         <div className={projects.card} style={{backgroundColor: "#fff"}}>
@@ -162,8 +152,8 @@ export const Index: FC<Props> = () => {
                             </div>
                         </div>
                     </div>
-                </div>
-            </section>
+                </section>
+            </div>
 
             <section className={about.container} id="about">
                 <div className={text.aboutHeader}>About</div>
