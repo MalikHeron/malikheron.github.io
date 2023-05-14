@@ -13,13 +13,33 @@
 
 .cardGroup {
     position: relative;
-    width: auto;
+    margin: 0;
+    width: 100%;
     height: auto;
     display: flex;
     flex-direction: row;
     align-items: center;
     align-content: center;
-    justify-content: center;
+    justify-items: left;
+    justify-content: left;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+.cardGroup::-webkit-scrollbar {
+    height: 3px;
+}
+
+.cardGroup::-webkit-scrollbar-track {
+    background: #000000;
+}
+
+.cardGroup::-webkit-scrollbar-thumb {
+    background: red;
+}
+
+.cardGroup::-webkit-scrollbar-thumb:hover {
+    background: #ffffff;
 }
 
 .card {
@@ -144,31 +164,6 @@
         overflow-x: clip;
     }
 
-    .cardGroup {
-        margin: 0;
-        width: 100%;
-        justify-items: left;
-        justify-content: left;
-        overflow-x: auto;
-        overflow-y: hidden;
-    }
-
-    .cardGroup::-webkit-scrollbar {
-        height: 3px;
-    }
-
-    .cardGroup::-webkit-scrollbar-track {
-        background: #000000;
-    }
-
-    .cardGroup::-webkit-scrollbar-thumb {
-        background: red;
-    }
-
-    .cardGroup::-webkit-scrollbar-thumb:hover {
-        background: #ffffff;
-    }
-
     .card, .cardDetails {
         width: 200px;
         height: 150px;
@@ -219,31 +214,6 @@
     .container {
         width: 90%;
         overflow-x: clip;
-    }
-
-    .cardGroup {
-        margin: 0;
-        width: 100%;
-        justify-items: left;
-        justify-content: left;
-        overflow-x: auto;
-        overflow-y: hidden;
-    }
-
-    .cardGroup::-webkit-scrollbar {
-        height: 3px;
-    }
-
-    .cardGroup::-webkit-scrollbar-track {
-        background: #000000;
-    }
-
-    .cardGroup::-webkit-scrollbar-thumb {
-        background: red;
-    }
-
-    .cardGroup::-webkit-scrollbar-thumb:hover {
-        background: #ffffff;
     }
 
     .card, .cardDetails {
@@ -297,31 +267,6 @@
         width: 90%;
     }
 
-    .cardGroup {
-        margin: 0;
-        width: 100%;
-        justify-items: left;
-        justify-content: left;
-        overflow-x: auto;
-        overflow-y: hidden;
-    }
-
-    .cardGroup::-webkit-scrollbar {
-        height: 3px;
-    }
-
-    .cardGroup::-webkit-scrollbar-track {
-        background: #000000;
-    }
-
-    .cardGroup::-webkit-scrollbar-thumb {
-        background: red;
-    }
-
-    .cardGroup::-webkit-scrollbar-thumb:hover {
-        background: #ffffff;
-    }
-
     .card, .cardDetails {
         width: 175px;
         height: 125px;
@@ -368,10 +313,6 @@
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 782px) and (max-width: 924px) {
-    .container {
-        width: 90%;
-    }
-
     .card, .cardDetails {
         width: 175px;
         height: 125px;

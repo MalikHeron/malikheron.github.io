@@ -19,6 +19,10 @@
     font-family: "Kaushan Script", cursive;
 }
 
+.projectsHeader {
+    margin-top: 0;
+}
+
 /* Extra small devices (phones, 320px and down) */
 @media only screen and (max-width: 320px) {
     .greeting, .projectsHeader, .aboutHeader, .contactHeader {
