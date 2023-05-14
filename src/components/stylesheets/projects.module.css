@@ -139,13 +139,40 @@
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
-    .container, .cardGroup {
-        flex-direction: column;
+    .container {
+        width: 90%;
+        overflow-x: clip;
+    }
+
+    .cardGroup {
+        margin: 0;
+        width: 100%;
+        justify-items: left;
+        justify-content: left;
+        overflow-x: auto;
+        overflow-y: hidden;
+    }
+
+    .cardGroup::-webkit-scrollbar {
+        height: 3px;
+    }
+
+    .cardGroup::-webkit-scrollbar-track {
+        background: #000000;
+    }
+
+    .cardGroup::-webkit-scrollbar-thumb {
+        background: red;
+    }
+
+    .cardGroup::-webkit-scrollbar-thumb:hover {
+        background: #ffffff;
     }
 
     .card, .cardDetails {
-        width: 155px;
-        height: 105px;
+        width: 200px;
+        height: 150px;
+        margin: 15px;
     }
 
     .icon1 {

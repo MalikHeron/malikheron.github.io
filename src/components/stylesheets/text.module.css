@@ -23,16 +23,19 @@
 @media only screen and (max-width: 600px) {
     .greeting, .projectsHeader, .aboutHeader, .contactHeader {
         font-size: 24px;
-        margin-top: 20px;
         text-shadow: 0 10px 4px #00000040;
     }
 
-    .aboutHeader {
+    .greeting .aboutHeader, .contactHeader {
         margin-top: 20px;
     }
 
     .greeting {
         font-size: 30px;
+    }
+
+    .projectsHeader {
+        margin-top: 0;
     }
 }
 
