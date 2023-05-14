@@ -40,10 +40,6 @@
     border-radius: 8px;
 }
 
-.homeHighlight {
-    background-color: var(--gray-color);
-}
-
 .home, .projects, .about, .contact {
     color: #000;
     font-size: 18px;
