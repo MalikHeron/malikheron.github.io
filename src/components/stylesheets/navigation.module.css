@@ -56,6 +56,7 @@
 
 .home:hover, .projects:hover, .about:hover, .contact:hover {
     color: #6686a1;
+    font-weight: bold;
     transition-delay: 100ms;
 }
 
