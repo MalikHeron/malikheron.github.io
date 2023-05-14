@@ -8,6 +8,7 @@ import projects from './stylesheets/projects.module.css';
 import about from './stylesheets/about.module.css';
 import overview from './stylesheets/overview.module.css';
 import contact from './stylesheets/contact.module.css';
+import form from './stylesheets/form.module.css';
 import text from './stylesheets/text.module.css';
 import socials from './stylesheets/socials.module.css';
 import * as navigation from "./utils/navigation";
@@ -235,17 +236,17 @@ export const Index: FC<Props> = () => {
                 <div className={contact.description}>
                     Feel free to send me a message, I look forward to working with you.
                 </div>
-                <div className={contact.contact}>
+                <div className={form.container}>
                     <form
                         action="https://formsubmit.co/malik.heron2001@gmail.com"
-                        className={contact.form}
+                        className={form.form}
                         method="post"
                     >
-                        <div className={contact.nameEmail}>
+                        <div className={form.nameEmail}>
                             <label htmlFor="name"></label>
                             <input
                                 autoComplete="off"
-                                className={contact.name}
+                                className={form.name}
                                 name="Name"
                                 placeholder="Your name"
                                 required
@@ -256,7 +257,7 @@ export const Index: FC<Props> = () => {
                             <label htmlFor="email"></label>
                             <input
                                 autoComplete="off"
-                                className={contact.email}
+                                className={form.email}
                                 name="Email Address"
                                 placeholder="Email address"
                                 required
@@ -268,7 +269,7 @@ export const Index: FC<Props> = () => {
                         <label htmlFor="message"></label>
                         <textarea
                             autoComplete="off"
-                            className={contact.message}
+                            className={form.message}
                             name="Message"
                             placeholder="Write something..."
                             required
@@ -276,7 +277,7 @@ export const Index: FC<Props> = () => {
                         <br/>
 
                         <input name="_captcha" type="hidden" value="true"/>
-                        <input className={contact.submit} type="submit" value="Submit"/>
+                        <input className={form.submit} type="submit" value="Submit"/>
                     </form>
                 </div>
                 <div className={contact.copyright}>© All rights reserved</div>

@@ -1,59 +1,83 @@
 .container {
-    position: relative;
-    display: flex;
-    flex-direction: column;
+    width: 100%;
+    height: auto;
     align-items: center;
     justify-content: center;
-    width: 100vw;
-    height: auto;
-    background-color: var(--blue-color);
 }
 
-.socials {
+.form {
     position: relative;
-    margin-top: 10px;
     width: auto;
     height: auto;
+    border: 1px;
     display: table;
+    align-items: center;
+}
+
+.name, .email, .message {
+    font-size: 14px;
+    font-family: "Andika New Basic", system-ui;
+}
+
+.nameEmail {
+    margin: 0 auto;
+    width: auto;
+    height: auto;
+    display: flex;
+}
+
+.name, .email {
+    position: relative;
+    float: left;
+    width: 250px;
+    height: 50px;
+    margin: 10px 5px 10px 5px;
+    padding: 8px;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 5px 4px 0 #00000040;
+}
+
+.message {
+    position: relative;
+    width: 510px;
+    height: 250px;
+    margin: 0 auto;
+    padding: 8px;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 5px 4px 0 #00000040;
+}
+
+.submit {
+    font-size: 16px;
+    width: 200px;
+    height: auto;
+    background-color: var(--green-color);
+    color: #fff;
+    padding: 20px;
+    margin: 0 auto;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
     justify-content: center;
 }
 
-.description {
-    position: relative;
-    margin: 5px 5px 10px;
-    color: #fff;
-    font-size: 24px;
-    font-family: "Andika New Basic", system-ui;
-    width: auto;
-    height: auto;
-    white-space: normal;
-    word-wrap: break-word;
-    padding-left: 8%;
-    padding-right: 8%;
-    text-align: center;
+.submit:hover {
+    -moz-box-shadow: 0 0 5px #00000040;
+    -webkit-box-shadow: 0 0 5px #00000040;
+    box-shadow: 0 0 5px #00000040;
 }
 
-.copyright {
-    color: #fff;
-    font-size: 18px;
-    font-family: "Andika New Basic", system-ui;
-    width: auto;
-    height: auto;
-    text-align: center;
-    align-items: center;
-    white-space: nowrap;
-    margin: 20px;
-    flex-direction: column;
+.submit:active {
+    box-shadow: 0 5px 4px 0 #00000040;
+    transition-duration: 0.2s;
+    transform: translateY(4px);
 }
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
-    .description {
-        font-size: 16px;
-        padding-left: 13%;
-        padding-right: 13%;
-    }
-
     .form {
         width: 90%;
         height: auto;
@@ -83,21 +107,10 @@
         width: 100px;
         padding: 10px;
     }
-
-    .copyright {
-        margin-bottom: 100px;
-        font-size: 12px;
-    }
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) and (max-width: 924px) {
-    .description {
-        font-size: 16px;
-        padding-left: 30%;
-        padding-right: 30%;
-    }
-
     .name, .email, .message {
         font-size: 11px;
     }
@@ -119,48 +132,18 @@
         width: 100px;
         padding: 10px;
     }
-
-    .copyright {
-        font-size: 12px;
-    }
 }
 
 /* Medium devices (landscape tablets, 924px and up) */
 @media only screen and (min-width: 924px) and (max-width: 997px) {
-    .description {
-        font-size: 20px;
-    }
-
     .name, .email, .message {
         font-size: 13px;
-    }
-
-    .copyright {
-        font-size: 14px;
     }
 }
 
 /* Large devices (laptops/desktops, 997px and up) */
 @media only screen and (min-width: 997px) and (max-width: 1200px) {
-    .description {
-        font-size: 20px;
-        padding-left: 25%;
-        padding-right: 25%;
-    }
-
     .name, .email, .message {
         font-size: 14px;
-    }
-
-    .copyright {
-        font-size: 16px;
-    }
-}
-
-/* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {
-    .description {
-        padding-left: 30%;
-        padding-right: 30%;
     }
 }

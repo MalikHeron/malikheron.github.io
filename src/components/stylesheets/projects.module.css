@@ -194,7 +194,7 @@
     }
 
     .cardTitle {
-        font-size: 10px;
+        font-size: 12px;
     }
 
     .cardTags {
@@ -205,20 +205,20 @@
     .cardTag {
         list-style: none;
         padding: 1px 6px;
-        font-size: 10px;
+        font-size: 12px;
     }
 
     .cardButton {
         padding: 5px;
-        font-size: 10px;
+        font-size: 12px;
     }
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) and (max-width: 924px) {
     .card, .cardDetails {
-        width: 155px;
-        height: 105px;
+        width: 175px;
+        height: 125px;
     }
 
     .icon1 {
@@ -241,7 +241,7 @@
     }
 
     .cardTitle {
-        font-size: 10px;
+        font-size: 11px;
     }
 
     .cardTags {
@@ -251,46 +251,20 @@
 
     .cardTag {
         padding: 2px 6px;
-        font-size: 10px;
+        font-size: 11px;
     }
 
     .cardButton {
         padding: 6px;
-        font-size: 10px;
+        font-size: 11px;
     }
 }
 
 /* Medium devices (landscape tablets, 924px and up) */
 @media only screen and (min-width: 924px) and (max-width: 997px) {
-    .container {
-        margin: 20px 20px 50px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 20px;
-    }
-
-    .cardGroup {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        align-content: center;
-        justify-content: center;
-    }
-
-    .card {
+    .card, .cardDetails {
         width: 200px;
         height: 150px;
-        border-radius: 20px;
-        align-content: center;
-        align-items: center;
-        justify-content: center;
-        justify-items: center;
-        margin: 30px;
-    }
-
-    .card:hover .cardDetails {
-        display: flex;
     }
 
     .icon1 {
@@ -308,15 +282,6 @@
         height: 122px;
     }
 
-    .cardDetails {
-        display: none;
-        width: 200px;
-        height: 150px;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
-
     .cardTitle, .cardTags, .cardButton {
         margin: 5px;
     }
@@ -326,24 +291,16 @@
     }
 
     .cardTags {
-        display: flex;
-        align-content: center;
-        flex-wrap: wrap;
         grid-gap: 12px;
         gap: 12px;
     }
 
     .cardTag {
-        list-style: none;
         padding: 4px 12px;
-        border-radius: 30px;
         font-size: 14px;
     }
 
     .cardButton {
-        border-radius: 10px;
-        padding: 10px;
-        text-align: center;
         font-size: 14px;
     }
 }
@@ -366,7 +323,7 @@
     }
 
     .icon3 {
-        width: 56px;
+        width: 76px;
         height: 112px;
     }
 
@@ -385,11 +342,11 @@
 
     .cardTag {
         padding: 4px 8px;
-        font-size: 10px;
+        font-size: 11px;
     }
 
     .cardButton {
         padding: 10px;
-        font-size: 10px;
+        font-size: 11px;
     }
 }
