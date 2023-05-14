@@ -88,8 +88,44 @@
     transform: scale(1.1);
 }
 
-/* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
+/* Extra small devices (phones, 320px and down) */
+@media only screen and (max-width: 320px) {
+    .container {
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-radius: 20px;
+        background-color: #292121;
+    }
+
+    .itemGroup {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .programmerIcon {
+        width: 77px;
+        height: 76px;
+    }
+
+    .languagesGroup, .toolsGroup, .focusGroup {
+        padding: 5px;
+        margin: 10px;
+    }
+
+    .languagesHeader, .toolsHeader, .focusHeader {
+        font-size: 20px;
+    }
+
+    .item, .itemBox {
+        font-size: 14px;
+    }
+}
+
+/* Extra small devices (phones, 320px and above) */
+@media only screen and (min-width: 320px) and (max-width: 600px) {
     .container {
         width: 90%;
         display: flex;
@@ -125,7 +161,50 @@
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) and (max-width: 924px) {
+@media only screen and (min-width: 600px) and (max-width: 782px) {
+    .container {
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-radius: 20px;
+        background-color: #292121;
+    }
+
+    .itemGroup {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .itemGroup {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .programmerIcon {
+        width: 77px;
+        height: 76px;
+    }
+
+    .languagesGroup, .toolsGroup, .focusGroup {
+        padding: 5px;
+        margin: 10px;
+    }
+
+    .languagesHeader, .toolsHeader, .focusHeader {
+        font-size: 24px;
+    }
+
+    .item, .itemBox {
+        font-size: 16px;
+    }
+}
+
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 782px) and (max-width: 924px) {
     .programmerIcon {
         width: 77px;
         height: 76px;

@@ -31,8 +31,19 @@
     text-align: center;
 }
 
-/* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
+/* Extra small devices (phones, 320px and down) */
+@media only screen and (max-width: 320px) {
+    .socials {
+        display: none;
+    }
+
+    .description {
+        font-size: 14px;
+    }
+}
+
+/* Extra small devices (phones, 320px and above) */
+@media only screen and (min-width: 320px) and (max-width: 600px) {
     .socials {
         display: none;
     }

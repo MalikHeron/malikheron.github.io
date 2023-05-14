@@ -11,7 +11,6 @@ import contact from './stylesheets/contact.module.css';
 import form from './stylesheets/form.module.css';
 import text from './stylesheets/text.module.css';
 import socials from './stylesheets/socials.module.css';
-import * as navigation from "./utils/navigation";
 
 interface Props {
     className?: string;
@@ -63,21 +62,28 @@ export const Index: FC<Props> = () => {
         };
     }, []);
 
+    const handleClick = (id: string) => {
+        const element = document.getElementById(id);
+        if (element) {
+            element.scrollIntoView({behavior: "smooth"});
+        }
+    }
+
     return (
         <div className={navigate.root} id="home">
             <nav className={navigate.container}>
                 <div id="homeHighlight" className={navigate.homeHighlight}>
-                    <div className={navigate.home} onClick={() => navigation.handleClick("home")}>Home</div>
+                    <div className={navigate.home} onClick={() => handleClick("home")}>Home</div>
                 </div>
                 <div id="projectsHighlight" className={navigate.projectsHighlight}>
-                    <div className={navigate.projects} onClick={() => navigation.handleClick("projects")}>Projects
+                    <div className={navigate.projects} onClick={() => handleClick("projects")}>Projects
                     </div>
                 </div>
                 <div id="aboutHighlight" className={navigate.aboutHighlight}>
-                    <div className={navigate.about} onClick={() => navigation.handleClick("about")}>About</div>
+                    <div className={navigate.about} onClick={() => handleClick("about")}>About</div>
                 </div>
                 <div id="contactHighlight" className={navigate.contactHighlight}>
-                    <div className={navigate.contact} onClick={() => navigation.handleClick("contact")}>Contact
+                    <div className={navigate.contact} onClick={() => handleClick("contact")}>Contact
                     </div>
                 </div>
             </nav>
