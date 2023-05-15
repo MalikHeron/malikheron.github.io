@@ -16,7 +16,7 @@
 
 .name, .email, .message {
     font-size: 14px;
-    font-family: "Andika New Basic", system-ui;
+    font-family: "Inter", system-ui;
 }
 
 .nameEmail {
@@ -50,6 +50,7 @@
 }
 
 .submit {
+    font-family: "Inter", system-ui;
     font-size: 16px;
     width: 200px;
     height: auto;

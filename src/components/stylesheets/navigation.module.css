@@ -70,15 +70,6 @@
     background: #ffffff;
 }
 
-@keyframes fadeInAnimation {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-
 /* Extra small devices (phones, 320px and down) */
 @media only screen and (max-width: 320px) {
     .container {
