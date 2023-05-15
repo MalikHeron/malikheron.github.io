@@ -19,13 +19,13 @@ interface Props {
 export const Index: FC<Props> = () => {
     useEffect(() => {
         const handleScroll = () => {
-            const projects = document.getElementById("projects") as HTMLElement;
-            const about = document.getElementById("about") as HTMLElement;
-
             const homeHighlight = document.getElementById("homeHighlight") as HTMLElement;
             const projectsHighlight = document.getElementById("projectsHighlight") as HTMLElement;
             const aboutHighlight = document.getElementById("aboutHighlight") as HTMLElement;
             const contactHighlight = document.getElementById("contactHighlight") as HTMLElement;
+
+            const projects = document.getElementById("projects") as HTMLElement;
+            const about = document.getElementById("about") as HTMLElement;
 
             homeHighlight.classList.remove(navigate.active);
             projectsHighlight.classList.remove(navigate.active);
@@ -52,7 +52,14 @@ export const Index: FC<Props> = () => {
 
     window.onload = () => {
         const homeHighlight = document.getElementById("homeHighlight") as HTMLElement;
-        homeHighlight.classList.add(navigate.active);
+        const projectsHighlight = document.getElementById("projectsHighlight") as HTMLElement;
+        const aboutHighlight = document.getElementById("aboutHighlight") as HTMLElement;
+        const contactHighlight = document.getElementById("contactHighlight") as HTMLElement;
+
+        if (!projectsHighlight.classList.contains(navigate.active) && !aboutHighlight.classList.contains(navigate.active)
+            && !contactHighlight.classList.contains(navigate.active)) {
+            homeHighlight.classList.add(navigate.active);
+        }
     }
 
     const handleClick = (id: string) => {
@@ -61,6 +68,32 @@ export const Index: FC<Props> = () => {
             element.scrollIntoView({behavior: "smooth"});
         }
     }
+
+    const socialLinks = (
+        <>
+            <div className={socials.linkedinIcon}>
+                <a className={socials.links} title="LinkedIn"
+                   href="https://www.linkedin.com/in/malik-heron-18b961158/"
+                   target="_blank"><i className="fa-brands fa-linkedin"></i></a>
+            </div>
+            <div className={socials.githubIcon}>
+                <a className={socials.links} title="Github" href="https://github.com/MalikHeron"
+                   target="_blank"><i
+                    className="fa-brands fa-github"></i></a>
+            </div>
+            <div className={socials.twitterIcon}>
+                <a className={socials.links} title="Twitter"
+                   href="https://twitter.com/MalikDHeron"
+                   target="_blank"><i
+                    className="fa-brands fa-twitter"></i></a>
+            </div>
+            <div className={socials.emailIcon}>
+                <a className={socials.links} title="Email" href="mailto:malik.heron2001@gmail.com"
+                   target="_blank"><i
+                    className="fa-solid fa-envelope"></i></a>
+            </div>
+        </>
+    )
 
     return (
         <div className={navigate.root}>
@@ -81,32 +114,14 @@ export const Index: FC<Props> = () => {
                 </div>
             </nav>
             <section className={intro.container} id="home">
-                <div className={intro.socials}>
-                    <div className={socials.linkedinIcon}>
-                        <a className={socials.links} href="https://www.linkedin.com/in/malik-heron-18b961158/"
-                           target="_blank"><i className="fa-brands fa-linkedin"></i></a>
-                    </div>
-                    <div className={socials.githubIcon}>
-                        <a className={socials.links} href="https://github.com/MalikHeron" target="_blank"><i
-                            className="fa-brands fa-github"></i></a>
-                    </div>
-                    <div className={socials.instagramIcon}>
-                        <a className={socials.links} href="https://www.instagram.com/malik_heron/?hl=en"
-                           target="_blank"><i
-                            className="fa-brands fa-instagram"></i></a>
-                    </div>
-                    <div className={socials.emailIcon}>
-                        <a className={socials.links} href="mailto:malik.heron2001@gmail.com" target="_blank"><i
-                            className="fa-solid fa-envelope"></i></a>
-                    </div>
-                </div>
+                <div className={intro.socials}>{socialLinks}</div>
                 <main className={intro.container} style={{background: "var(--blue-color)"}}>
                     <div className={text.greeting}>
                         <p>Hi there! I’m Malik Heron</p>
                     </div>
                     <div className={intro.description}>
-                        I'm a software developer and UX designer with a passion for developing Android apps.
-                        I'm always eager to learn and expand my knowledge in the field. Welcome to my
+                        I am a software developer and UX designer with a passion for developing Android apps.
+                        I am always eager to learn and expand my knowledge in the field. Welcome to my
                         portfolio where you can learn more about my skills and experience.
                     </div>
                 </main>
@@ -165,15 +180,16 @@ export const Index: FC<Props> = () => {
                 <div className={about.description}>
                     As a passionate problem-solver, I thrive on the challenge of crafting efficient and functional
                     code. My goal is to create a seamless user experience through modern and visually appealing
-                    UI design. I believe that it’s the little details that keep users coming back to apps and
-                    websites time and time again. With experience in a variety of languages and tools, I’m
+                    UI design. I believe that it is the little details that keep users coming back to apps and
+                    websites time and time again. With experience in a variety of languages and tools, I am
                     always looking for new ways to work smarter and more efficiently. While my focus is
-                    currently on a few key areas, I’m excited to continue expanding my skills
+                    currently on a few key areas, I am excited to continue expanding my skills
                     and knowledge in the future.
                 </div>
                 <div className={overview.container}>
                     <img className={`${overview.programmerIcon} ${about.icon}`} src={'/assets/programmer.jpg'}
-                         alt="Programmer"></img>
+                         alt="Programmer" title="Designed by juicy_fish -
+                            Flaticon"></img>
                     <div className={overview.itemGroup}>
                         <div className={overview.languagesGroup}>
                             <div className={overview.languagesHeader}>Languages</div>
@@ -215,25 +231,7 @@ export const Index: FC<Props> = () => {
 
             <section className={contact.container} id="contact">
                 <div className={text.contactHeader}>Let’s Get In Touch</div>
-                <div className={contact.socials}>
-                    <div className={socials.linkedinIcon}>
-                        <a className={socials.links} href="https://www.linkedin.com/in/malik-heron-18b961158/"
-                           target="_blank"><i className="fa-brands fa-linkedin"></i></a>
-                    </div>
-                    <div className={socials.githubIcon}>
-                        <a className={socials.links} href="https://github.com/MalikHeron" target="_blank"><i
-                            className="fa-brands fa-github"></i></a>
-                    </div>
-                    <div className={socials.instagramIcon}>
-                        <a className={socials.links} href="https://www.instagram.com/malik_heron/?hl=en"
-                           target="_blank"><i
-                            className="fa-brands fa-instagram"></i></a>
-                    </div>
-                    <div className={socials.emailIcon}>
-                        <a className={socials.links} href="mailto:malik.heron2001@gmail.com" target="_blank"><i
-                            className="fa-solid fa-envelope"></i></a>
-                    </div>
-                </div>
+                <div className={contact.socials}>{socialLinks}</div>
                 <div className={contact.description}>
                     Feel free to send me a message, I look forward to working with you.
                 </div>
