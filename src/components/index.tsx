@@ -69,6 +69,13 @@ export const Index: FC<Props> = () => {
         }
     }
 
+    /*<Link className={projects.cardButton} to={'/projects/konnect-app'}>View
+                                    Project
+                                </Link>
+                                 to={'/projects/dlt-calculator-app'}
+                                 to={'/projects/best-tv-app'}
+     */
+
     const socialLinks = (
         <>
             <div className={socials.linkedinIcon}>
@@ -138,9 +145,9 @@ export const Index: FC<Props> = () => {
                                     <li className={projects.cardTag}>Kotlin</li>
                                     <li className={projects.cardTag}>Maps</li>
                                 </ul>
-                                <Link className={projects.cardButton} to={'/projects/best-tv-app'}>View
+                                <div className={projects.cardButton}>View
                                     Project
-                                </Link>
+                                </div>
                             </div>
                         </div>
                         <div className={projects.card} style={{backgroundColor: "#ee2323"}}>
@@ -151,9 +158,9 @@ export const Index: FC<Props> = () => {
                                     <li className={projects.cardTag}>Calculation</li>
                                     <li className={projects.cardTag}>Estimates</li>
                                 </ul>
-                                <Link className={projects.cardButton} to={'/projects/dlt-calculator-app'}>View
+                                <div className={projects.cardButton}>View
                                     Project
-                                </Link>
+                                </div>
                             </div>
                         </div>
                         <div className={projects.card} style={{backgroundColor: "#ffc555"}}>
@@ -165,9 +172,9 @@ export const Index: FC<Props> = () => {
                                     <li className={projects.cardTag}>Firebase</li>
                                     <li className={projects.cardTag}>Kotlin</li>
                                 </ul>
-                                <Link className={projects.cardButton} to={'/projects/konnect-app'}>View
+                                <div className={projects.cardButton}>View
                                     Project
-                                </Link>
+                                </div>
                             </div>
                         </div>
                     </div>
