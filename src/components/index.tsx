@@ -121,8 +121,7 @@ export const Index: FC<Props> = () => {
                     </div>
                     <div className={intro.description}>
                         I am a software developer and UX designer with a passion for developing apps.
-                        I am always eager to learn and expand my knowledge in the field. Welcome to my
-                        portfolio where you can learn more about my skills and experience.
+                        I am always eager to learn and expand my knowledge in the field.
                     </div>
                 </main>
                 <section className={projects.container} id="projects">
