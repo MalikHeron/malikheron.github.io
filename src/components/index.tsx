@@ -120,7 +120,7 @@ export const Index: FC<Props> = () => {
                         <p>Hi there! I’m Malik Heron</p>
                     </div>
                     <div className={intro.description}>
-                        I am a software developer and UX designer with a passion for developing Android apps.
+                        I am a software developer and UX designer with a passion for developing apps.
                         I am always eager to learn and expand my knowledge in the field. Welcome to my
                         portfolio where you can learn more about my skills and experience.
                     </div>
@@ -194,18 +194,18 @@ export const Index: FC<Props> = () => {
                         <div className={overview.languagesGroup}>
                             <div className={overview.languagesHeader}>Languages</div>
                             <div className={overview.columnGroup}>
-                                <div className={overview.column}>
-                                    <div className={overview.itemBox}>C</div>
-                                    <div className={overview.itemBox}>C++</div>
-                                    <div className={overview.itemBox}>HTML</div>
-                                    <div className={overview.itemBox}>Java</div>
-                                </div>
-                                <div className={overview.column}>
-                                    <div className={overview.itemBox}>Kotlin</div>
-                                    <div className={overview.itemBox}>Python</div>
-                                    <div className={overview.itemBox}>SQL</div>
-                                    <div className={overview.itemBox}>XML</div>
-                                </div>
+                                <ul className={overview.column}>
+                                    <li className={overview.itemBox}>C++</li>
+                                    <li className={overview.itemBox}>CSS</li>
+                                    <li className={overview.itemBox}>HTML</li>
+                                    <li className={overview.itemBox}>Java</li>
+                                </ul>
+                                <ul className={overview.column}>
+                                    <li className={overview.itemBox}>Kotlin</li>
+                                    <li className={overview.itemBox}>Python</li>
+                                    <li className={overview.itemBox}>SQL</li>
+                                    <li className={overview.itemBox}>XML</li>
+                                </ul>
                             </div>
                         </div>
                         <div className={overview.toolsGroup}>
