@@ -62,6 +62,14 @@ export const Index: FC<Props> = () => {
         }
     }
 
+    const handleFocus = () => {
+        document.body.classList.add('input-focused');
+    };
+
+    const handleBlur = () => {
+        document.body.classList.remove('input-focused');
+    };
+
     const handleClick = (id: string) => {
         const element = document.getElementById(id);
         if (element) {
@@ -104,7 +112,7 @@ export const Index: FC<Props> = () => {
 
     return (
         <div className={navigate.root}>
-            <nav className={navigate.container}>
+            <nav id="navBar" className={navigate.container}>
                 <div id="homeHighlight" className={navigate.homeHighlight}>
                     <div className={navigate.home} onClick={() => handleClick("home")}>Home</div>
                 </div>
@@ -250,6 +258,8 @@ export const Index: FC<Props> = () => {
                         <div className={form.nameEmail}>
                             <label htmlFor="name"></label>
                             <input
+                                onFocus={handleFocus}
+                                onBlur={handleBlur}
                                 autoComplete="off"
                                 className={form.name}
                                 name="Name"
@@ -261,6 +271,8 @@ export const Index: FC<Props> = () => {
 
                             <label htmlFor="email"></label>
                             <input
+                                onFocus={handleFocus}
+                                onBlur={handleBlur}
                                 autoComplete="off"
                                 className={form.email}
                                 name="Email Address"
@@ -273,6 +285,8 @@ export const Index: FC<Props> = () => {
 
                         <label htmlFor="message"></label>
                         <textarea
+                            onFocus={handleFocus}
+                            onBlur={handleBlur}
                             autoComplete="off"
                             className={form.message}
                             name="Message"
