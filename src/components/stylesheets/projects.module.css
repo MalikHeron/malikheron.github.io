@@ -36,7 +36,7 @@
 }
 
 .cardGroup::-webkit-scrollbar-thumb {
-    background: red;
+    background: var(--aquarmine-green-color);
 }
 
 .cardGroup::-webkit-scrollbar-thumb:hover {
@@ -57,6 +57,7 @@
     justify-items: center;
     margin: 30px;
     transition: all .2s ease-out;
+    background-color: var(--smoke-white-color);
 }
 
 .card:hover {
@@ -110,7 +111,6 @@
     font-weight: bold;
     color: white;
     position: relative;
-    font-family: "Inter", system-ui;
 }
 
 .cardTags {
@@ -119,7 +119,6 @@
     flex-wrap: wrap;
     grid-gap: 12px;
     gap: 12px;
-    font-family: "Inter", system-ui;
 }
 
 .cardTag {
@@ -133,7 +132,7 @@
 
 .cardButton {
     color: #fff;
-    background-color: var(--green-color);
+    background-color: var(--turquoise-green-color);
     border: none;
     border-radius: 10px;
     padding: 10px;
@@ -142,7 +141,6 @@
     font-size: 14px;
     transition-duration: 0.2s;
     cursor: pointer;
-    font-family: "Inter", system-ui;
 }
 
 .cardButton:hover {
@@ -270,7 +268,7 @@
 }
 
 /* Extra small devices (phones, 320px and above) */
-@media only screen and (min-width: 320px) and (max-width: 600px) {
+@media only screen and (min-width: 360px) and (max-width: 600px) {
     .cardGroup {
         flex-direction: column;
         overflow-x: hidden;
@@ -295,7 +293,7 @@
     .cardTags {
         grid-gap: 8px;
         gap: 8px;
-        margin: 20px;
+        margin: 10px;
     }
 
     .cardTag {
@@ -309,7 +307,50 @@
     }
 }
 
-/* Extra small devices (phones, 320px and down) */
+/* Extra small devices (phones, 360px and down) */
+@media only screen and (min-width: 320px) and (max-width: 360px) {
+    .cardGroup {
+        flex-direction: column;
+        overflow-x: hidden;
+        overflow-y: hidden;
+    }
+
+    .cardDetails {
+        top: -10px;
+        left: -10px;
+    }
+
+    .card:hover {
+        transform: scale(1.0);
+    }
+
+    .card, .cardDetails {
+        width: 250px;
+        height: 170px;
+        margin: 10px;
+    }
+
+    .cardTitle {
+        font-size: 14px;
+    }
+
+    .cardTags {
+        grid-gap: 8px;
+        gap: 8px;
+        margin: 10px;
+    }
+
+    .cardTag {
+        padding: 1px 6px;
+        font-size: 12px;
+    }
+
+    .cardButton {
+        padding: 5px;
+        font-size: 14px;
+    }
+}
+
 @media only screen and (max-width: 320px) {
     .cardGroup {
         flex-direction: column;
@@ -317,15 +358,9 @@
         overflow-y: hidden;
     }
 
-    .card, .cardDetails {
-        width: 250px;
-        height: 170px;
-        margin: 15px;
-    }
-
     .cardDetails {
-        top: -15px;
-        left: -15px;
+        top: -10px;
+        left: -10px;
     }
 
     .card:hover {
@@ -335,9 +370,26 @@
     .card, .cardDetails {
         width: 200px;
         height: 120px;
+        margin: 10px;
+    }
+
+    .cardTitle {
+        font-size: 12px;
+    }
+
+    .cardTags {
+        grid-gap: 8px;
+        gap: 8px;
+        margin: 10px;
     }
 
     .cardTag {
         padding: 1px 6px;
+        font-size: 10px;
+    }
+
+    .cardButton {
+        padding: 5px;
+        font-size: 12px;
     }
 }

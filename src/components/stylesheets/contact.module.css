@@ -6,7 +6,6 @@
     justify-content: center;
     width: 100vw;
     height: auto;
-    background-color: var(--blue-color);
 }
 
 .socials {
@@ -14,7 +13,6 @@
     margin-top: 10px;
     width: auto;
     height: auto;
-    display: table;
     justify-content: center;
 }
 
@@ -23,7 +21,6 @@
     margin: 5px 5px 10px;
     color: #fff;
     font-size: 24px;
-    font-family: "Andika New Basic", system-ui;
     width: auto;
     height: auto;
     white-space: normal;
@@ -36,7 +33,6 @@
 .copyright {
     color: #fff;
     font-size: 18px;
-    font-family: "Inter", system-ui;
     width: auto;
     height: auto;
     text-align: center;
