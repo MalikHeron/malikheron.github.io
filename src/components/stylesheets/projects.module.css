@@ -9,6 +9,7 @@
     border-radius: 20px;
     background-color: #292121;
     padding: 20px;
+    overflow-x: clip;
 }
 
 .cardGroup {
@@ -126,8 +127,8 @@
     background-color: #fff;
     color: #0d0f13;
     padding: 4px 12px;
-    border-radius: 30px;
-    font-size: 14px;
+    border-radius: 10px;
+    font-size: 13px;
 }
 
 .cardButton {
@@ -136,7 +137,7 @@
     border: none;
     border-radius: 10px;
     padding: 10px;
-    margin-top: 5px;
+    margin-top: 30px;
     text-align: center;
     font-size: 14px;
     transition-duration: 0.2s;
@@ -165,256 +166,11 @@
     }
 }
 
-/* Extra small devices (phones, 320px and down) */
-@media only screen and (max-width: 320px) {
-    .container {
-        width: 90%;
-        overflow-x: clip;
-    }
-
-    .card, .cardDetails {
-        width: 200px;
-        height: 150px;
-    }
-
-    .icon1 {
-        width: 79px;
-        height: 83px;
-    }
-
-    .icon2 {
-        width: 101px;
-        height: 89px;
-    }
-
-    .icon3 {
-        width: 56px;
-        height: 92px;
-    }
-
-    .cardTitle, .cardTags, .cardButton {
-        margin: 2px;
-    }
-
-    .cardTitle {
-        font-size: 12px;
-    }
-
-    .cardTags {
-        grid-gap: 6px;
-        gap: 6px;
-    }
-
-    .cardTag {
-        list-style: none;
-        padding: 1px 6px;
-        font-size: 12px;
-    }
-
-    .cardButton {
-        padding: 5px;
-        font-size: 12px;
-    }
-}
-
-/* Extra small devices (phones, 320px and above) */
-@media only screen and (min-width: 320px) and (max-width: 600px) {
-    .container {
-        width: 90%;
-        overflow-x: clip;
-    }
-
-    .card, .cardDetails {
-        width: 200px;
-        height: 150px;
-    }
-
-    .icon1 {
-        width: 79px;
-        height: 83px;
-    }
-
-    .icon2 {
-        width: 101px;
-        height: 89px;
-    }
-
-    .icon3 {
-        width: 56px;
-        height: 92px;
-    }
-
-    .cardTitle, .cardTags, .cardButton {
-        margin: 2px;
-    }
-
-    .cardTitle {
-        font-size: 13px;
-    }
-
-    .cardTags {
-        grid-gap: 8px;
-        gap: 8px;
-    }
-
-    .cardTag {
-        list-style: none;
-        padding: 3px 6px;
-        font-size: 13px;
-    }
-
-    .cardButton {
-        padding: 5px;
-        font-size: 13px;
-    }
-}
-
-/* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) and (max-width: 782px) {
-    .container {
-        width: 90%;
-    }
-
-    .card, .cardDetails {
-        width: 175px;
-        height: 125px;
-    }
-
-    .icon1 {
-        width: 79px;
-        height: 83px;
-    }
-
-    .icon2 {
-        width: 101px;
-        height: 89px;
-    }
-
-    .icon3 {
-        width: 56px;
-        height: 92px;
-    }
-
-    .cardTitle, .cardTags, .cardButton {
-        margin: 2px;
-    }
-
-    .cardTitle {
-        font-size: 11px;
-    }
-
-    .cardTags {
-        grid-gap: 4px;
-        gap: 4px;
-    }
-
-    .cardTag {
-        padding: 2px 6px;
-        font-size: 11px;
-    }
-
-    .cardButton {
-        padding: 6px;
-        font-size: 11px;
-    }
-}
-
-/* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 782px) and (max-width: 924px) {
-    .card, .cardDetails {
-        width: 175px;
-        height: 125px;
-    }
-
-    .icon1 {
-        width: 79px;
-        height: 83px;
-    }
-
-    .icon2 {
-        width: 101px;
-        height: 89px;
-    }
-
-    .icon3 {
-        width: 56px;
-        height: 92px;
-    }
-
-    .cardTitle, .cardTags, .cardButton {
-        margin: 2px;
-    }
-
-    .cardTitle {
-        font-size: 11px;
-    }
-
-    .cardTags {
-        grid-gap: 4px;
-        gap: 4px;
-    }
-
-    .cardTag {
-        padding: 2px 6px;
-        font-size: 11px;
-    }
-
-    .cardButton {
-        padding: 6px;
-        font-size: 11px;
-    }
-}
-
-/* Medium devices (landscape tablets, 924px and up) */
-@media only screen and (min-width: 924px) and (max-width: 997px) {
-    .card, .cardDetails {
-        width: 200px;
-        height: 150px;
-    }
-
-    .icon1 {
-        width: 119px;
-        height: 123px;
-    }
-
-    .icon2 {
-        width: 131px;
-        height: 129px;
-    }
-
-    .icon3 {
-        width: 66px;
-        height: 122px;
-    }
-
-    .cardTitle, .cardTags, .cardButton {
-        margin: 5px;
-    }
-
-    .cardTitle {
-        font-size: 16px;
-    }
-
-    .cardTags {
-        grid-gap: 12px;
-        gap: 12px;
-    }
-
-    .cardTag {
-        padding: 4px 12px;
-        font-size: 14px;
-    }
-
-    .cardButton {
-        font-size: 14px;
-    }
-}
-
 /* Large devices (laptops/desktops, 997px and up) */
 @media only screen and (min-width: 997px) and (max-width: 1200px) {
     .card, .cardDetails {
-        width: 190px;
-        height: 140px;
+        width: 250px;
+        height: 170px;
     }
 
     .icon1 {
@@ -437,7 +193,7 @@
     }
 
     .cardTitle {
-        font-size: 12px;
+        font-size: 14px;
     }
 
     .cardTags {
@@ -452,6 +208,117 @@
 
     .cardButton {
         padding: 10px;
+        font-size: 13px;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (max-width: 997px) {
+    .container {
+        width: 90%;
+    }
+
+    .card, .cardDetails {
+        width: 240px;
+        height: 160px;
+    }
+
+    .icon1 {
+        width: 79px;
+        height: 83px;
+    }
+
+    .icon2 {
+        width: 101px;
+        height: 89px;
+    }
+
+    .icon3 {
+        width: 56px;
+        height: 92px;
+    }
+
+    .cardTitle, .cardTags, .cardButton {
+        margin: 2px;
+    }
+
+    .cardTags {
+        grid-gap: 4px;
+        gap: 4px;
+    }
+
+    .cardTag {
+        padding: 2px 6px;
+    }
+
+    .cardButton {
+        padding: 6px;
+        font-size: 12px;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (max-width: 782px) {
+    .card, .cardDetails {
+        width: 220px;
+        height: 140px;
+    }
+
+    .cardTitle {
+        font-size: 13px;
+    }
+}
+
+/* Extra small devices (phones, 320px and above) */
+@media only screen and (min-width: 320px) and (max-width: 600px) {
+    .cardGroup {
+        flex-direction: column;
+        overflow-x: hidden;
+        overflow-y: hidden;
+    }
+
+    .card, .cardDetails {
+        width: 200px;
+        height: 120px;
+    }
+
+    .cardTitle {
+        font-size: 12px;
+    }
+
+    .cardTags {
+        grid-gap: 8px;
+        gap: 8px;
+    }
+
+    .cardTag {
+        padding: 3px 6px;
         font-size: 11px;
+    }
+
+    .cardButton {
+        padding: 5px;
+    }
+}
+
+/* Extra small devices (phones, 320px and down) */
+@media only screen and (max-width: 320px) {
+    .cardGroup {
+        flex-direction: column;
+        overflow-x: hidden;
+        overflow-y: hidden;
+    }
+
+    .card:hover {
+        transform: scale(1.0);
+    }
+
+    .card, .cardDetails {
+        width: 200px;
+        height: 120px;
+    }
+
+    .cardTag {
+        padding: 1px 6px;
     }
 }
