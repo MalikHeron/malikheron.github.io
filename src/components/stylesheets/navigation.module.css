@@ -70,8 +70,22 @@
     background: #ffffff;
 }
 
-/* Extra small devices (phones, 320px and down) */
-@media only screen and (max-width: 320px) {
+/* Large devices (laptops/desktops, 997px and up) */
+@media only screen and (max-width: 1200px) {
+    .home, .projects, .about, .contact {
+        font-size: 18px;
+    }
+}
+
+/* Medium devices (landscape tablets, 750px and up) */
+@media only screen and (max-width: 997px) {
+    .home, .projects, .about, .contact {
+        font-size: 14px;
+    }
+}
+
+/* Extra small devices (phones, 320px and above) */
+@media only screen and (max-width: 750px) {
     .container {
         bottom: 0;
         margin-top: 0;
@@ -81,7 +95,7 @@
     }
 
     .home, .projects, .about, .contact {
-        font-size: 12px;
+        font-size: 16px;
     }
 }
 
@@ -100,31 +114,17 @@
     }
 }
 
-/* Extra small devices (phones, 320px and above) */
-@media only screen and (min-width: 600px) and (max-width: 750px) {
+/* Extra small devices (phones, 320px and down) */
+@media only screen and (max-width: 320px) {
     .container {
         bottom: 0;
         margin-top: 0;
         margin-bottom: 28px;
-        padding: 5px;
+        padding: 2px;
         left: 50%;
     }
 
     .home, .projects, .about, .contact {
-        font-size: 16px;
-    }
-}
-
-/* Medium devices (landscape tablets, 750px and up) */
-@media only screen and (min-width: 750px) and (max-width: 997px) {
-    .home, .projects, .about, .contact {
-        font-size: 14px;
-    }
-}
-
-/* Large devices (laptops/desktops, 997px and up) */
-@media only screen and (min-width: 997px) and (max-width: 1200px) {
-    .home, .projects, .about, .contact {
-        font-size: 18px;
+        font-size: 12px;
     }
 }

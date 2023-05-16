@@ -42,42 +42,26 @@
     position: relative;
 }
 
+/* Large devices (laptops/desktops, 997px and up) */
+@media only screen and (max-width: 1200px) {
+    .twitterIcon, .githubIcon, .linkedinIcon, .emailIcon {
+        font-size: 32px;
+        padding: 8px;
+    }
+}
+
+/* Extra small devices (phones, 320px and above) */
+@media only screen and (max-width: 600px) {
+    .twitterIcon, .githubIcon, .linkedinIcon, .emailIcon {
+        font-size: 28px;
+        padding: 0 8px 0;
+    }
+}
+
 /* Extra small devices (phones, 320px and down) */
 @media only screen and (max-width: 320px) {
     .twitterIcon, .githubIcon, .linkedinIcon, .emailIcon {
         font-size: 24px;
         padding: 0 8px 0;
-    }
-}
-
-/* Extra small devices (phones, 320px and above) */
-@media only screen and (min-width: 320px) and (max-width: 600px) {
-    .twitterIcon, .githubIcon, .linkedinIcon, .emailIcon {
-        font-size: 28px;
-        padding: 0 8px 0;
-    }
-}
-
-/* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) and (max-width: 924px) {
-    .twitterIcon, .githubIcon, .linkedinIcon, .emailIcon {
-        font-size: 28px;
-        padding: 8px;
-    }
-}
-
-/* Medium devices (landscape tablets, 924px and up) */
-@media only screen and (min-width: 924px) and (max-width: 997px) {
-    .twitterIcon, .githubIcon, .linkedinIcon, .emailIcon {
-        font-size: 32px;
-        padding: 8px;
-    }
-}
-
-/* Large devices (laptops/desktops, 997px and up) */
-@media only screen and (min-width: 997px) and (max-width: 1200px) {
-    .twitterIcon, .githubIcon, .linkedinIcon, .emailIcon {
-        font-size: 32px;
-        padding: 8px;
     }
 }
