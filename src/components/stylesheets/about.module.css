@@ -6,8 +6,7 @@
     width: 100vw;
     height: auto;
     justify-content: center;
-    background: var(--blue-color);
-    background: linear-gradient(180deg, rgba(84, 108, 130, 1) 52%, rgba(255, 255, 255, 1) 88%, rgba(84, 108, 130, 1) 100%);
+    background: var(--jet-black-color);
 }
 
 .description {
@@ -15,22 +14,18 @@
     margin-top: 10px;
     white-space: normal;
     word-wrap: break-word;
-    padding-left: 8%;
-    padding-right: 8%;
     color: white;
-    font-size: 24px;
-    font-family: "Andika New Basic", system-ui;
     width: auto;
     height: auto;
     text-align: center;
+    padding-left: 10%;
+    padding-right: 10%;
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
     .description {
-        font-size: 20px;
-        padding-left: 12%;
-        padding-right: 12%;
+        font-size: 24px;
     }
 }
 

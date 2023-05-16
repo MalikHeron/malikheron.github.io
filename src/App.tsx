@@ -12,6 +12,10 @@ import "@fontsource/lilita-one";
 import "@fontsource/andika-new-basic";
 import "@fontsource/inter";
 import "@fortawesome/fontawesome-free/css/all.css";
+import "@fontsource/montserrat";
+import "@fontsource/lora";
+import "@fontsource/nunito-sans";
+import "@fontsource/halant";
 
 interface Props {
     className?: string;

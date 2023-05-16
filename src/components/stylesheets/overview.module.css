@@ -43,10 +43,10 @@
 }
 
 .languagesHeader, .toolsHeader, .focusHeader {
-    color: #fff;
+    color: var(--aquarmine-green-color);
     font-size: 28px;
     position: relative;
-    font-family: "Lilita One", system-ui;
+    font-family: "Lora", system-ui;
     text-decoration: underline;
 }
 
@@ -60,7 +60,6 @@
 
 .item {
     color: #fff;
-    font-family: "Andika New Basic", system-ui;
     font-size: 24px;
     position: relative;
     padding: 2px;
@@ -68,8 +67,8 @@
 
 .itemBox {
     position: relative;
-    background-color: #ee2323;
-    color: #fff;
+    background-color: var(--smoke-white-color);
+    color: var(--jet-black-color);
     border-radius: 10px;
     width: 100px;
     height: auto;
@@ -182,12 +181,18 @@
 
 /* Extra small devices (phones, 320px and down) */
 @media only screen and (max-width: 320px) {
+    .languagesGroup, .toolsGroup, .focusGroup {
+        padding: 10px;
+        margin: 5px;
+    }
+
     .languagesHeader, .toolsHeader, .focusHeader {
         font-size: 16px;
     }
 
     .item, .itemBox {
-        font-size: 12px;
+        font-size: 16px;
+        margin: 2px;
     }
 
     .itemBox {

@@ -130,7 +130,7 @@ export const Index: FC<Props> = () => {
             </nav>
             <section className={intro.container} id="home">
                 <div className={intro.socials}>{socialLinks}</div>
-                <main className={intro.container} style={{background: "var(--blue-color)"}}>
+                <main className={intro.container}>
                     <div className={text.greeting}>
                         <p>Hi there! I’m Malik Heron</p>
                     </div>
@@ -142,7 +142,7 @@ export const Index: FC<Props> = () => {
                 <section className={projects.container} id="projects">
                     <div className={text.projectsHeader}>Featured Projects</div>
                     <div className={projects.cardGroup}>
-                        <div className={projects.card} style={{backgroundColor: "#fff"}}>
+                        <div className={projects.card}>
                             <div className={`${projects.icon} ${projects.icon1}`}></div>
                             <div className={projects.cardDetails}>
                                 <div className={projects.cardTitle}>Best TV Mobile App</div>
@@ -158,7 +158,7 @@ export const Index: FC<Props> = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className={projects.card} style={{backgroundColor: "#ee2323"}}>
+                        <div className={projects.card}>
                             <div className={`${projects.icon} ${projects.icon2}`}></div>
                             <div className={projects.cardDetails}>
                                 <div className={projects.cardTitle}>Download Time Calculator App</div>
@@ -171,7 +171,7 @@ export const Index: FC<Props> = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className={projects.card} style={{backgroundColor: "#ffc555"}}>
+                        <div className={projects.card}>
                             <div className={`${projects.icon} ${projects.icon3}`}></div>
                             <div className={projects.cardDetails}>
                                 <div className={projects.cardTitle}>Konnect Mobile App</div>

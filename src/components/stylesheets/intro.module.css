@@ -5,8 +5,6 @@
     align-items: center;
     width: 100vw;
     height: auto;
-    background: var(--blue-color);
-    background: linear-gradient(180deg, rgba(84, 108, 130, 1) 53%, rgba(255, 255, 255, 1) 78%, rgba(84, 108, 130, 1) 100%);
 }
 
 .socials {
