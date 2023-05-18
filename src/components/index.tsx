@@ -305,6 +305,7 @@ export const Index: FC<Props> = () => {
                         <input name="_captcha" type="hidden" value="true"/>
                         <input className={form.submit} type="submit" value="Submit"/>
                     </form>
+                    <p>&copy; 2023 Malik Heron</p>
                 </section>
             </main>
 

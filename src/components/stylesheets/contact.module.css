@@ -8,6 +8,10 @@
     text-align: center;
 }
 
+.section p {
+    display: none;
+}
+
 /* Large devices (laptops/desktops, 1200px and down) */
 @media only screen and (max-width: 1200px) and (max-height: 600px) {
     .section h1 {
@@ -55,5 +59,10 @@
 
     .section h3 {
         font-size: 1em;
+    }
+
+    .section p {
+        display: initial;
+        margin: 0 auto 50px;
     }
 }

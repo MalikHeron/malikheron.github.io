@@ -2,7 +2,8 @@
     position: relative;
     width: 100vw;
     height: auto;
-    display: block;
+    display: flex;
+    flex-direction: column;
     overflow-x: hidden;
     overflow-y: auto;
     font-family: "Andika New Basic", system-ui;
