@@ -80,7 +80,7 @@
 }
 
 ::-webkit-scrollbar {
-    width: 2px;
+    width: 0;
 }
 
 ::-webkit-scrollbar-track {
@@ -146,6 +146,10 @@
         scroll-snap-type: none;
         scroll-snap-stop: normal;
         scroll-behavior: auto;
+    }
+
+    ::-webkit-scrollbar {
+        width: 2px;
     }
 
     .container {

@@ -5,13 +5,10 @@ body,
     padding-left: 0;
     height: auto;
     width: 100vw;
-    overflow-y: auto;
+    overflow-y: hidden;
     overflow-x: hidden;
     background-color: var(--jet-black-color);
     font-family: "Andika New Basic", system-ui;
-    min-height: 100vh;
-    display: flex;
-    flex-basis: 100%;
 }
 
 #root {
@@ -109,6 +106,12 @@ footer p {
 }
 
 @media (max-width: 600px) {
+    html,
+    body,
+    #root {
+        overflow-y: auto;
+    }
+
     body.input-focused #navBar {
         display: none;
     }
