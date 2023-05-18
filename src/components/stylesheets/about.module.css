@@ -1,57 +1,74 @@
-.container {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100vw;
-    height: auto;
-    justify-content: center;
-    background: var(--jet-black-color);
-}
-
 .description {
-    position: relative;
-    margin-top: 10px;
-    white-space: normal;
-    word-wrap: break-word;
-    color: white;
     width: auto;
     height: auto;
-    text-align: center;
-    padding-left: 10%;
-    padding-right: 10%;
+    max-width: 540px;
+    font-size: 20px;
+    line-height: 1.6;
 }
 
-/* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {
-    .description {
-        font-size: 24px;
+.animate {
+    animation-duration: 1s;
+}
+
+.slideInLeft.animate {
+    animation-name: slideInFromLeft;
+}
+
+.slideInRight.animate {
+    animation-name: slideInFromRight;
+}
+
+@keyframes slideInFromLeft {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
     }
 }
 
-/* Medium devices (landscape tablets, 924px and up) */
-@media only screen and (max-width: 997px) {
+@keyframes slideInFromRight {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+/* Large devices (laptops/desktops, 1200px and down) */
+@media only screen and (max-width: 1200px) and (max-height: 600px) {
+    .section h1 {
+        font-size: 2.5em;
+    }
+
     .description {
         font-size: 18px;
     }
 }
 
-/* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (max-width: 924px) {
+/* Extra small devices (phones, 992px and above) */
+@media only screen and (max-width: 992px) {
+    .section h1 {
+        font-size: 2.5em;
+    }
+
     .description {
-        font-size: 15px;
+        font-size: 18px;
     }
 }
 
-/* Extra small devices (phones, 320px and above) */
+/* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
-    .description {
-        font-size: 17px;
+    .section {
+        margin-right: 30px;
+        margin-left: 30px;
     }
-}
 
-/* Extra small devices (phones, 320px and down) */
-@media only screen and (max-width: 320px) {
+    .section h1 {
+        font-size: 1.6em;
+    }
+
     .description {
         font-size: 17px;
     }

@@ -1,158 +1,90 @@
-.container {
+.cardContainer {
     position: relative;
-    margin: 20px 20px 50px;
-    width: auto;
-    height: auto;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    border-radius: 20px;
-    background-color: #292121;
-    padding: 20px;
-    overflow-x: clip;
+    width: auto;
+    height: 60%;
+    padding: 5px;
+    overflow-y: auto;
+    border-radius: 10px;
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+    scroll-snap-stop: always;
 }
 
-.cardGroup {
-    position: relative;
-    margin: 0;
-    width: 100%;
+.cardContainer::-webkit-scrollbar {
+    width: 2px;
+}
+
+.cardContainer::-webkit-scrollbar-track {
+    background: var(--jet-black-color);
+}
+
+.cardContainer::-webkit-scrollbar-thumb {
+    background: var(--aquarmine-green-color);
+}
+
+.cardContainer::-webkit-scrollbar-thumb:hover {
+    background: #ffffff;
+}
+
+.card {
+    margin-top: 10px;
+    width: auto;
     height: auto;
     display: flex;
     flex-direction: row;
     align-items: center;
-    align-content: center;
-    justify-items: left;
-    justify-content: left;
-    overflow-x: auto;
-    overflow-y: hidden;
-}
-
-.cardGroup::-webkit-scrollbar {
-    height: 3px;
-}
-
-.cardGroup::-webkit-scrollbar-track {
-    background: #000000;
-}
-
-.cardGroup::-webkit-scrollbar-thumb {
-    background: var(--aquarmine-green-color);
-}
-
-.cardGroup::-webkit-scrollbar-thumb:hover {
-    background: #ffffff;
-}
-
-.card, .cardDetails {
-    width: 280px;
-    height: 200px;
-    border-radius: 20px;
-    align-items: center;
-    justify-content: center;
-}
-
-.card {
-    position: relative;
-    align-content: center;
-    justify-items: center;
-    margin: 30px;
-    transition: all .2s ease-out;
-    background-color: var(--smoke-white-color);
+    padding: 10px;
+    background-color: var(--fair-black-color);
+    border-radius: 10px;
+    box-shadow: 0 0 2px #00000040;
 }
 
 .card:hover {
-    transform: scale(1.1);
+    -moz-box-shadow: 0 0 8px #00000040;
+    -webkit-box-shadow: 0 0 8px #00000040;
+    box-shadow: 0 0 8px #00000040;
 }
 
-.card:hover .cardDetails {
-    display: flex;
-}
-
-.cardDetails {
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: none;
-    flex-direction: column;
-    animation: fadeInAnimation ease-out 0.5s;
-    background-color: var(--semi-transparent);
-}
-
-.icon {
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-.icon1 {
-    background-image: url('/assets/best_tv.jpg');
-    width: 139px;
-    height: 143px;
-}
-
-.icon2 {
-    background-image: url('/assets/download_calculator.jpg');
-    width: 151px;
-    height: 149px;
-}
-
-.icon3 {
-    background-image: url('/assets/konnect.jpg');
-    width: 86px;
-    height: 142px;
-}
-
-.cardTitle, .cardTags, .cardButton {
-    margin: 5px;
-}
-
-.cardTitle {
-    font-size: 16px;
-    font-weight: bold;
-    color: white;
-    position: relative;
+.cardDescription {
+    width: auto;
+    height: auto;
+    max-width: 540px;
+    line-height: 1.6;
 }
 
 .cardTags {
     display: flex;
-    align-content: center;
+    flex-direction: row;
+    width: max-content;
+    height: max-content;
     flex-wrap: wrap;
-    grid-gap: 12px;
-    gap: 12px;
+    grid-gap: 8px;
+    gap: 8px;
+    padding-inline-start: 0;
 }
 
-.cardTag {
+.cardTags li {
     list-style: none;
-    background-color: #fff;
-    color: #0d0f13;
+    background-color: var(--aquarmine-green-color);
+    color: var(--jet-black-color);
     padding: 4px 12px;
-    border-radius: 10px;
-    font-size: 13px;
-}
-
-.cardButton {
-    color: #fff;
-    background-color: var(--turquoise-green-color);
-    border: none;
-    border-radius: 10px;
-    padding: 10px;
-    margin-top: 30px;
-    text-align: center;
+    border-radius: 15px;
     font-size: 14px;
-    transition-duration: 0.2s;
-    cursor: pointer;
 }
 
-.cardButton:hover {
-    -moz-box-shadow: 0 0 5px #00000040;
-    -webkit-box-shadow: 0 0 5px #00000040;
-    box-shadow: 0 0 5px #00000040;
+.icon {
+    margin: 10px;
+    width: 119px;
+    height: 122px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
 }
 
-.cardButton:active {
-    box-shadow: 0 5px 4px 0 #00000040;
-    transition-duration: 0.2s;
-    transform: translateY(4px);
+.icon3 {
+    background-image: url('/assets/konnect.jpg');
 }
 
 @keyframes fadeInAnimation {
@@ -164,232 +96,72 @@
     }
 }
 
-/* Large devices (laptops/desktops, 997px and up) */
-@media only screen and (min-width: 997px) and (max-width: 1200px) {
-    .card, .cardDetails {
-        width: 250px;
-        height: 170px;
+/* Large devices (laptops/desktops, 1200px and down) */
+@media only screen and (max-width: 1200px) and (min-height: 600px) {
+    .section h1 {
+        font-size: 1.8em;
     }
 
-    .icon1 {
-        width: 109px;
-        height: 113px;
-    }
-
-    .icon2 {
-        width: 121px;
-        height: 119px;
-    }
-
-    .icon3 {
-        width: 76px;
-        height: 112px;
-    }
-
-    .cardTitle, .cardTags, .cardButton {
-        margin: 3px;
-    }
-
-    .cardTitle {
-        font-size: 14px;
-    }
-
-    .cardTags {
-        grid-gap: 10px;
-        gap: 10px;
-    }
-
-    .cardTag {
-        padding: 4px 8px;
-        font-size: 11px;
-    }
-
-    .cardButton {
-        padding: 10px;
-        font-size: 13px;
+    .cardContainer {
+        width: 100%;
+        height: 60%;
+        padding: 5px;
     }
 }
 
-/* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (max-width: 997px) {
-    .container {
-        width: 90%;
+/* Large devices (laptops/desktops, 1200px and down) */
+@media only screen and (max-width: 1200px) and (max-height: 600px) {
+    .section h1 {
+        font-size: 1.8em;
     }
 
-    .card, .cardDetails {
-        width: 240px;
-        height: 160px;
+    .cardContainer {
+        width: 78%;
+        height: 60%;
+        padding: 5px;
+    }
+}
+
+/* Extra small devices (phones, 600px and above) */
+@media only screen and (max-width: 600px) {
+    .section {
+        margin-right: 30px;
+        margin-left: 30px;
     }
 
-    .icon1 {
+    .section h1 {
+        font-size: 1.8em;
+    }
+
+    .cardContainer {
+        width: auto;
+        height: 100%;
+        overflow-y: auto;
+    }
+
+    .card {
+        width: auto;
+        height: auto;
+    }
+
+    .icon {
+        display: none;
+    }
+
+    .cardDetails {
+        width: auto;
+        margin: 5px;
+    }
+
+    .cardDescription {
+        width: auto;
+        height: auto;
+        max-width: 540px;
+        line-height: 1.6;
+    }
+
+    .icon {
         width: 79px;
-        height: 83px;
-    }
-
-    .icon2 {
-        width: 101px;
-        height: 89px;
-    }
-
-    .icon3 {
-        width: 56px;
-        height: 92px;
-    }
-
-    .cardTitle, .cardTags, .cardButton {
-        margin: 2px;
-    }
-
-    .cardTags {
-        grid-gap: 4px;
-        gap: 4px;
-    }
-
-    .cardTag {
-        padding: 2px 6px;
-    }
-
-    .cardButton {
-        padding: 6px;
-        font-size: 12px;
-    }
-}
-
-/* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (max-width: 782px) {
-    .card, .cardDetails {
-        width: 220px;
-        height: 140px;
-    }
-
-    .cardTitle {
-        font-size: 13px;
-    }
-}
-
-/* Extra small devices (phones, 320px and above) */
-@media only screen and (min-width: 360px) and (max-width: 600px) {
-    .cardGroup {
-        flex-direction: column;
-        overflow-x: hidden;
-        overflow-y: hidden;
-    }
-
-    .card, .cardDetails {
-        width: 250px;
-        height: 170px;
-        margin: 15px;
-    }
-
-    .cardDetails {
-        top: -15px;
-        left: -15px;
-    }
-
-    .cardTitle {
-        font-size: 14px;
-    }
-
-    .cardTags {
-        grid-gap: 8px;
-        gap: 8px;
-        margin: 10px;
-    }
-
-    .cardTag {
-        padding: 3px 6px;
-        font-size: 13px;
-    }
-
-    .cardButton {
-        padding: 5px;
-        font-size: 14px;
-    }
-}
-
-/* Extra small devices (phones, 360px and down) */
-@media only screen and (min-width: 320px) and (max-width: 360px) {
-    .cardGroup {
-        flex-direction: column;
-        overflow-x: hidden;
-        overflow-y: hidden;
-    }
-
-    .cardDetails {
-        top: -10px;
-        left: -10px;
-    }
-
-    .card:hover {
-        transform: scale(1.0);
-    }
-
-    .card, .cardDetails {
-        width: 250px;
-        height: 170px;
-        margin: 10px;
-    }
-
-    .cardTitle {
-        font-size: 14px;
-    }
-
-    .cardTags {
-        grid-gap: 8px;
-        gap: 8px;
-        margin: 10px;
-    }
-
-    .cardTag {
-        padding: 1px 6px;
-        font-size: 12px;
-    }
-
-    .cardButton {
-        padding: 5px;
-        font-size: 14px;
-    }
-}
-
-@media only screen and (max-width: 320px) {
-    .cardGroup {
-        flex-direction: column;
-        overflow-x: hidden;
-        overflow-y: hidden;
-    }
-
-    .cardDetails {
-        top: -10px;
-        left: -10px;
-    }
-
-    .card:hover {
-        transform: scale(1.0);
-    }
-
-    .card, .cardDetails {
-        width: 200px;
-        height: 120px;
-        margin: 10px;
-    }
-
-    .cardTitle {
-        font-size: 12px;
-    }
-
-    .cardTags {
-        grid-gap: 8px;
-        gap: 8px;
-        margin: 10px;
-    }
-
-    .cardTag {
-        padding: 1px 6px;
-        font-size: 10px;
-    }
-
-    .cardButton {
-        padding: 5px;
-        font-size: 12px;
+        height: 82px;
     }
 }
