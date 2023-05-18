@@ -1,7 +1,7 @@
 .root {
     position: relative;
     width: 100vw;
-    height: 100vh;
+    height: auto;
     display: block;
     overflow-x: hidden;
     overflow-y: auto;
@@ -94,7 +94,7 @@
     background: #ffffff;
 }
 
-/* Medium devices (landscape tablets, 820px and up) */
+/* Medium devices (landscape tablets, 1024px and up) */
 @media only screen and (max-width: 1024px) and (max-height: 1368px) {
     .container {
         top: auto;
@@ -104,7 +104,7 @@
     }
 }
 
-/* Medium devices (landscape tablets, 820px and up) */
+/* Medium devices (landscape tablets, 912px and up) */
 @media only screen and (max-width: 912px) and (max-height: 1368px) {
     .container {
         top: auto;
