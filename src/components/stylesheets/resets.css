@@ -2,14 +2,16 @@ html,
 body,
 #root {
     margin: 0;
-    padding: 0;
+    padding-left: 0;
+    max-width: 100vw;
+    max-height: 100vh;
+    min-width: 100vw;
     min-height: 100vh;
-    display: flex;
-    flex-basis: 100%;
+    height: 100vh;
     width: 100vw;
-    height: auto;
-    overflow-y: auto;
+    overflow-y: hidden;
     overflow-x: hidden;
+    font-family: "Andika New Basic", system-ui;
 }
 
 #root {
@@ -26,6 +28,75 @@ body label {
     cursor: pointer;
     -webkit-user-select: none;
     user-select: none;
+}
+
+main {
+    height: 100vh;
+    width: 100vw;
+    scroll-snap-stop: always;
+}
+
+section {
+    position: relative;
+    margin-left: 10%;
+    margin-right: 10%;
+    max-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100vh;
+    scroll-snap-align: start;
+}
+
+h1 {
+    color: var(--aquarmine-green-color);
+    font-family: Lora, system-ui;
+    display: block;
+    font-size: 3.5em;
+    margin-block-start: 0.1em;
+    margin-block-end: 0.1em;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 1.8em;
+    font-family: Lora, system-ui;
+    font-weight: normal;
+    margin-block-start: 0.5em;
+    margin-block-end: 0.3em;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+}
+
+h3 {
+    display: block;
+    font-size: 1.17em;
+    margin-block-start: 0.1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+    font-weight: bold;
+}
+
+p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+}
+
+ul {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 300px;
+    height: 100px;
+    list-style-type: disc;
+    margin-block-start: 0;
 }
 
 nav {

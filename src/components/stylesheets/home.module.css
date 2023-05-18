@@ -1,40 +1,9 @@
-.container {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100vw;
-    height: auto;
-}
-
-.socials {
-    position: relative;
-    margin-top: 35px;
-    margin-left: 80%;
-    width: auto;
-    height: auto;
-}
-
 .description {
-    color: #fff;
-    white-space: normal;
-    word-wrap: break-word;
-    padding-left: 8%;
-    padding-right: 8%;
-    font-size: 24px;
-    font-family: "Andika New Basic", system-ui;
-    position: relative;
     width: auto;
     height: auto;
-    text-align: center;
-}
-
-/* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {
-    .description {
-        padding-left: 20%;
-        padding-right: 20%;
-    }
+    max-width: 540px;
+    font-size: 22px;
+    line-height: 1.6;
 }
 
 /* Large devices (laptops/desktops, 997px and up) */

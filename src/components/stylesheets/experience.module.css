@@ -1,41 +1,19 @@
+.group {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.focusGroup {
+    margin-left: -15%;
+}
+
 .description {
     width: auto;
     height: auto;
-    max-width: 540px;
-    font-size: 20px;
+    max-width: 500px;
+    font-size: 16px;
     line-height: 1.6;
 }
-
-@keyframes slideInFromLeft {
-    from {
-        transform: translateX(-100%);
-    }
-    to {
-        transform: translateX(0);
-    }
-}
-
-@keyframes slideInFromRight {
-    from {
-        transform: translateX(100%);
-    }
-    to {
-        transform: translateX(0);
-    }
-}
-
-.animate {
-    animation-duration: 1s;
-}
-
-.slideInLeft.animate {
-    animation-name: slideInFromLeft;
-}
-
-.slideInRight.animate {
-    animation-name: slideInFromRight;
-}
-
 
 /* Medium devices (landscape tablets, 924px and up) */
 @media only screen and (max-width: 997px) {

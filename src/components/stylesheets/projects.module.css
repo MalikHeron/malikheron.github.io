@@ -1,158 +1,89 @@
-.container {
-    position: relative;
-    margin: 20px 20px 50px;
-    width: auto;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border-radius: 20px;
-    background-color: #292121;
-    padding: 20px;
-    overflow-x: clip;
+.cardContainer {
+    display: block;
+    width: max-content;
+    height: 500px;
+    padding: 5px;
+    overflow-y: auto;
+    border-radius: 10px;
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+    scroll-snap-stop: always;
 }
 
-.cardGroup {
-    position: relative;
-    margin: 0;
-    width: 100%;
-    height: auto;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    align-content: center;
-    justify-items: left;
-    justify-content: left;
-    overflow-x: auto;
-    overflow-y: hidden;
+.cardContainer::-webkit-scrollbar {
+    width: 2px;
 }
 
-.cardGroup::-webkit-scrollbar {
-    height: 3px;
+.cardContainer::-webkit-scrollbar-track {
+    background: var(--jet-black-color);
 }
 
-.cardGroup::-webkit-scrollbar-track {
-    background: #000000;
-}
-
-.cardGroup::-webkit-scrollbar-thumb {
+.cardContainer::-webkit-scrollbar-thumb {
     background: var(--aquarmine-green-color);
 }
 
-.cardGroup::-webkit-scrollbar-thumb:hover {
+.cardContainer::-webkit-scrollbar-thumb:hover {
     background: #ffffff;
 }
 
-.card, .cardDetails {
-    width: 280px;
-    height: 200px;
-    border-radius: 20px;
-    align-items: center;
-    justify-content: center;
-}
-
 .card {
-    position: relative;
-    align-content: center;
-    justify-items: center;
-    margin: 30px;
-    transition: all .2s ease-out;
-    background-color: var(--smoke-white-color);
+    margin-top: 10px;
+    width: max-content;
+    height: max-content;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 10px;
+    background-color: var(--fair-black-color);
+    border-radius: 10px;
+    box-shadow: 0 0 2px #00000040;
 }
 
 .card:hover {
-    transform: scale(1.1);
+    -moz-box-shadow: 0 0 8px #00000040;
+    -webkit-box-shadow: 0 0 8px #00000040;
+    box-shadow: 0 0 8px #00000040;
 }
 
-.card:hover .cardDetails {
-    display: flex;
-}
-
-.cardDetails {
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: none;
-    flex-direction: column;
-    animation: fadeInAnimation ease-out 0.5s;
-    background-color: var(--semi-transparent);
-}
-
-.icon {
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-.icon1 {
-    background-image: url('/assets/best_tv.jpg');
-    width: 139px;
-    height: 143px;
-}
-
-.icon2 {
-    background-image: url('/assets/download_calculator.jpg');
-    width: 151px;
-    height: 149px;
-}
-
-.icon3 {
-    background-image: url('/assets/konnect.jpg');
-    width: 86px;
-    height: 142px;
-}
-
-.cardTitle, .cardTags, .cardButton {
-    margin: 5px;
-}
-
-.cardTitle {
-    font-size: 16px;
-    font-weight: bold;
-    color: white;
-    position: relative;
+.cardDescription {
+    width: auto;
+    height: auto;
+    max-width: 540px;
+    line-height: 1.6;
 }
 
 .cardTags {
     display: flex;
-    align-content: center;
+    flex-direction: row;
+    width: max-content;
+    height: max-content;
     flex-wrap: wrap;
-    grid-gap: 12px;
-    gap: 12px;
+    grid-gap: 8px;
+    gap: 8px;
+    padding-inline-start: 0;
 }
 
-.cardTag {
+.cardTags li {
     list-style: none;
-    background-color: #fff;
-    color: #0d0f13;
+    background-color: var(--aquarmine-green-color);
+    color: var(--jet-black-color);
     padding: 4px 12px;
-    border-radius: 10px;
-    font-size: 13px;
-}
-
-.cardButton {
-    color: #fff;
-    background-color: var(--turquoise-green-color);
-    border: none;
-    border-radius: 10px;
-    padding: 10px;
-    margin-top: 30px;
-    text-align: center;
+    border-radius: 15px;
     font-size: 14px;
-    transition-duration: 0.2s;
-    cursor: pointer;
 }
 
-.cardButton:hover {
-    -moz-box-shadow: 0 0 5px #00000040;
-    -webkit-box-shadow: 0 0 5px #00000040;
-    box-shadow: 0 0 5px #00000040;
+.icon {
+    margin: 10px;
+    width: 119px;
+    height: 122px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
 }
 
-.cardButton:active {
-    box-shadow: 0 5px 4px 0 #00000040;
-    transition-duration: 0.2s;
-    transform: translateY(4px);
+.icon3 {
+    background-image: url('/assets/konnect.jpg');
 }
 
 @keyframes fadeInAnimation {

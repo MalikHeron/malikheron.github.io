@@ -3,13 +3,12 @@ import {Link} from "react-router-dom";
 import type {FC} from 'react';
 
 import navigate from './stylesheets/navigation.module.css';
-import intro from './stylesheets/intro.module.css';
+import home from './stylesheets/home.module.css';
+import experience from './stylesheets/experience.module.css';
 import projects from './stylesheets/projects.module.css';
 import about from './stylesheets/about.module.css';
-import overview from './stylesheets/overview.module.css';
 import contact from './stylesheets/contact.module.css';
 import form from './stylesheets/form.module.css';
-import text from './stylesheets/text.module.css';
 import socials from './stylesheets/socials.module.css';
 
 interface Props {
@@ -18,49 +17,33 @@ interface Props {
 
 export const Index: FC<Props> = () => {
     useEffect(() => {
-        const handleScroll = () => {
-            const homeHighlight = document.getElementById("homeHighlight") as HTMLElement;
-            const projectsHighlight = document.getElementById("projectsHighlight") as HTMLElement;
-            const aboutHighlight = document.getElementById("aboutHighlight") as HTMLElement;
-            const contactHighlight = document.getElementById("contactHighlight") as HTMLElement;
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('nav li');
 
-            const projects = document.getElementById("projects") as HTMLElement;
-            const about = document.getElementById("about") as HTMLElement;
-
-            homeHighlight.classList.remove(navigate.active);
-            projectsHighlight.classList.remove(navigate.active);
-            aboutHighlight.classList.remove(navigate.active);
-            contactHighlight.classList.remove(navigate.active);
-
-            if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 50) {
-                contactHighlight.classList.add(navigate.active);
-            } else if (window.scrollY >= about.offsetTop - 4) {
-                aboutHighlight.classList.add(navigate.active);
-            } else if (window.scrollY >= projects.offsetTop - 4) {
-                projectsHighlight.classList.add(navigate.active);
-            } else {
-                homeHighlight.classList.add(navigate.active);
-            }
+        const options = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.5
         };
 
-        window.addEventListener("scroll", handleScroll);
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const sectionId = entry.target.id;
+                    sectionId.concat("Tab");
+                    navLinks.forEach(link => {
+                        if (link.textContent && link.textContent.toLowerCase() === sectionId.toLowerCase()) {
+                            link.classList.add(navigate.active);
+                        } else {
+                            link.classList.remove(navigate.active);
+                        }
+                    });
+                }
+            });
+        }, options);
 
-        return () => {
-            window.removeEventListener("scroll", handleScroll);
-        };
+        sections.forEach(section => observer.observe(section));
     }, []);
-
-    window.onload = () => {
-        const homeHighlight = document.getElementById("homeHighlight") as HTMLElement;
-        const projectsHighlight = document.getElementById("projectsHighlight") as HTMLElement;
-        const aboutHighlight = document.getElementById("aboutHighlight") as HTMLElement;
-        const contactHighlight = document.getElementById("contactHighlight") as HTMLElement;
-
-        if (!projectsHighlight.classList.contains(navigate.active) && !aboutHighlight.classList.contains(navigate.active)
-            && !contactHighlight.classList.contains(navigate.active)) {
-            homeHighlight.classList.add(navigate.active);
-        }
-    }
 
     const handleFocus = () => {
         document.body.classList.add('input-focused');
@@ -72,8 +55,20 @@ export const Index: FC<Props> = () => {
 
     const handleClick = (id: string) => {
         const element = document.getElementById(id);
+        let sectionID = ['home', 'about', 'experience', 'projects', 'contact'];
+
         if (element) {
             element.scrollIntoView({behavior: "smooth"});
+            sectionID.forEach(sectionID => {
+                const tab = document.getElementById(`${id}Tab`) as HTMLElement;
+                console.log(tab)
+                if (id === sectionID) {
+                    console.log(sectionID);
+                    tab.classList.add(navigate.active);
+                } else {
+                    tab.classList.remove(navigate.active);
+                }
+            });
         }
     }
 
@@ -86,21 +81,21 @@ export const Index: FC<Props> = () => {
 
     const socialLinks = (
         <>
-            <div className={socials.linkedinIcon}>
-                <a className={socials.links} title="LinkedIn"
-                   href="https://www.linkedin.com/in/malik-heron-18b961158/"
-                   target="_blank"><i className="fa-brands fa-linkedin"></i></a>
+            <div className={socials.twitterIcon}>
+                <a className={socials.links} title="Twitter"
+                   href="https://twitter.com/MalikDHeron"
+                   target="_blank"><i
+                    className="fa-brands fa-twitter"></i></a>
             </div>
             <div className={socials.githubIcon}>
                 <a className={socials.links} title="Github" href="https://github.com/MalikHeron"
                    target="_blank"><i
                     className="fa-brands fa-github"></i></a>
             </div>
-            <div className={socials.twitterIcon}>
-                <a className={socials.links} title="Twitter"
-                   href="https://twitter.com/MalikDHeron"
-                   target="_blank"><i
-                    className="fa-brands fa-twitter"></i></a>
+            <div className={socials.linkedinIcon}>
+                <a className={socials.links} title="LinkedIn"
+                   href="https://www.linkedin.com/in/malik-heron-18b961158/"
+                   target="_blank"><i className="fa-brands fa-linkedin"></i></a>
             </div>
             <div className={socials.emailIcon}>
                 <a className={socials.links} title="Email" href="mailto:malik.heron2001@gmail.com"
@@ -112,144 +107,158 @@ export const Index: FC<Props> = () => {
 
     return (
         <div className={navigate.root}>
+            <div className={socials.container}>{socialLinks}</div>
             <nav id="navBar" className={navigate.container}>
-                <div id="homeHighlight" className={navigate.homeHighlight}>
-                    <div className={navigate.home} onClick={() => handleClick("home")}>Home</div>
-                </div>
-                <div id="projectsHighlight" className={navigate.projectsHighlight}>
-                    <div className={navigate.projects} onClick={() => handleClick("projects")}>Projects
-                    </div>
-                </div>
-                <div id="aboutHighlight" className={navigate.aboutHighlight}>
-                    <div className={navigate.about} onClick={() => handleClick("about")}>About</div>
-                </div>
-                <div id="contactHighlight" className={navigate.contactHighlight}>
-                    <div className={navigate.contact} onClick={() => handleClick("contact")}>Contact
-                    </div>
-                </div>
+                <li id="homeTab" className={`${navigate.home} ${navigate.active}`}
+                    onClick={() => handleClick("home")}>HOME
+                </li>
+                <li id="aboutTab" className={navigate.projects} onClick={() => handleClick("about")}>ABOUT</li>
+                <li id="experienceTab" className={navigate.experience}
+                    onClick={() => handleClick("experience")}>EXPERIENCE
+                </li>
+                <li id="projectsTab" className={navigate.contact} onClick={() => handleClick("projects")}>PROJECTS</li>
+                <li id="contactTab" className={navigate.contact} onClick={() => handleClick("contact")}>CONTACT</li>
             </nav>
-            <section className={intro.container} id="home">
-                <div className={intro.socials}>{socialLinks}</div>
-                <main className={intro.container}>
-                    <div className={text.greeting}>
-                        <p>Hi there! I’m Malik Heron</p>
+
+            <main>
+                <section id="home">
+                    <h1>Malik Heron</h1>
+                    <h2>Software Developer and UX Designer</h2>
+                    <p className={home.description}>
+                        Highly passionate about developing apps with
+                        modern interfaces. Always eager to learn and
+                        expand my knowledge in the field.
+                    </p>
+                </section>
+
+                <section id="about">
+                    <h1>
+                        <span className={about.slideInLeft}>&lt;</span>About Me
+                        <span className={about.slideInRight}>/&gt;</span>
+                    </h1>
+                    <p className={about.description}>
+                        As a passionate problem-solver, I thrive on the challenge of
+                        crafting efficient and functional code. My goal is to create a
+                        seamless user experience through modern and visually
+                        appealing UI design. I believe that it is the little details that keep
+                        users coming back to apps and websites time and time again.
+                        <br/><br/>
+                        With experience in a variety of languages and tools, I am always
+                        looking for new ways to work smarter and more efficiently. While
+                        my focus is currently on a few key areas, I am excited to continue
+                        expanding my skills and knowledge in the future.
+                    </p>
+                </section>
+
+                <section id="experience" className={experience.group}>
+                    <div className={navigate.applicationsGroup}>
+                        <h1>Applications</h1>
+                        <p className={experience.description}>
+                            Throughout my university experience and over the years, I have
+                            had the pleasure of using various applications for different
+                            projects. My favorites include:
+                        </p>
+                        <ul>
+                            <li>Android Studio</li>
+                            <li>Figma</li>
+                            <li>Intellij</li>
+                            <li>Pycharm</li>
+                            <li>VS Code</li>
+                            <li>Webstorm</li>
+                        </ul>
                     </div>
-                    <div className={intro.description}>
-                        I am a software developer and UX designer with a passion for developing apps.
-                        I am always eager to learn and expand my knowledge in the field.
+
+                    <div className={experience.languageGroup}>
+                        <h1>Languages</h1>
+                        <p className={experience.description}>
+                            I strive to learn as many programming languages as possible in
+                            the areas of development that interest me. I have experience in:
+                        </p>
+                        <ul>
+                            <li>C</li>
+                            <li>C++</li>
+                            <li>CSS</li>
+                            <li>HTML</li>
+                            <li>Java</li>
+                            <li>Kotlin</li>
+                            <li>Python</li>
+                            <li>SQL</li>
+                            <li>XML</li>
+                        </ul>
                     </div>
-                </main>
-                <section className={projects.container} id="projects">
-                    <div className={text.projectsHeader}>Featured Projects</div>
-                    <div className={projects.cardGroup}>
+
+                    <div className={experience.focusGroup}>
+                        <h1>Focus</h1>
+                        <p className={experience.description}>
+                            I am currently focused on mobile and web development, while
+                            continuously expanding my knowledge in UX and UI design. I
+                            believe that having a strong understanding of user experience
+                            and user interface design is crucial in creating successful and
+                            user-friendly applications.
+                        </p>
+                    </div>
+                </section>
+
+                <section id="projects">
+                    <h1>Projects</h1>
+                    <div className={projects.cardContainer}>
                         <div className={projects.card}>
-                            <div className={`${projects.icon} ${projects.icon1}`}></div>
-                            <div className={projects.cardDetails}>
-                                <div className={projects.cardTitle}>Best TV Mobile App</div>
+                            <img className={projects.icon} src={'/assets/best_tv.jpg'} alt={"best tv logo"}/>
+                            <div className={projects.textGroup}>
+                                <h3 className={projects.cardTitle}>Best TV Communications Mobile App</h3>
+                                <p className={projects.cardDescription}>
+                                    Best TV Communications is an ISP based in Trelawny, Jamaica.
+                                    I was tasked with the job of creating a mobile application to
+                                    make payments and communication easier with their clients.
+                                    Features include a service overview, bill payment system, data
+                                    usage visualization, a support chat and an outage map.
+                                </p>
                                 <ul className={projects.cardTags}>
-                                    <li className={projects.cardTag}>Billing</li>
-                                    <li className={projects.cardTag}>Communication</li>
-                                    <li className={projects.cardTag}>Firebase</li>
-                                    <li className={projects.cardTag}>Kotlin</li>
-                                    <li className={projects.cardTag}>Maps</li>
+                                    <li>Firebase</li>
+                                    <li>Kotlin</li>
+                                    <li>XML</li>
                                 </ul>
-                                <div className={projects.cardButton}>View
-                                    Project
-                                </div>
                             </div>
                         </div>
+
                         <div className={projects.card}>
-                            <div className={`${projects.icon} ${projects.icon2}`}></div>
+                            <img className={projects.icon} src={'/assets/download_calculator.jpg'} alt={"dlt logo"}/>
                             <div className={projects.cardDetails}>
-                                <div className={projects.cardTitle}>Download Time Calculator App</div>
+                                <h3 className={projects.cardTitle}>Download Time Calculator</h3>
+                                <p className={projects.cardDescription}>
+                                    This is a personal project built for calculating download times
+                                    using a set of download speeds and sizes.
+                                </p>
                                 <ul className={projects.cardTags}>
-                                    <li className={projects.cardTag}>Calculation</li>
-                                    <li className={projects.cardTag}>Estimates</li>
+                                    <li>Dart</li>
+                                    <li>Flutter</li>
                                 </ul>
-                                <div className={projects.cardButton}>View
-                                    Project
-                                </div>
                             </div>
                         </div>
+
                         <div className={projects.card}>
-                            <div className={`${projects.icon} ${projects.icon3}`}></div>
+                            <div className={`${projects.icon} ${projects.icon3}`}/>
                             <div className={projects.cardDetails}>
-                                <div className={projects.cardTitle}>Konnect Mobile App</div>
+                                <h3 className={projects.cardTitle}>Konnect Mobile App</h3>
+                                <p className={projects.cardDescription}>
+                                    This is a personal project built for communicating with others
+                                    over the internet. Features include media upload and download, messaging, posting,
+                                    sharing of location etc.
+                                </p>
                                 <ul className={projects.cardTags}>
-                                    <li className={projects.cardTag}>Communication</li>
-                                    <li className={projects.cardTag}>Firebase</li>
-                                    <li className={projects.cardTag}>Kotlin</li>
+                                    <li>Dart</li>
+                                    <li>Firebase</li>
+                                    <li>Flutter</li>
                                 </ul>
-                                <div className={projects.cardButton}>View
-                                    Project
-                                </div>
                             </div>
                         </div>
                     </div>
                 </section>
-            </section>
 
-            <section className={about.container} id="about">
-                <div className={text.aboutHeader}>About</div>
-                <div className={about.description}>
-                    As a passionate problem-solver, I thrive on the challenge of crafting efficient and functional
-                    code. My goal is to create a seamless user experience through modern and visually appealing
-                    UI design. I believe that it is the little details that keep users coming back to apps and
-                    websites time and time again. With experience in a variety of languages and tools, I am
-                    always looking for new ways to work smarter and more efficiently. While my focus is
-                    currently on a few key areas, I am excited to continue expanding my skills
-                    and knowledge in the future.
-                </div>
-                <div className={overview.container}>
-                    <img className={`${overview.programmerIcon} ${about.icon}`} src={'/assets/programmer.jpg'}
-                         alt="Programmer" title="Designed by juicy_fish -
-                            Flaticon"></img>
-                    <div className={overview.itemGroup}>
-                        <div className={overview.languagesGroup}>
-                            <div className={overview.languagesHeader}>Languages</div>
-                            <div className={overview.columnGroup}>
-                                <ul className={overview.column}>
-                                    <li className={overview.itemBox}>C++</li>
-                                    <li className={overview.itemBox}>CSS</li>
-                                    <li className={overview.itemBox}>HTML</li>
-                                    <li className={overview.itemBox}>Java</li>
-                                </ul>
-                                <ul className={overview.column}>
-                                    <li className={overview.itemBox}>Kotlin</li>
-                                    <li className={overview.itemBox}>Python</li>
-                                    <li className={overview.itemBox}>SQL</li>
-                                    <li className={overview.itemBox}>XML</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div className={overview.toolsGroup}>
-                            <div className={overview.toolsHeader}>Tools</div>
-                            <div className={overview.item}>Android Studio</div>
-                            <div className={overview.item}>Figma</div>
-                            <div className={overview.item}>Github</div>
-                            <div className={overview.item}>Intellij</div>
-                            <div className={overview.item}>Pycharm</div>
-                            <div className={overview.item}>VS Code</div>
-                            <div className={overview.item}>Webstorm</div>
-                        </div>
-                        <div className={overview.focusGroup}>
-                            <div className={overview.focusHeader}>Focus</div>
-                            <div className={overview.item}>Mobile App Development</div>
-                            <div className={overview.item}>User Interface Design</div>
-                            <div className={overview.item}>User Experience Design</div>
-                            <div className={overview.item}>Web Development</div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section className={contact.container} id="contact">
-                <div className={text.contactHeader}>Let’s Get In Touch</div>
-                <div className={contact.socials}>{socialLinks}</div>
-                <div className={contact.description}>
-                    Feel free to send me a message, I look forward to working with you.
-                </div>
-                <div className={form.container}>
+                <section id="contact">
+                    <h1>Contact</h1>
+                    <h2>Let's Get In Touch</h2>
+                    <h3>I look forward to hearing from you.</h3>
                     <form
                         action="https://formsubmit.co/malik.heron2001@gmail.com"
                         className={form.form}
@@ -298,9 +307,8 @@ export const Index: FC<Props> = () => {
                         <input name="_captcha" type="hidden" value="true"/>
                         <input className={form.submit} type="submit" value="Submit"/>
                     </form>
-                </div>
-                <div className={contact.copyright}>© All rights reserved</div>
-            </section>
+                </section>
+            </main>
         </div>
     );
 };

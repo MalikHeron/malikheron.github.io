@@ -1,10 +1,24 @@
+.container {
+    position: fixed;
+    margin-right: 70px;
+    top: calc(20%);
+    right: 0;
+    transform: translateY(-50%);
+    width: auto;
+    height: auto;
+    z-index: 2;
+    display: flex;
+}
+
 .twitterIcon, .githubIcon, .linkedinIcon, .emailIcon {
-    font-size: 32px;
+    font-size: 28px;
     position: relative;
-    float: left;
-    margin: 0 auto;
-    padding: 8px;
+    padding: 4px;
     cursor: pointer;
+}
+
+.twitterIcon:hover, .githubIcon:hover, .linkedinIcon:hover, .emailIcon:hover {
+    transform: scale(1.2);
 }
 
 .links {
@@ -13,7 +27,6 @@
 
 .links:hover {
     color: white;
-    transform: scale(1.1);
 }
 
 /* Large devices (laptops/desktops, 997px and up) */
