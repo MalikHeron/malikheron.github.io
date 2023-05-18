@@ -29,8 +29,25 @@
     color: white;
 }
 
-/* Medium devices (landscape tablets, 820px and up) */
-@media only screen and (max-width: 820px) {
+@media only screen and (max-width: 1200px) {
+    .container {
+        position: fixed;
+        margin-right: 3%;
+        top: 15%;
+        right: 0;
+        transform: translateY(-50%);
+        width: auto;
+        height: auto;
+        z-index: 2;
+        display: flex;
+    }
+
+    .twitterIcon, .githubIcon, .linkedinIcon, .emailIcon {
+        font-size: 24px;
+    }
+}
+
+@media only screen and (max-width: 800px) {
     .container {
         position: fixed;
         margin-right: 5%;
@@ -44,15 +61,12 @@
     }
 
     .twitterIcon, .githubIcon, .linkedinIcon, .emailIcon {
-        font-size: 18px;
+        font-size: 24px;
     }
 }
 
-/* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
     .twitterIcon, .githubIcon, .linkedinIcon, .emailIcon {
-        font-size: 28px;
-        padding: 0 8px 0;
-        visibility: hidden;
+        display: none;
     }
 }

@@ -1,5 +1,4 @@
 import React, {useEffect} from 'react';
-import {Link} from "react-router-dom";
 import type {FC} from 'react';
 
 import navigate from './stylesheets/navigation.module.css';
@@ -235,7 +234,7 @@ export const Index: FC<Props> = () => {
                         </div>
 
                         <div className={projects.card}>
-                            <div className={`${projects.icon} ${projects.icon3}`}/>
+                            <img className={projects.icon} src={'/assets/konnect.jpg'} alt={"konnect logo"}/>
                             <div className={projects.cardDetails}>
                                 <h3 className={projects.cardTitle}>Konnect Mobile App</h3>
                                 <p className={projects.cardDescription}>
