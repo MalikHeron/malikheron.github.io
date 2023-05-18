@@ -1,7 +1,7 @@
 .root {
     position: relative;
     width: 100vw;
-    height: 100vh;
+    height: auto;
     display: flex;
     flex-direction: column;
     overflow-x: hidden;
@@ -19,7 +19,6 @@
     --anti-flash-white-color: #F0F0F0;
     --aquarmine-green-color: #4CE0B3;
     --jet-black-color: #2F2D2E;
-    --semi-transparent: rgba(0, 0, 0, 0.4);
 }
 
 .container {
