@@ -107,21 +107,24 @@ export const Index: FC<Props> = () => {
 
     return (
         <div className={navigate.root}>
-            <div className={socials.container}>{socialLinks}</div>
-            <nav id="navBar" className={navigate.container}>
-                <li id="homeTab" className={`${navigate.home} ${navigate.active}`}
-                    onClick={() => handleClick("home")}>HOME
-                </li>
-                <li id="aboutTab" className={navigate.projects} onClick={() => handleClick("about")}>ABOUT</li>
-                <li id="experienceTab" className={navigate.experience}
-                    onClick={() => handleClick("experience")}>EXPERIENCE
-                </li>
-                <li id="projectsTab" className={navigate.contact} onClick={() => handleClick("projects")}>PROJECTS</li>
-                <li id="contactTab" className={navigate.contact} onClick={() => handleClick("contact")}>CONTACT</li>
-            </nav>
+            <header>
+                <div className={socials.container}>{socialLinks}</div>
+                <nav id="navBar" className={navigate.container}>
+                    <li id="homeTab" className={`${navigate.home} ${navigate.active}`}
+                        onClick={() => handleClick("home")}>HOME
+                    </li>
+                    <li id="aboutTab" className={navigate.projects} onClick={() => handleClick("about")}>ABOUT</li>
+                    <li id="experienceTab" className={navigate.experience}
+                        onClick={() => handleClick("experience")}>EXPERIENCE
+                    </li>
+                    <li id="projectsTab" className={navigate.contact} onClick={() => handleClick("projects")}>PROJECTS
+                    </li>
+                    <li id="contactTab" className={navigate.contact} onClick={() => handleClick("contact")}>CONTACT</li>
+                </nav>
+            </header>
 
             <main>
-                <section id="home">
+                <section id="home" className={home.section}>
                     <h1>Malik Heron</h1>
                     <h2>Software Developer and UX Designer</h2>
                     <p className={home.description}>
@@ -131,7 +134,7 @@ export const Index: FC<Props> = () => {
                     </p>
                 </section>
 
-                <section id="about">
+                <section id="about" className={about.section}>
                     <h1>
                         <span className={about.slideInLeft}>&lt;</span>About Me
                         <span className={about.slideInRight}>/&gt;</span>
@@ -150,56 +153,51 @@ export const Index: FC<Props> = () => {
                     </p>
                 </section>
 
-                <section id="experience" className={experience.group}>
-                    <div className={navigate.applicationsGroup}>
-                        <h1>Applications</h1>
-                        <p className={experience.description}>
-                            Throughout my university experience and over the years, I have
-                            had the pleasure of using various applications for different
-                            projects. My favorites include:
-                        </p>
-                        <ul>
-                            <li>Android Studio</li>
-                            <li>Figma</li>
-                            <li>Intellij</li>
-                            <li>Pycharm</li>
-                            <li>VS Code</li>
-                            <li>Webstorm</li>
-                        </ul>
-                    </div>
+                <section id="experience" className={experience.section}>
+                    <h1>Experience</h1>
+                    <h2>Applications</h2>
+                    <p className={experience.description}>
+                        Throughout my university experience and over the years, I have
+                        had the pleasure of using various applications for different
+                        projects. My favorites include:
+                    </p>
+                    <ul>
+                        <li>Android Studio</li>
+                        <li>Figma</li>
+                        <li>Intellij</li>
+                        <li>Pycharm</li>
+                        <li>VS Code</li>
+                        <li>Webstorm</li>
+                    </ul>
 
-                    <div className={experience.languageGroup}>
-                        <h1>Languages</h1>
-                        <p className={experience.description}>
-                            I strive to learn as many programming languages as possible in
-                            the areas of development that interest me. I have experience in:
-                        </p>
-                        <ul>
-                            <li>C</li>
-                            <li>C++</li>
-                            <li>CSS</li>
-                            <li>HTML</li>
-                            <li>Java</li>
-                            <li>Kotlin</li>
-                            <li>Python</li>
-                            <li>SQL</li>
-                            <li>XML</li>
-                        </ul>
-                    </div>
+                    <h2>Languages</h2>
+                    <p className={experience.description}>
+                        I strive to learn as many programming languages as possible in
+                        the areas of development that interest me. I have experience in:
+                    </p>
+                    <ul>
+                        <li>C</li>
+                        <li>C++</li>
+                        <li>CSS</li>
+                        <li>HTML</li>
+                        <li>Java</li>
+                        <li>Kotlin</li>
+                        <li>Python</li>
+                        <li>SQL</li>
+                        <li>XML</li>
+                    </ul>
 
-                    <div className={experience.focusGroup}>
-                        <h1>Focus</h1>
-                        <p className={experience.description}>
-                            I am currently focused on mobile and web development, while
-                            continuously expanding my knowledge in UX and UI design. I
-                            believe that having a strong understanding of user experience
-                            and user interface design is crucial in creating successful and
-                            user-friendly applications.
-                        </p>
-                    </div>
+                    <h2>Focus</h2>
+                    <p className={experience.description}>
+                        I am currently focused on mobile and web development, while
+                        continuously expanding my knowledge in UX and UI design. I
+                        believe that having a strong understanding of user experience
+                        and user interface design is crucial in creating successful and
+                        user-friendly applications.
+                    </p>
                 </section>
 
-                <section id="projects">
+                <section id="projects" className={projects.section}>
                     <h1>Projects</h1>
                     <div className={projects.cardContainer}>
                         <div className={projects.card}>
@@ -222,11 +220,11 @@ export const Index: FC<Props> = () => {
                         </div>
 
                         <div className={projects.card}>
-                            <img className={projects.icon} src={'/assets/download_calculator.jpg'} alt={"dlt logo"}/>
+                            <img className={projects.icon} src={'/assets/alarm.png'} alt={"dlt logo"}/>
                             <div className={projects.cardDetails}>
                                 <h3 className={projects.cardTitle}>Download Time Calculator</h3>
                                 <p className={projects.cardDescription}>
-                                    This is a personal project built for calculating download times
+                                    A personal project built for calculating download times
                                     using a set of download speeds and sizes.
                                 </p>
                                 <ul className={projects.cardTags}>
@@ -241,8 +239,8 @@ export const Index: FC<Props> = () => {
                             <div className={projects.cardDetails}>
                                 <h3 className={projects.cardTitle}>Konnect Mobile App</h3>
                                 <p className={projects.cardDescription}>
-                                    This is a personal project built for communicating with others
-                                    over the internet. Features include media upload and download, messaging, posting,
+                                    A personal project built for communicating with others
+                                    via the internet. Features include media upload and download, messaging, posting,
                                     sharing of location etc.
                                 </p>
                                 <ul className={projects.cardTags}>
@@ -255,13 +253,13 @@ export const Index: FC<Props> = () => {
                     </div>
                 </section>
 
-                <section id="contact">
+                <section id="contact" className={contact.section}>
                     <h1>Contact</h1>
                     <h2>Let's Get In Touch</h2>
                     <h3>I look forward to hearing from you.</h3>
                     <form
                         action="https://formsubmit.co/malik.heron2001@gmail.com"
-                        className={form.form}
+                        className={form.container}
                         method="post"
                     >
                         <div className={form.nameEmail}>
@@ -309,6 +307,8 @@ export const Index: FC<Props> = () => {
                     </form>
                 </section>
             </main>
+
+            <footer><p>&copy; 2023 Malik Heron</p></footer>
         </div>
     );
 };

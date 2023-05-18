@@ -33,7 +33,6 @@ body label {
 main {
     height: 100vh;
     width: 100vw;
-    scroll-snap-stop: always;
 }
 
 section {
@@ -103,8 +102,32 @@ nav {
     display: inline-block;
 }
 
+footer p {
+    position: fixed;
+    bottom: 0;
+    right: 2%;
+}
+
 @media (max-width: 600px) {
     body.input-focused #navBar {
+        display: none;
+    }
+
+    h1 {
+        font-size: 3em;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    section {
+        height: auto;
+        margin: auto;
+        max-height: none;
+    }
+
+    footer {
         display: none;
     }
 }

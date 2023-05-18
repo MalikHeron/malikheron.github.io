@@ -1,7 +1,9 @@
 .cardContainer {
-    display: block;
-    width: max-content;
-    height: 500px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    height: 60%;
     padding: 5px;
     overflow-y: auto;
     border-radius: 10px;
@@ -28,11 +30,10 @@
 
 .card {
     margin-top: 10px;
-    width: max-content;
-    height: max-content;
+    width: auto;
+    height: auto;
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
     align-items: center;
     padding: 10px;
     background-color: var(--fair-black-color);
@@ -95,232 +96,72 @@
     }
 }
 
-/* Large devices (laptops/desktops, 997px and up) */
-@media only screen and (min-width: 997px) and (max-width: 1200px) {
-    .card, .cardDetails {
-        width: 250px;
-        height: 170px;
+/* Large devices (laptops/desktops, 1200px and down) */
+@media only screen and (max-width: 1200px) and (min-height: 600px) {
+    .section h1 {
+        font-size: 1.8em;
     }
 
-    .icon1 {
-        width: 109px;
-        height: 113px;
-    }
-
-    .icon2 {
-        width: 121px;
-        height: 119px;
-    }
-
-    .icon3 {
-        width: 76px;
-        height: 112px;
-    }
-
-    .cardTitle, .cardTags, .cardButton {
-        margin: 3px;
-    }
-
-    .cardTitle {
-        font-size: 14px;
-    }
-
-    .cardTags {
-        grid-gap: 10px;
-        gap: 10px;
-    }
-
-    .cardTag {
-        padding: 4px 8px;
-        font-size: 11px;
-    }
-
-    .cardButton {
-        padding: 10px;
-        font-size: 13px;
+    .cardContainer {
+        width: 100%;
+        height: 60%;
+        padding: 5px;
     }
 }
 
-/* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (max-width: 997px) {
-    .container {
-        width: 90%;
+/* Large devices (laptops/desktops, 1200px and down) */
+@media only screen and (max-width: 1200px) and (max-height: 600px) {
+    .section h1 {
+        font-size: 1.8em;
     }
 
-    .card, .cardDetails {
-        width: 240px;
-        height: 160px;
+    .cardContainer {
+        width: 78%;
+        height: 60%;
+        padding: 5px;
+    }
+}
+
+/* Extra small devices (phones, 600px and above) */
+@media only screen and (max-width: 600px) {
+    .section {
+        margin-right: 30px;
+        margin-left: 30px;
     }
 
-    .icon1 {
+    .section h1 {
+        font-size: 1.8em;
+    }
+
+    .cardContainer {
+        width: auto;
+        height: 100%;
+        overflow-y: auto;
+    }
+
+    .card {
+        width: auto;
+        height: auto;
+    }
+
+    .icon {
+        display: none;
+    }
+
+    .cardDetails {
+        width: auto;
+        margin: 5px;
+    }
+
+    .cardDescription {
+        width: auto;
+        height: auto;
+        max-width: 540px;
+        line-height: 1.6;
+    }
+
+    .icon {
         width: 79px;
-        height: 83px;
-    }
-
-    .icon2 {
-        width: 101px;
-        height: 89px;
-    }
-
-    .icon3 {
-        width: 56px;
-        height: 92px;
-    }
-
-    .cardTitle, .cardTags, .cardButton {
-        margin: 2px;
-    }
-
-    .cardTags {
-        grid-gap: 4px;
-        gap: 4px;
-    }
-
-    .cardTag {
-        padding: 2px 6px;
-    }
-
-    .cardButton {
-        padding: 6px;
-        font-size: 12px;
-    }
-}
-
-/* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (max-width: 782px) {
-    .card, .cardDetails {
-        width: 220px;
-        height: 140px;
-    }
-
-    .cardTitle {
-        font-size: 13px;
-    }
-}
-
-/* Extra small devices (phones, 320px and above) */
-@media only screen and (min-width: 360px) and (max-width: 600px) {
-    .cardGroup {
-        flex-direction: column;
-        overflow-x: hidden;
-        overflow-y: hidden;
-    }
-
-    .card, .cardDetails {
-        width: 250px;
-        height: 170px;
-        margin: 15px;
-    }
-
-    .cardDetails {
-        top: -15px;
-        left: -15px;
-    }
-
-    .cardTitle {
-        font-size: 14px;
-    }
-
-    .cardTags {
-        grid-gap: 8px;
-        gap: 8px;
-        margin: 10px;
-    }
-
-    .cardTag {
-        padding: 3px 6px;
-        font-size: 13px;
-    }
-
-    .cardButton {
-        padding: 5px;
-        font-size: 14px;
-    }
-}
-
-/* Extra small devices (phones, 360px and down) */
-@media only screen and (min-width: 320px) and (max-width: 360px) {
-    .cardGroup {
-        flex-direction: column;
-        overflow-x: hidden;
-        overflow-y: hidden;
-    }
-
-    .cardDetails {
-        top: -10px;
-        left: -10px;
-    }
-
-    .card:hover {
-        transform: scale(1.0);
-    }
-
-    .card, .cardDetails {
-        width: 250px;
-        height: 170px;
-        margin: 10px;
-    }
-
-    .cardTitle {
-        font-size: 14px;
-    }
-
-    .cardTags {
-        grid-gap: 8px;
-        gap: 8px;
-        margin: 10px;
-    }
-
-    .cardTag {
-        padding: 1px 6px;
-        font-size: 12px;
-    }
-
-    .cardButton {
-        padding: 5px;
-        font-size: 14px;
-    }
-}
-
-@media only screen and (max-width: 320px) {
-    .cardGroup {
-        flex-direction: column;
-        overflow-x: hidden;
-        overflow-y: hidden;
-    }
-
-    .cardDetails {
-        top: -10px;
-        left: -10px;
-    }
-
-    .card:hover {
-        transform: scale(1.0);
-    }
-
-    .card, .cardDetails {
-        width: 200px;
-        height: 120px;
-        margin: 10px;
-    }
-
-    .cardTitle {
-        font-size: 12px;
-    }
-
-    .cardTags {
-        grid-gap: 8px;
-        gap: 8px;
-        margin: 10px;
-    }
-
-    .cardTag {
-        padding: 1px 6px;
-        font-size: 10px;
-    }
-
-    .cardButton {
-        padding: 5px;
-        font-size: 12px;
+        height: 82px;
     }
 }

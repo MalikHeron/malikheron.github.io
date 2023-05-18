@@ -1,6 +1,6 @@
-.form {
+.container {
     position: relative;
-    width: max-content;
+    width: auto;
     height: auto;
     display: flex;
     flex-direction: column;
@@ -53,7 +53,7 @@
     background-color: var(--aquarmine-green-color);
     color: var(--jet-black-color);
     padding: 20px;
-    margin: 0 auto;
+    margin: 0 auto 40px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
@@ -73,88 +73,52 @@
     transform: translateY(4px);
 }
 
-/* Large devices (laptops/desktops, 997px and up) */
-@media only screen and (max-width: 1200px) {
-    .name, .email, .message {
-        font-size: 14px;
-    }
-}
-
-/* Medium devices (landscape tablets, 924px and up) */
-@media only screen and (max-width: 997px) {
-    .name, .email, .message {
-        font-size: 13px;
-    }
-}
-
-/* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (max-width: 924px) {
-    .name, .email, .message {
-        font-size: 11px;
-    }
-
-    .name, .email {
-        width: 215px;
-        height: 40px;
-        padding: 8px;
-    }
-
-    .message {
-        width: 440px;
-        height: 150px;
-        padding: 8px;
-    }
-
-    .submit {
-        font-size: 12px;
-        width: 100px;
-        padding: 10px;
-    }
-}
-
-/* Extra small devices (phones, 320px and above) */
-@media only screen and (max-width: 600px) {
-    .form {
+/* Large devices (laptops/desktops, 1200px and down) */
+@media only screen and (max-width: 1200px) and (max-height: 600px) {
+    .container {
+        position: relative;
         width: 90%;
-        height: auto;
     }
 
     .nameEmail {
-        flex-direction: column;
-    }
-
-    .name, .email, .message {
-        font-size: 14px;
+        width: 80%;
     }
 
     .name, .email {
-        width: auto;
-        height: 50px;
-        margin: 0;
+        width: 80%;
+        height: 40px;
+    }
+
+    .message {
+        width: 76.5%;
+        height: 180px;
+    }
+
+    .submit {
+        margin-bottom: 0;
+    }
+}
+
+/* Extra small devices (phones, 600px and below) */
+@media only screen and (max-width: 600px) {
+    .container {
+        position: relative;
+        width: 95%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .nameEmail {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .name, .email {
+        width: 100%;
     }
 
     .message {
         width: 100%;
-    }
-
-    .submit {
-        font-size: 14px;
-    }
-}
-
-/* Extra small devices (phones, 320px and down) */
-@media only screen and (max-width: 320px) {
-    .name, .email, .message {
-        font-size: 12px;
-    }
-
-    .name, .email {
-        width: auto;
-        height: 40px;
-        margin: 0;
-    }
-
-    .submit {
-        font-size: 12px;
     }
 }
