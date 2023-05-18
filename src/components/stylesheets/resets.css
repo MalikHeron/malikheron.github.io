@@ -30,12 +30,16 @@ body label {
 main {
     height: 100vh;
     width: 100vw;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scroll-snap-type: y mandatory;
+    scroll-snap-stop: always;
+    scroll-behavior: smooth;
 }
 
 section {
     position: relative;
-    margin-left: 10%;
-    margin-right: 10%;
+    margin: 10% 10%;
     max-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -136,6 +140,12 @@ footer p {
 
     h2 {
         font-size: 1.5em;
+    }
+
+    main {
+        scroll-snap-type: none;
+        scroll-snap-stop: normal;
+        scroll-behavior: auto;
     }
 
     section {
