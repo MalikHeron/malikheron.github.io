@@ -1,9 +1,21 @@
+.section h1 {
+    font-size: 2.5em;
+}
+
+.section h2 {
+    font-size: 1.2em;
+}
+
+.section h3 {
+    font-size: 1.1em;
+}
+
 .description {
     color: white;
     width: auto;
     height: auto;
     max-width: 700px;
-    font-size: 20px;
+    font-size: 1.2em;
     line-height: 1.6;
     text-align: center;
 }
@@ -12,8 +24,7 @@
     display: none;
 }
 
-/* Large devices (laptops/desktops, 1200px and down) */
-@media only screen and (max-width: 1200px) and (max-height: 600px) {
+@media only screen and (max-width: 1200px) {
     .section h1 {
         font-size: 1.8em;
     }
@@ -27,8 +38,7 @@
     }
 }
 
-/* Large devices (laptops/desktops, 1200px and down) */
-@media only screen and (max-width: 1200px) and (min-height: 600px) {
+@media only screen and (max-width: 800px) {
     .section h1 {
         font-size: 1.8em;
     }
@@ -42,11 +52,10 @@
     }
 }
 
-
-/* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
     .section {
-        margin: 30px;
+        margin-left: 30px;
+        margin-right: 30px;
     }
 
     .section h1 {
