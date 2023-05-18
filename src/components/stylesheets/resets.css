@@ -7,11 +7,8 @@ body,
     width: 100vw;
     overflow-y: hidden;
     overflow-x: hidden;
-    background-color: var(--jet-black-color);
     font-family: "Andika New Basic", system-ui;
-    display: flex;
-    min-height: 100vh;
-    flex-basis: 100%;
+    box-sizing: border-box;
 }
 
 #root {
@@ -108,19 +105,33 @@ footer p {
     right: 2%;
 }
 
-@media (max-width: 600px) {
-    html,
-    body,
-    #root {
-        overflow-y: auto;
+@media only screen and  (max-width: 1200px) {
+    footer p {
+        font-size: 1.1em;
+    }
+}
+
+@media only screen and  (max-width: 800px) {
+    h1 {
+        font-size: 1.8em;
     }
 
+    h2 {
+        font-size: 1.2em;
+    }
+
+    footer p {
+        font-size: 1em;
+    }
+}
+
+@media only screen and (max-width: 600px) {
     body.input-focused #navBar {
         display: none;
     }
 
     h1 {
-        font-size: 3em;
+        font-size: 1.2em;
     }
 
     h2 {
