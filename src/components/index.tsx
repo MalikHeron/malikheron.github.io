@@ -29,10 +29,11 @@ export const Index: FC<Props> = () => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     const sectionId = entry.target.id;
-                    sectionId.concat("Tab");
                     navLinks.forEach(link => {
                         if (link.textContent && link.textContent.toLowerCase() === sectionId.toLowerCase()) {
-                            link.classList.add(navigate.active);
+                            if (!link.classList.contains(navigate.active)) {
+                                link.classList.add(navigate.active);
+                            }
                         } else {
                             link.classList.remove(navigate.active);
                         }
@@ -44,30 +45,11 @@ export const Index: FC<Props> = () => {
         sections.forEach(section => observer.observe(section));
     }, []);
 
-    const handleFocus = () => {
-        document.body.classList.add('input-focused');
-    };
-
-    const handleBlur = () => {
-        document.body.classList.remove('input-focused');
-    };
-
     const handleClick = (id: string) => {
         const element = document.getElementById(id);
-        let sectionID = ['home', 'about', 'experience', 'projects', 'contact'];
 
         if (element) {
             element.scrollIntoView({behavior: "smooth"});
-            sectionID.forEach(sectionID => {
-                const tab = document.getElementById(`${id}Tab`) as HTMLElement;
-                console.log(tab)
-                if (id === sectionID) {
-                    console.log(sectionID);
-                    tab.classList.add(navigate.active);
-                } else {
-                    tab.classList.remove(navigate.active);
-                }
-            });
         }
     }
 
@@ -109,34 +91,31 @@ export const Index: FC<Props> = () => {
             <header>
                 <div className={socials.container}>{socialLinks}</div>
                 <nav id="navBar" className={navigate.container}>
-                    <li id="homeTab" className={`${navigate.home} ${navigate.active}`}
+                    <li id="homeTab" className={`${navigate.tab} ${navigate.active}`}
                         onClick={() => handleClick("home")}>HOME
                     </li>
-                    <li id="aboutTab" className={navigate.projects} onClick={() => handleClick("about")}>ABOUT</li>
-                    <li id="experienceTab" className={navigate.experience}
+                    <li id="aboutTab" className={navigate.tab} onClick={() => handleClick("about")}>ABOUT</li>
+                    <li id="experienceTab" className={navigate.tab}
                         onClick={() => handleClick("experience")}>EXPERIENCE
                     </li>
-                    <li id="projectsTab" className={navigate.contact} onClick={() => handleClick("projects")}>PROJECTS
+                    <li id="projectsTab" className={navigate.tab} onClick={() => handleClick("projects")}>PROJECTS
                     </li>
-                    <li id="contactTab" className={navigate.contact} onClick={() => handleClick("contact")}>CONTACT</li>
+                    <li id="contactTab" className={navigate.tab} onClick={() => handleClick("contact")}>CONTACT</li>
                 </nav>
+                <a className={navigate.resume} href="/assets/resume.pdf" target="_blank">View Resume</a>
             </header>
 
             <main>
                 <section id="home" className={home.section}>
-                    <h1>Malik Heron</h1>
+                    <h1 id="title" className={about.slideInLeft}>Malik Heron</h1>
                     <h2>Software Developer and UX Designer</h2>
                     <p className={home.description}>
-                        Focused on developing modern applications with user-friendly interfaces
-                        and always eager to learn and grow in the field.
+                        Focused on developing modern applications with user-friendly interfaces.
                     </p>
                 </section>
 
                 <section id="about" className={about.section}>
-                    <h1>
-                        <span className={about.slideInLeft}>&lt;</span>About Me
-                        <span className={about.slideInRight}>/&gt;</span>
-                    </h1>
+                    <h1>About Me</h1>
                     <p className={about.description}>
                         As a passionate problem-solver, I thrive on the challenge of
                         crafting efficient and functional code. My goal is to create a
@@ -194,6 +173,7 @@ export const Index: FC<Props> = () => {
                         and user interface design is crucial in creating successful and
                         user-friendly applications.
                     </p>
+                    <a className={experience.resume} href="/assets/resume.pdf" target="_blank">View Resume</a>
                 </section>
 
                 <section id="projects" className={projects.section}>
@@ -255,6 +235,7 @@ export const Index: FC<Props> = () => {
                 <section id="contact" className={contact.section}>
                     <h1>Contact</h1>
                     <h2>Let's Get In Touch</h2>
+                    <div className={socials.containerM}>{socialLinks}</div>
                     <h3>I look forward to hearing from you.</h3>
                     <form
                         action="https://formsubmit.co/malik.heron2001@gmail.com"
@@ -264,8 +245,6 @@ export const Index: FC<Props> = () => {
                         <div className={form.nameEmail}>
                             <label htmlFor="name"></label>
                             <input
-                                onFocus={handleFocus}
-                                onBlur={handleBlur}
                                 autoComplete="off"
                                 className={form.name}
                                 name="Name"
@@ -277,8 +256,6 @@ export const Index: FC<Props> = () => {
 
                             <label htmlFor="email"></label>
                             <input
-                                onFocus={handleFocus}
-                                onBlur={handleBlur}
                                 autoComplete="off"
                                 className={form.email}
                                 name="Email Address"
@@ -291,8 +268,6 @@ export const Index: FC<Props> = () => {
 
                         <label htmlFor="message"></label>
                         <textarea
-                            onFocus={handleFocus}
-                            onBlur={handleBlur}
                             autoComplete="off"
                             className={form.message}
                             name="Message"

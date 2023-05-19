@@ -17,9 +17,10 @@
     background-color: var(--aquarmine-green-color);
     position: absolute;
     width: max-content;
+    border-radius: 3px;
 }
 
-.home, .about, .experience, .projects, .contact {
+.tab {
     font-size: 18px;
     font-weight: bold;
     position: relative;
@@ -30,13 +31,13 @@
     list-style: none;
 }
 
-.home.active::before, .about.active::before, .experience.active::before, .projects.active::before, .contact.active::before {
+.tab.active::before {
     width: 60px;
     transform: scaleX(1);
     transition: transform 0.5s ease-out;
 }
 
-.home::before, .about::before, .experience::before, .projects::before, .contact::before {
+.tab::before {
     content: "";
     width: 60px;
     height: 1px;
@@ -49,9 +50,43 @@
     transition: transform 0.5s ease-out;
 }
 
-.home:hover::before, .about:hover::before, .experience:hover::before, .projects:hover::before, .contact:hover::before {
+.tab:hover::before {
     transform: scaleX(1);
     transform-origin: bottom left;
+}
+
+.resume {
+    position: fixed;
+    font-size: 1em;
+    margin-right: 68px;
+    bottom: 10%;
+    right: 0;
+    display: block;
+    width: max-content;
+    height: auto;
+    background-color: var(--aquarmine-green-color);
+    color: var(--jet-black-color);
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+    justify-content: center;
+    text-decoration: none;
+    font-weight: bold;
+    z-index: 1;
+}
+
+.resume:hover {
+    -moz-box-shadow: 0 0 5px #00000040;
+    -webkit-box-shadow: 0 0 5px #00000040;
+    box-shadow: 0 0 5px #00000040;
+}
+
+.resume:active {
+    box-shadow: 0 5px 4px 0 #00000040;
+    transition-duration: 0.2s;
+    transform: translateY(10%);
 }
 
 @media only screen and (max-width: 1200px) {
@@ -59,17 +94,15 @@
         margin-right: 28px;
     }
 
-    .home, .about, .experience, .projects, .contact {
+    .tab {
         font-size: 16px;
     }
 
-    .home.active::before, .about.active::before, .experience.active::before, .projects.active::before, .contact.active::before {
+    .tab.active::before {
         width: 40px;
-        transform: scaleX(1);
-        transition: transform 0.5s ease-out;
     }
 
-    .home::before, .about::before, .experience::before, .projects::before, .contact::before {
+    .tab::before {
         content: "";
         width: 40px;
         height: 1px;
@@ -79,45 +112,44 @@
         transition: transform 0.5s ease-out;
     }
 
-    .home:hover::before, .about:hover::before, .experience:hover::before, .projects:hover::before, .contact:hover::before {
-        transform: scaleX(1);
-        transform-origin: bottom left;
+    .resume {
+        margin-right: 28px;
+        font-size: 14px;
     }
 }
 
 @media only screen and (max-width: 800px) {
     .container {
-        margin-right: 3px;
+        margin-right: 8px;
     }
 
-    .home, .about, .experience, .projects, .contact {
-        font-size: 16px;
+    .tab {
+        font-size: 14px;
     }
 
-    .home.active::before, .about.active::before, .experience.active::before, .projects.active::before, .contact.active::before {
+    .tab.active::before {
         width: 40px;
-        transform: scaleX(1);
-        transition: transform 0.5s ease-out;
     }
 
-    .home::before, .about::before, .experience::before, .projects::before, .contact::before {
+    .tab::before {
         content: "";
         width: 40px;
         height: 1px;
         left: -40px;
-        transform: scaleX(0.5);
-        transform-origin: bottom left;
-        transition: transform 0.5s ease-out;
     }
 
-    .home:hover::before, .about:hover::before, .experience:hover::before, .projects:hover::before, .contact:hover::before {
-        transform: scaleX(1);
-        transform-origin: bottom left;
+    .resume {
+        margin-right: 30px;
+        font-size: 14px;
     }
 }
 
 @media only screen and (max-width: 600px) {
     .container {
         visibility: hidden;
+    }
+
+    .resume {
+        display: none;
     }
 }
