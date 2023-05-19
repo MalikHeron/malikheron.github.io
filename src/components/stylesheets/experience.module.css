@@ -51,7 +51,7 @@
     }
 
     .description {
-        font-size: 0.8em;
+        font-size: 0.9em;
         max-width: 500px;
     }
 
@@ -68,7 +68,7 @@
     }
 
     .description {
-        font-size: 0.8em;
+        font-size: 0.9em;
         max-width: 70%;
     }
 
@@ -87,20 +87,20 @@
 
     .section h1 {
         display: initial;
-        font-size: 1.8em;
+        font-size: 1.6em;
     }
 
     .section h2 {
-        font-size: 1.4em;
+        font-size: 1.2em;
     }
 
     .description {
         max-width: 100%;
-        font-size: 1.1em;
+        font-size: 1em;
     }
 
     .section ul, .section ul {
-        font-size: 1.1em;
+        font-size: 1em;
         display: flex;
         flex-direction: column;
         flex-wrap: wrap;
