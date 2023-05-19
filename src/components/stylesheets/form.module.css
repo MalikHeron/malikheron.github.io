@@ -46,6 +46,7 @@
 
 .submit {
     font-size: 1em;
+    font-weight: bold;
     width: 20%;
     height: auto;
     background-color: var(--aquarmine-green-color);
@@ -106,6 +107,7 @@
     }
 
     .submit {
+        font-weight: normal;
         margin-bottom: 0;
     }
 }
@@ -135,6 +137,7 @@
     }
 
     .submit {
+        font-weight: normal;
         width: 50%;
         margin: 0 auto 20px;
     }
