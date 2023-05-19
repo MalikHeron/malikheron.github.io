@@ -5,10 +5,19 @@ body,
     padding-left: 0;
     height: auto;
     width: 100vw;
-    overflow-y: hidden;
+    overflow-y: auto;
     overflow-x: hidden;
     font-family: "Andika New Basic", system-ui;
     box-sizing: border-box;
+    color: white;
+    background: var(--jet-black-color);
+
+    --fair-black-color: #3B393A;
+    --turquoise-green-color: #2AB38A;
+    --poppy-red-color: #D14141;
+    --anti-flash-white-color: #F0F0F0;
+    --aquarmine-green-color: #4CE0B3;
+    --jet-black-color: #2F2D2E;
 }
 
 #root {
@@ -28,10 +37,11 @@ body label {
 }
 
 main {
-    height: 100vh;
+    position: relative;
     width: 100vw;
-    overflow-y: auto;
+    height: 100vh;
     overflow-x: hidden;
+    overflow-y: auto;
     scroll-snap-type: y mandatory;
     scroll-snap-stop: always;
     scroll-behavior: smooth;
@@ -39,7 +49,8 @@ main {
 
 section {
     position: relative;
-    margin: 10% 10%;
+    margin-left: 10%;
+    margin-right: 10%;
     max-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -107,6 +118,22 @@ footer p {
     position: fixed;
     bottom: 0;
     right: 2%;
+}
+
+::-webkit-scrollbar {
+    width: 2px;
+}
+
+::-webkit-scrollbar-track {
+    background: #000000;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #ffffff;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #ffffff;
 }
 
 @media only screen and  (max-width: 1200px) {
