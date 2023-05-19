@@ -1,26 +1,3 @@
-.root {
-    position: relative;
-    width: 100vw;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    overflow-x: hidden;
-    overflow-y: auto;
-    font-family: "Andika New Basic", system-ui;
-    background: var(--jet-black-color);
-    color: white;
-    scroll-snap-type: y mandatory;
-    scroll-snap-stop: always;
-    scroll-behavior: smooth;
-
-    --fair-black-color: #3B393A;
-    --turquoise-green-color: #2AB38A;
-    --poppy-red-color: #D14141;
-    --anti-flash-white-color: #F0F0F0;
-    --aquarmine-green-color: #4CE0B3;
-    --jet-black-color: #2F2D2E;
-}
-
 .container {
     position: fixed;
     margin-right: 68px;
@@ -76,22 +53,6 @@
 .home:hover::before, .about:hover::before, .experience:hover::before, .projects:hover::before, .contact:hover::before {
     transform: scaleX(1);
     transform-origin: bottom left;
-}
-
-::-webkit-scrollbar {
-    width: 2px;
-}
-
-::-webkit-scrollbar-track {
-    background: #000000;
-}
-
-::-webkit-scrollbar-thumb {
-    background: #ffffff;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: #ffffff;
 }
 
 @media only screen and (max-width: 1200px) {
@@ -157,12 +118,6 @@
 }
 
 @media only screen and (max-width: 600px) {
-    .root {
-        scroll-snap-type: none;
-        scroll-snap-stop: normal;
-        scroll-behavior: auto;
-    }
-
     .container {
         visibility: hidden;
     }

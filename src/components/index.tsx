@@ -105,7 +105,7 @@ export const Index: FC<Props> = () => {
     )
 
     return (
-        <div className={navigate.root}>
+        <>
             <header>
                 <div className={socials.container}>{socialLinks}</div>
                 <nav id="navBar" className={navigate.container}>
@@ -309,6 +309,6 @@ export const Index: FC<Props> = () => {
             </main>
 
             <footer><p>&copy; 2023 Malik Heron</p></footer>
-        </div>
+        </>
     );
 };
