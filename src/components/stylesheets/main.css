@@ -2,8 +2,7 @@ html,
 body,
 #root {
     margin: 0;
-    padding-left: 0;
-    height: auto;
+    height: 100%;
     width: 100vw;
     overflow-y: auto;
     overflow-x: hidden;
@@ -148,14 +147,6 @@ footer p {
 }
 
 @media only screen and  (max-width: 800px) {
-    h1 {
-        font-size: 1.8em;
-    }
-
-    h2 {
-        font-size: 1.2em;
-    }
-
     footer p {
         font-size: 0.9em;
     }
@@ -167,7 +158,6 @@ footer p {
     }
 
     h1 {
-        font-size: 1.2em;
         position: sticky;
         top: 0;
         width: 100%;
@@ -175,10 +165,6 @@ footer p {
         padding-top: 0.4em;
         padding-bottom: 0.4em;
         backdrop-filter: blur(5px);
-    }
-
-    h2 {
-        font-size: 1.5em;
     }
 
     main {
