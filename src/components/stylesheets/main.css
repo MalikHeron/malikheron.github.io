@@ -153,6 +153,14 @@ footer p {
 }
 
 @media only screen and (max-width: 600px) {
+    html,
+    body,
+    #root {
+        margin: auto;
+        height: auto;
+        width: auto;
+    }
+
     body.input-focused #navBar {
         display: none;
     }
