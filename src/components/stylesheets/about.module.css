@@ -10,36 +10,6 @@
     line-height: 1.6;
 }
 
-.animate {
-    animation-duration: 1s;
-}
-
-.slideInLeft.animate {
-    animation-name: slideInFromLeft;
-}
-
-.slideInRight.animate {
-    animation-name: slideInFromRight;
-}
-
-@keyframes slideInFromLeft {
-    from {
-        transform: translateX(-100%);
-    }
-    to {
-        transform: translateX(0);
-    }
-}
-
-@keyframes slideInFromRight {
-    from {
-        transform: translateX(100%);
-    }
-    to {
-        transform: translateX(0);
-    }
-}
-
 @media only screen and (max-width: 1200px) {
     .section h1 {
         font-size: 1.8em;
