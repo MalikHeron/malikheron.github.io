@@ -20,9 +20,8 @@
 }
 
 .home, .about, .experience, .projects, .contact {
-    font-size: 16px;
+    font-size: 18px;
     font-weight: bold;
-    font-family: "Andika New Basic", system-ui;
     position: relative;
     width: max-content;
     height: auto;

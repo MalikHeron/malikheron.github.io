@@ -6,7 +6,7 @@
     transform: translateY(-50%);
     width: auto;
     height: auto;
-    z-index: 2;
+    z-index: 1;
     display: flex;
 }
 
@@ -31,15 +31,8 @@
 
 @media only screen and (max-width: 1200px) {
     .container {
-        position: fixed;
         margin-right: 3%;
         top: 15%;
-        right: 0;
-        transform: translateY(-50%);
-        width: auto;
-        height: auto;
-        z-index: 2;
-        display: flex;
     }
 
     .twitterIcon, .githubIcon, .linkedinIcon, .emailIcon {
@@ -49,15 +42,8 @@
 
 @media only screen and (max-width: 800px) {
     .container {
-        position: fixed;
         margin-right: 5%;
         top: 15%;
-        right: 0;
-        transform: translateY(-50%);
-        width: auto;
-        height: auto;
-        z-index: 2;
-        display: flex;
     }
 
     .twitterIcon, .githubIcon, .linkedinIcon, .emailIcon {

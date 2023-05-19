@@ -127,9 +127,8 @@ export const Index: FC<Props> = () => {
                     <h1>Malik Heron</h1>
                     <h2>Software Developer and UX Designer</h2>
                     <p className={home.description}>
-                        Highly passionate about developing apps with
-                        modern interfaces. Always eager to learn and
-                        expand my knowledge in the field.
+                        Focused on developing modern applications with user-friendly interfaces
+                        and always eager to learn and grow in the field.
                     </p>
                 </section>
 
@@ -171,8 +170,9 @@ export const Index: FC<Props> = () => {
 
                     <h2>Languages</h2>
                     <p className={experience.description}>
-                        I strive to learn as many programming languages as possible in
-                        the areas of development that interest me. I have experience in:
+                        I am dedicated to expanding my proficiency in a diverse
+                        range of programming languages within my areas of interest
+                        in development. I have experience in:
                     </p>
                     <ul>
                         <li>C</li>
