@@ -2,6 +2,10 @@
     font-size: 2.5em;
 }
 
+.section h3:hover {
+    color: lightgrey;
+}
+
 .cardContainer {
     position: relative;
     display: flex;
