@@ -18,32 +18,45 @@ export const Index: FC<Props> = () => {
     useEffect(() => {
         const sections = document.querySelectorAll('section');
         const navLinks = document.querySelectorAll('nav li');
+        let currentSection = '';
 
         const options = {
             root: null,
             rootMargin: '0px',
-            threshold: 0.5
+            threshold: 0.5,
         };
 
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const sectionId = entry.target.id;
-                    navLinks.forEach(link => {
-                        if (link.textContent && link.textContent.toLowerCase() === sectionId.toLowerCase()) {
-                            if (!link.classList.contains(navigate.active)) {
-                                link.classList.add(navigate.active);
-                            }
-                        } else {
-                            link.classList.remove(navigate.active);
+        const observer = new IntersectionObserver(
+            entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const sectionId = entry.target.id;
+                        currentSection = sectionId;
+
+                        // Update navigate.currentHeader class
+                        const currentHeader = document.querySelector(`.${navigate.sectionHeader}`);
+                        if (currentHeader) {
+                            currentHeader.textContent = currentSection.charAt(0).toUpperCase() + currentSection.slice(1);
                         }
-                    });
-                }
-            });
-        }, options);
+
+                        navLinks.forEach(link => {
+                            if (link.textContent && link.textContent.toLowerCase() === sectionId.toLowerCase()) {
+                                if (!link.classList.contains(navigate.active)) {
+                                    link.classList.add(navigate.active);
+                                }
+                            } else {
+                                link.classList.remove(navigate.active);
+                            }
+                        });
+                    }
+                });
+            },
+            options
+        );
 
         sections.forEach(section => observer.observe(section));
     }, []);
+
 
     const handleClick = (id: string) => {
         const element = document.getElementById(id);
@@ -90,7 +103,14 @@ export const Index: FC<Props> = () => {
         <>
             <header>
                 <div className={socials.container}>{socialLinks}</div>
-                <nav id="navBar" className={navigate.container}>
+                <input className={navigate.menuToggle} type="checkbox"/>
+                <label className={navigate.menuButton} htmlFor="menuToggle">
+                    <span></span>
+                </label>
+                <div id="navContainer" className={navigate.containerM}>
+                    <h2 className={navigate.sectionHeader}/>
+                </div>
+                <nav className={navigate.container}>
                     <li id="homeTab" className={`${navigate.tab} ${navigate.active}`}
                         onClick={() => handleClick("home")}>HOME
                     </li>
