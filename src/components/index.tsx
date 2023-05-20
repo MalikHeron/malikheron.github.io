@@ -23,7 +23,7 @@ export const Index: FC<Props> = () => {
         const options = {
             root: null,
             rootMargin: '0px',
-            threshold: 0.5,
+            threshold: window.innerWidth <= 600 ? 0.3 : 0.5,
         };
 
         const observer = new IntersectionObserver(
@@ -60,6 +60,10 @@ export const Index: FC<Props> = () => {
 
     const handleClick = (id: string) => {
         const element = document.getElementById(id);
+        const checkbox = document.getElementById('checkbox') as HTMLInputElement | null;
+        if (checkbox != null) {
+            checkbox.checked = false;
+        }
 
         if (element) {
             element.scrollIntoView({behavior: "smooth"});
@@ -99,29 +103,34 @@ export const Index: FC<Props> = () => {
         </>
     )
 
+    const navLinks = (
+        <>
+            <li id="homeTab" className={`${navigate.tab} ${navigate.active}`}
+                onClick={() => handleClick("home")}>HOME
+            </li>
+            <li id="aboutTab" className={navigate.tab} onClick={() => handleClick("about")}>ABOUT</li>
+            <li id="experienceTab" className={navigate.tab}
+                onClick={() => handleClick("experience")}>EXPERIENCE
+            </li>
+            <li id="projectsTab" className={navigate.tab} onClick={() => handleClick("projects")}>PROJECTS
+            </li>
+            <li id="contactTab" className={navigate.tab} onClick={() => handleClick("contact")}>CONTACT</li>
+        </>
+    )
+
     return (
         <>
             <header>
                 <div className={socials.container}>{socialLinks}</div>
-                <input className={navigate.menuToggle} type="checkbox"/>
-                <label className={navigate.menuButton} htmlFor="menuToggle">
-                    <span></span>
-                </label>
-                <div id="navContainer" className={navigate.containerM}>
+                <div className={navigate.appBar}>
+                    <input id="checkbox" className={navigate.menuToggle} type="checkbox"/>
+                    <label className={navigate.menuButton} htmlFor="menuToggle">
+                        <span></span>
+                    </label>
                     <h2 className={navigate.sectionHeader}/>
+                    <nav className={navigate.container}>{navLinks}</nav>
                 </div>
-                <nav className={navigate.container}>
-                    <li id="homeTab" className={`${navigate.tab} ${navigate.active}`}
-                        onClick={() => handleClick("home")}>HOME
-                    </li>
-                    <li id="aboutTab" className={navigate.tab} onClick={() => handleClick("about")}>ABOUT</li>
-                    <li id="experienceTab" className={navigate.tab}
-                        onClick={() => handleClick("experience")}>EXPERIENCE
-                    </li>
-                    <li id="projectsTab" className={navigate.tab} onClick={() => handleClick("projects")}>PROJECTS
-                    </li>
-                    <li id="contactTab" className={navigate.tab} onClick={() => handleClick("contact")}>CONTACT</li>
-                </nav>
+                <nav className={navigate.container}>{navLinks}</nav>
                 <a className={navigate.resume} href="/assets/resume.pdf" target="_blank">View Resume</a>
             </header>
 

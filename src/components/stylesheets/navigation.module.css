@@ -1,3 +1,7 @@
+.appBar .container {
+    display: none;
+}
+
 .container {
     position: fixed;
     margin-right: 68px;
@@ -153,19 +157,37 @@
 }
 
 @media only screen and (max-width: 600px) {
+    .container {
+        display: none;
+    }
+
     .resume {
         display: none;
     }
 
+    .appBar {
+        position: fixed;
+        display: flex;
+        flex-direction: row;
+        width: 100vw;
+        height: 35px;
+        top: 0;
+        justify-content: center;
+        align-items: center;
+        justify-items: center;
+        padding: 10px;
+        z-index: 2;
+        backdrop-filter: blur(10px);
+    }
+
     .menuToggle {
+        position: absolute;
+        left: 30px;
         display: initial;
         opacity: 0;
-        z-index: 99;
-        position: fixed;
-        top: 25px;
-        left: 20px;
         width: 32px;
         height: 32px;
+        z-index: 5;
     }
 
     .menuToggle:checked + .menuButton > span {
@@ -187,27 +209,14 @@
     }
 
     .menuButton {
-        position: fixed;
+        position: absolute;
         top: 25px;
-        left: 20px;
+        left: 30px;
         width: 32px;
-        height: 32px;
+        height: max-content;
         cursor: pointer;
         background-color: transparent;
-        z-index: 98;
-    }
-
-    .sectionHeader {
-        display: initial;
-        position: fixed;
-        top: 0;
-        left: 40%;
-        transform: translateX(-50%);
-        width: 32px;
-        height: 32px;
-        font-size: 1.5em;
-        font-weight: bold;
-        color: var(--aquarmine-green-color);
+        z-index: 2;
     }
 
     .menuButton > span,
@@ -223,40 +232,41 @@
 
     .menuButton > span::before {
         content: '';
-        top: -8px;
+        top: 8px;
     }
 
     .menuButton > span::after {
         content: '';
-        top: 8px;
+        top: 16px;
     }
 
-    .container {
-        display: block;
-        position: fixed;
+    .sectionHeader {
+        display: initial;
+        position: relative;
+        width: auto;
+        height: auto;
+        font-size: 1.5em;
+        font-weight: bold;
+        color: var(--aquarmine-green-color);
+    }
+
+    .appBar .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
         top: 0;
         left: -100%;
         width: 100%;
         height: 100vh;
-        margin: 0;
-        padding-top: 50%;
         list-style: none;
-        background-color: transparent;
+        background-color: var(--jet-black-color);
         backdrop-filter: blur(4px);
         transition-duration: .25s;
         right: initial;
         transform: translateY(0);
-        z-index: 2;
-    }
-
-    .containerM {
-        position: fixed;
-        width: 100vw;
-        height: 35px;
-        top: 0;
-        padding: 10px;
-        z-index: 2;
-        backdrop-filter: blur(4px);
+        z-index: 1;
     }
 
     .tab {
@@ -267,9 +277,8 @@
         font-weight: 600;
         text-decoration: none;
         transition-duration: .25s;
-        margin: 0 auto;
-        vertical-align: center;
     }
+
 
     .active {
         color: var(--jet-black-color);
