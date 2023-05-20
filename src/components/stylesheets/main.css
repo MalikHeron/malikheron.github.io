@@ -4,8 +4,6 @@ body,
     margin: 0;
     padding: 0;
     min-height: 100vh;
-    display: flex;
-    flex-basis: 100%;
     width: 100vw;
     height: auto;
     overflow-y: auto;
@@ -162,16 +160,12 @@ footer p {
     }
 
     h1 {
-        position: sticky;
-        top: 0;
-        width: 100%;
-        margin-right: -30px;
-        padding-top: 0.4em;
         padding-bottom: 0.4em;
-        backdrop-filter: blur(5px);
+        padding-top: 0.4em;
     }
 
     main {
+        height: auto;
         scroll-snap-type: none;
         scroll-snap-stop: normal;
         scroll-behavior: auto;
@@ -180,6 +174,8 @@ footer p {
     section {
         height: auto;
         margin: auto;
+        padding-left: 20px;
+        padding-right: 20px;
         max-height: none;
     }
 
