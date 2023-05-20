@@ -12,6 +12,7 @@
 
 .containerM {
     position: relative;
+    margin: 20px auto;
     width: auto;
     height: auto;
     display: none;
@@ -65,5 +66,10 @@
 
     .container {
         display: none;
+    }
+
+    .twitterIcon, .githubIcon, .linkedinIcon, .emailIcon {
+        font-size: 32px;
+        padding: 6px;
     }
 }

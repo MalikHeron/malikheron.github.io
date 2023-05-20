@@ -235,7 +235,6 @@ export const Index: FC<Props> = () => {
                 <section id="contact" className={contact.section}>
                     <h1>Contact</h1>
                     <h2>Let's Get In Touch</h2>
-                    <div className={socials.containerM}>{socialLinks}</div>
                     <h3>I look forward to hearing from you.</h3>
                     <form
                         action="https://formsubmit.co/malik.heron2001@gmail.com"
@@ -279,6 +278,7 @@ export const Index: FC<Props> = () => {
                         <input name="_captcha" type="hidden" value="true"/>
                         <input className={form.submit} type="submit" value="Submit"/>
                     </form>
+                    <div className={socials.containerM}>{socialLinks}</div>
                     <p>&copy; 2023 Malik Heron</p>
                 </section>
             </main>
