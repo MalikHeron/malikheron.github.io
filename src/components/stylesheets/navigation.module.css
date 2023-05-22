@@ -279,7 +279,6 @@
         transition-duration: .25s;
     }
 
-
     .active {
         color: var(--jet-black-color);
     }
