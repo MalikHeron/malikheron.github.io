@@ -1,5 +1,6 @@
 import React, {useEffect} from 'react';
 import type {FC} from 'react';
+import {Projects} from './projects';
 
 import navigate from './stylesheets/navigation.module.css';
 import home from './stylesheets/home.module.css';
@@ -9,6 +10,7 @@ import about from './stylesheets/about.module.css';
 import contact from './stylesheets/contact.module.css';
 import form from './stylesheets/form.module.css';
 import socials from './stylesheets/socials.module.css';
+import style from "./stylesheets/projects.module.css";
 
 interface Props {
     className?: string;
@@ -23,7 +25,7 @@ export const Index: FC<Props> = () => {
         const options = {
             root: null,
             rootMargin: '0px',
-            threshold: window.innerWidth <= 600 ? 0.3 : 0.5,
+            threshold: window.innerWidth <= 600 ? 0.7 : 0.5,
         };
 
         const observer = new IntersectionObserver(
@@ -207,58 +209,7 @@ export const Index: FC<Props> = () => {
 
                 <section id="projects" className={projects.section}>
                     <h1>Projects</h1>
-                    <div className={projects.cardContainer}>
-                        <div className={projects.card}>
-                            <img className={projects.icon} src={'/assets/best_tv.jpg'} alt={"best tv logo"}/>
-                            <div className={projects.textGroup}>
-                                <h3 className={projects.cardTitle}>Best TV Communications Mobile App</h3>
-                                <p className={projects.cardDescription}>
-                                    Best TV Communications is an ISP based in Trelawny, Jamaica.
-                                    I was tasked with the job of creating a mobile application to
-                                    make payments and communication easier with their clients.
-                                    Features include a service overview, bill payment system, data
-                                    usage visualization, a support chat and an outage map.
-                                </p>
-                                <ul className={projects.cardTags}>
-                                    <li>Firebase</li>
-                                    <li>Kotlin</li>
-                                    <li>XML</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div className={projects.card}>
-                            <img className={projects.icon} src={'/assets/alarm.png'} alt={"dlt logo"}/>
-                            <div className={projects.cardDetails}>
-                                <h3 className={projects.cardTitle}>Download Time Calculator</h3>
-                                <p className={projects.cardDescription}>
-                                    A personal project built for calculating download times
-                                    using a set of download speeds and sizes.
-                                </p>
-                                <ul className={projects.cardTags}>
-                                    <li>Dart</li>
-                                    <li>Flutter</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div className={projects.card}>
-                            <img className={projects.icon} src={'/assets/konnect.jpg'} alt={"konnect logo"}/>
-                            <div className={projects.cardDetails}>
-                                <h3 className={projects.cardTitle}>Konnect Mobile App</h3>
-                                <p className={projects.cardDescription}>
-                                    A personal project built for communicating with others
-                                    via the internet. Features include media upload and download, messaging, posting,
-                                    sharing of location etc.
-                                </p>
-                                <ul className={projects.cardTags}>
-                                    <li>Dart</li>
-                                    <li>Firebase</li>
-                                    <li>Flutter</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+                    <div className={style.cardContainer}><Projects/></div>
                 </section>
 
                 <section id="contact" className={contact.section}>
