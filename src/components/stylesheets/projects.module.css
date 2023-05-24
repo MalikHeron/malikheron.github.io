@@ -71,7 +71,7 @@
     flex-direction: row;
     width: max-content;
     height: max-content;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     grid-gap: 8px;
     gap: 8px;
     padding-inline-start: 0;
@@ -83,7 +83,7 @@
     color: var(--jet-black-color);
     padding: 4px 12px;
     border-radius: 15px;
-    font-size: 1em;
+    font-size: 0.9em;
 }
 
 .icon {
