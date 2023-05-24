@@ -50,7 +50,12 @@ export const Projects = () => {
                 <div className={style.card} key={project.id}>
                     <img className={style.icon} src={`assets/${project.icon}`} alt={project.title}/>
                     <div className={style.textGroup}>
-                        <h3 className={style.cardTitle}>{project.title}</h3>
+                        <span className={style.cardTitle}>
+                            <h3 className={style.titleText}>{project.title}</h3>
+                            <span className={style.arrow}>
+                                <i className="fa-solid fa-arrow-right"></i>
+                            </span>
+                        </span>
                         <p className={style.cardDescription}>{project.description}</p>
                         <ul className={style.cardTags}>
                             {project.tags.map(tag => <li key={tag}>{tag}</li>)}
