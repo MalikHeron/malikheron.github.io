@@ -1,0 +1,32 @@
+.SocialLinks {
+   display: flex;
+   position: fixed;
+   margin-right: 2%;
+   top: 20%;
+   right: 0;
+   transform: translateY(-50%);
+   z-index: 1;
+
+   @media screen and (max-width: 1024px) {
+      position: relative;
+      top: unset;
+      right: unset;
+      transform: none;
+      margin-right: initial;
+      text-align: center;
+      margin-bottom: 1em;
+   }
+
+   i {
+      color: var(--aquamarine-green-color);
+      font-size: 28px;
+      position: relative;
+      padding: 0.2em;
+      cursor: pointer;
+
+      &:hover {
+         transform: scale(1.2);
+         color: white;
+      }
+   }
+}
