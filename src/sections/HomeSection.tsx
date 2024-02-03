@@ -2,7 +2,7 @@ import '@styles/HomeSection.scss';
 
 function HomeSection() {
    return (
-      <section id='home' className='HomeSection' data-bs-spy="scroll" data-bs-target="#navbar">
+      <section id='home' className='HomeSection'>
          <h1 id="title">Malik Heron</h1>
          <h2>Software Developer and UX Designer</h2>
          <p className='description'>
