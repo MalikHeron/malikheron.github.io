@@ -8,6 +8,7 @@ interface Project {
    title: string;
    description: string;
    tags: string[];
+   link: string;
 }
 
 export function ProjectSection() {
@@ -40,7 +41,7 @@ export function ProjectSection() {
                   <img className='icon' src={`assets/${project.icon}`} alt={project.title} />
                   <div className='content'>
                      <div className='card-header'>
-                        <h3 className='card-title'>{project.title}</h3>
+                        <a className='title' href={project.link} target='_blank'>{project.title}</a>
                         <span className='arrow'>
                            <i className="fa-solid fa-arrow-right"></i>
                         </span>
