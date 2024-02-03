@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { BrowserRouter } from 'react-router-dom'
 import 'font-awesome/css/font-awesome.min.css'
 import "@fontsource/kaushan-script";
 import "@fontsource/lilita-one";
