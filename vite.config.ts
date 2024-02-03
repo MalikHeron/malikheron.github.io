@@ -1,8 +1,16 @@
-import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react';
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+import { ViteAliases } from 'vite-aliases'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  server: { watch: { awaitWriteFinish: true } },
-  plugins: [react()],
-});
+   plugins: [
+      react(),
+      ViteAliases({
+         createGlobalAlias: false,
+         useConfig: true,
+         deep: false,
+         prefix: '@'
+      }),
+   ],
+})
