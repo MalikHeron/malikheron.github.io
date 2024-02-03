@@ -46,11 +46,14 @@ function Navbar() {
       }
    }
 
-   const toggleNavbar = () => {
+   const toggleNavbar = (id: string) => {
       if (window.matchMedia("screen and (min-width: 600px)").matches)
          return
       const btn = document.getElementsByClassName('navbar-toggler')[0] as HTMLButtonElement
       btn.click()
+      setTimeout(() => {
+         handleClick(id)
+      }, 400);
    }
 
    return (
@@ -72,18 +75,10 @@ function Navbar() {
                </button>
                <div className="collapse navbar-collapse" id="navbarToggler">
                   <ul className="navbar-nav">
-                     <li className='nav-item' onClick={() => toggleNavbar()}>
-                        <a href='#about' className='nav-link'>About</a>
-                     </li>
-                     <li className='nav-item' onClick={() => toggleNavbar()}>
-                        <a href='#experience' className='nav-link'>Experience</a>
-                     </li>
-                     <li className='nav-item' onClick={() => toggleNavbar()}>
-                        <a href='#projects' className='nav-link'>Projects</a>
-                     </li>
-                     <li className='nav-item' onClick={() => toggleNavbar()}>
-                        <a href='#contact' className='nav-link'>Contact</a>
-                     </li>
+                     <li className='nav-link' onClick={() => toggleNavbar("about")}>About</li>
+                     <li className='nav-link' onClick={() => toggleNavbar("experience")}>Experience</li>
+                     <li className='nav-link' onClick={() => toggleNavbar("projects")}>Projects</li>
+                     <li className='nav-link' onClick={() => toggleNavbar("contact")}>Contact</li>
                   </ul>
                </div>
             </div>
