@@ -92,16 +92,4 @@
          color: var(--jet-black-color);
       }
    }
-
-   .resume:hover {
-      -moz-box-shadow: 0 0 5px #00000040;
-      -webkit-box-shadow: 0 0 5px #00000040;
-      box-shadow: 0 0 5px #00000040;
-   }
-
-   .resume:active {
-      box-shadow: 0 5px 4px 0 #00000040;
-      transition-duration: 0.2s;
-      transform: translateY(10%);
-   }
 }
