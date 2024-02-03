@@ -6,7 +6,7 @@ function Navbar() {
    useEffect(() => {
       const sections = document.querySelectorAll('section');
       const navLinks = document.querySelectorAll('nav li');
-      let currentSection = '';
+      //let currentSection = '';
 
       const options = {
          root: null,
@@ -19,7 +19,7 @@ function Navbar() {
             entries.forEach(entry => {
                if (entry.isIntersecting) {
                   const sectionId = entry.target.id;
-                  currentSection = sectionId;
+                  //currentSection = sectionId;
 
                   navLinks.forEach(link => {
                      if (link.textContent && link.textContent.toLowerCase() === sectionId.toLowerCase()) {
