@@ -1,5 +1,4 @@
 import '@styles/components/Navbar.scss';
-import SocialLinks from './SocialLinks';
 import { useEffect } from 'react';
 
 function Navbar() {
