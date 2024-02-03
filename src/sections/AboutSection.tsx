@@ -2,7 +2,7 @@ import '@styles/AboutSection.scss';
 
 function AboutSection() {
    return (
-      <section id='about' className='AboutSection' data-bs-spy="scroll" data-bs-target="#navbar" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true">
+      <section id='about' className='AboutSection'>
          <h1>About Me</h1>
          <p className='description'>
             As a passionate problem-solver, I thrive on the challenge of
