@@ -1,9 +1,6 @@
 .ProjectSection {
 
    h1 {
-      font-size: 2.5em;
-      margin-bottom: 0.5em;
-
       @media screen and (max-width: 600px) {
          margin-top: 1.5em;
          font-size: 2em;
@@ -113,19 +110,21 @@
    .card-tags {
       display: flex;
       flex-direction: row;
-      width: fit-content;
-      height: max-content;
+      flex-wrap: wrap;
+      max-width: 100%;
       grid-gap: 8px;
       gap: 8px;
       padding-inline-start: 0;
 
       li {
+         max-width: fit-content;
+         max-height: fit-content;
          list-style: none;
          background-color: var(--aquamarine-green-color);
          color: var(--jet-black-color);
          padding: 4px 12px;
          border-radius: 15px;
-         font-size: 0.9em;
+         font-size: 0.8em;
       }
    }
 
@@ -133,8 +132,6 @@
       margin: 10px;
       max-width: 78px;
       max-height: 122px;
-      height: auto;
-      width: auto;
       display: block;
       background-position: center;
       background-repeat: no-repeat;

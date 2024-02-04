@@ -1,15 +1,5 @@
 .ContactSection {
 
-   h1 {
-      font-size: 2.5em;
-      margin-bottom: 0.5em;
-
-      @media screen and (max-width: 600px) {
-         margin-top: 1.5em;
-         font-size: 2em;
-      }
-   }
-
    h2 {
       font-size: 1.2em;
    }
@@ -18,12 +8,9 @@
       font-size: 1.1em;
       font-weight: normal;
       align-self: self-start;
+      color: var(--silver-color);
    }
-
-   p {
-      display: none;
-   }
-
+   
    .group {
       display: flex;
       flex-direction: column;
