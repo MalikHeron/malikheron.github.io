@@ -1,7 +1,15 @@
 .ContactSection {
 
+   @media screen and (max-width: 600px) {
+      margin-bottom: 0;
+   }
+
    h2 {
       font-size: 1.2em;
+
+      @media screen and (max-width: 600px) {
+         text-align: center;
+      }
    }
 
    h3 {
@@ -9,13 +17,17 @@
       font-weight: normal;
       align-self: self-start;
       color: var(--silver-color);
+
+      @media screen and (max-width: 600px) {
+         text-align: center;
+      }
    }
-   
+
    .group {
       display: flex;
       flex-direction: column;
       margin-bottom: 0.5em;
-      
+
       @media screen and (max-width: 600px) {
          display: flex;
          flex-direction: column;

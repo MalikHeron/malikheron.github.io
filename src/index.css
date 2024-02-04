@@ -76,9 +76,8 @@ section {
    @media screen and (max-width: 600px) {
       height: auto;
       margin: auto;
-      max-width: 80%;
-      max-height: none;
-      margin-bottom: 2em;
+      max-width: 90%;
+      margin-bottom: 5em;
    }
 
    h1 {

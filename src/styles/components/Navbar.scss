@@ -1,11 +1,14 @@
 .Navbar {
 
-   .container-fluid {
+   .navbar {
       display: none;
-      background-color: var(--jet-black-color);
 
-      .navbar {
-         background-color: var(--jet-black-color);
+      &.bg-body-tertiary {
+         background-color: var(--jet-black-color) !important;
+
+         .container-fluid {
+            background-color: var(--jet-black-color);
+         }
       }
 
       @media screen and (max-width: 600px) {
@@ -53,7 +56,7 @@
          border-radius: 8px;
       }
 
-      @media screen and (max-width: 600px){
+      @media screen and (max-width: 600px) {
          display: none;
       }
    }
