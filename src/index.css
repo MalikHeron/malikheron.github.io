@@ -131,11 +131,6 @@ footer p {
    right: 2%;
 }
 
-::placeholder {
-   color: darkgray;
-   opacity: 1;
-}
-
 @media screen and (min-width: 600px) {
    ::-webkit-scrollbar {
       width: 2px;
@@ -154,19 +149,7 @@ footer p {
    }
 }
 
-@media only screen and (max-width: 1200px) {
-   footer p {
-      font-size: 1em;
-   }
-}
-
-@media only screen and (max-width: 800px) {
-   footer p {
-      font-size: 0.9em;
-   }
-}
-
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 1024px) {
    footer p {
       position: relative;
       bottom: unset;

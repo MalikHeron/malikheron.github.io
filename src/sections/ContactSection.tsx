@@ -8,20 +8,17 @@ function ContactSection() {
    return (
       <section id='contact' className="ContactSection">
          <h1>Contact</h1>
-         <SocialLinks />
+         <h2>Let's Get In Touch</h2>
+         <h3>I look forward to hearing from you.</h3>
          <form
             action="https://formsubmit.co/malik.heron2001@gmail.com"
             method="post"
          >
-            <div className="row g-1">
-               <h2>Let's Get In Touch</h2>
-               <h3>I look forward to hearing from you.</h3>
-            </div>
             {/* Full Name */}
             <div className="group">
                <input
                   type="text"
-                  className="form-control mb-2"
+                  className="form-control"
                   name="name"
                   id="name"
                   placeholder="Your name"
@@ -40,14 +37,16 @@ function ContactSection() {
             {/* Message */}
             <textarea
                className="form-control mb-3"
+               name="message"
                id="message"
                placeholder="Write something..."
                rows={1}
                required>
             </textarea>
             <input name="_captcha" type="hidden" value="true" />
-            <input className='submit' type="submit" value="Submit" />
+            <button className='submit' type="submit">Submit</button>
          </form>
+         <SocialLinks />
          <footer><p>&copy; {currentYear} Malik Heron</p></footer>
       </section >
    );
