@@ -13,7 +13,7 @@ function ContactSection() {
             action="https://formsubmit.co/malik.heron2001@gmail.com"
             method="post"
          >
-            <div className="row g-3">
+            <div className="row g-1">
                <h2>Let's Get In Touch</h2>
                <h3>I look forward to hearing from you.</h3>
             </div>
