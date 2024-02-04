@@ -6,7 +6,7 @@ function Navbar() {
    useEffect(() => {
       const sections = document.querySelectorAll('section');
       const navLinks = document.querySelectorAll('nav li');
-      //let currentSection = '';
+      let currentSection = '';
 
       const options = {
          root: null,
@@ -19,7 +19,13 @@ function Navbar() {
             entries.forEach(entry => {
                if (entry.isIntersecting) {
                   const sectionId = entry.target.id;
-                  //currentSection = sectionId;
+                  currentSection = sectionId;
+
+                  // Update navigate.currentHeader class
+                  const currentHeader = document.querySelector(`.sectionHeader`);
+                  if (currentHeader) {
+                     currentHeader.textContent = currentSection.charAt(0).toUpperCase() + currentSection.slice(1);
+                  }
 
                   navLinks.forEach(link => {
                      if (link.textContent && link.textContent.toLowerCase() === sectionId.toLowerCase()) {
@@ -68,8 +74,9 @@ function Navbar() {
          <nav className="navbar fixed-top bg-body-tertiary">
             <div className="container-fluid">
                <a className="navbar-brand" onClick={() => handleClick("home")}>
-                  <img src="assets/logo_fire.png" alt="Logo" width="40" height="40"/>
+                  <img src="assets/logo_fire.png" alt="Logo" width="40" height="40" />
                </a>
+               <h5 className='sectionHeader'/>
                <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
                   <span className="navbar-toggler-icon"></span>
                </button>
