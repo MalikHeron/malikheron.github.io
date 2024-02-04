@@ -65,9 +65,9 @@ function Navbar() {
             <li id="projectsTab" className='tab' onClick={() => handleClick("projects")}>PROJECTS</li>
             <li id="contactTab" className='tab' onClick={() => handleClick("contact")}>CONTACT</li>
          </nav>
-         <nav className="navbar sticky-top bg-body-tertiary">
+         <nav className="navbar fixed-top bg-body-tertiary">
             <div className="container-fluid">
-               <a href="#home" className="navbar-brand">
+               <a className="navbar-brand" onClick={() => handleClick("home")}>
                   <img src="assets/logo_fire.png" alt="Logo" width="40" height="40"/>
                </a>
                <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
