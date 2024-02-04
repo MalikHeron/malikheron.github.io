@@ -13,20 +13,22 @@
          height: auto;
       }
 
-      &::-webkit-scrollbar {
-         width: 2px;
-      }
+      @media screen and (min-width: 600px) {
+         &::-webkit-scrollbar {
+            width: 2px;
+         }
 
-      &::-webkit-scrollbar-track {
-         background: var(--jet-black-color);
-      }
+         &::-webkit-scrollbar-track {
+            background: var(--jet-black-color);
+         }
 
-      &::-webkit-scrollbar-thumb {
-         background: var(--aquamarine-green-color);
-      }
+         &::-webkit-scrollbar-thumb {
+            background: var(--aquamarine-green-color);
+         }
 
-      &::-webkit-scrollbar-thumb:hover {
-         background: #ffffff;
+         &::-webkit-scrollbar-thumb:hover {
+            background: #ffffff;
+         }
       }
    }
 

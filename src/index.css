@@ -136,7 +136,7 @@ footer p {
    opacity: 1;
 }
 
-@media screen and (min-width: 850px) {
+@media screen and (min-width: 600px) {
    ::-webkit-scrollbar {
       width: 2px;
    }
