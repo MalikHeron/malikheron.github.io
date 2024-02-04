@@ -5,8 +5,6 @@ import AboutSection from '@sections/AboutSection';
 import HomeSection from '@sections/HomeSection';
 
 export function App() {
-   const currentYear = new Date().getFullYear();
-
    return (
       <>
          <HomeSection />
@@ -14,7 +12,6 @@ export function App() {
          <ExperienceSection />
          <ProjectSection />
          <ContactSection />
-         <footer><p>&copy; {currentYear} Malik Heron</p></footer>
       </>
    );
 };

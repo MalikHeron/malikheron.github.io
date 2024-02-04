@@ -3,6 +3,8 @@ import SocialLinks from '@components/SocialLinks';
 
 function ContactSection() {
 
+   const currentYear = new Date().getFullYear();
+
    return (
       <section id='contact' className="ContactSection">
          <h1>Contact</h1>
@@ -46,6 +48,7 @@ function ContactSection() {
             <input name="_captcha" type="hidden" value="true" />
             <input className='submit' type="submit" value="Submit" />
          </form>
+         <footer><p>&copy; {currentYear} Malik Heron</p></footer>
       </section >
    );
 }
