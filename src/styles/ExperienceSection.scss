@@ -35,30 +35,32 @@
    }
 
    .resume {
-      position: fixed;
+      //position: fixed;
       font-size: 1em;
-      margin-right: 2%;
-      bottom: 10%;
-      right: 0;
+      //margin-right: 2%;
+      //bottom: 10%;
+      //right: 0;
       background-color: var(--aquamarine-green-color);
       color: var(--jet-black-color);
       padding: 0.5em;
       border: none;
-      border-radius: 4px;
+      border-radius: 8px;
       cursor: pointer;
       text-align: center;
       justify-content: center;
       text-decoration: none;
       font-weight: bold;
-      z-index: 1;
+      //z-index: 0;
+      margin-top: 1em;
+      //z-index: 1;
 
-      @media screen and (max-width: 1024px) {
+      /*@media screen and (min-width: 1024px) {
          position: relative;
          bottom: unset;
          right: unset;
          z-index: 0;
          margin-top: 1em;
-      }
+      }*/
 
       &:active {
          box-shadow: 0 5px 4px 0 #00000040;

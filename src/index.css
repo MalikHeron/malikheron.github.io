@@ -59,19 +59,20 @@ section {
    margin-left: 5%;
    margin-right: 5%;
    max-height: 100vh;
-   max-width: 80%;
+   max-width: 100%;
    display: flex;
    flex-direction: column;
    justify-content: center;
    align-items: flex-start;
    height: 100vh;
    scroll-snap-align: start;
+   align-items: center;
 
-   @media screen and (max-width: 1024px) {
+   /*@media screen and (max-width: 1024px) {
       align-items: center;
       margin-right: 10%;
       margin-left: 10%;
-   }
+   }*/
 
    @media screen and (max-width: 600px) {
       height: auto;
@@ -137,11 +138,12 @@ footer p {
    }
 
    ::-webkit-scrollbar-track {
-      background: #000000;
+      background: var(--jet-black-color);
    }
 
    ::-webkit-scrollbar-thumb {
       background: #ffffff;
+      border-radius: 50px;
    }
 
    ::-webkit-scrollbar-thumb:hover {

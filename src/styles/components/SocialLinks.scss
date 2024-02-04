@@ -1,20 +1,21 @@
 .SocialLinks {
    display: flex;
-   position: fixed;
-   margin-right: 2%;
-   top: 20%;
-   right: 0;
-   transform: translateY(-50%);
-   z-index: 1;
+   //position: fixed;
+   //margin-right: 2%;
+   //top: 20%;
+   //right: 0;
+   //transform: translateY(-50%);
+   //z-index: 1;
+   text-align: center;
 
-   @media screen and (max-width: 1024px) {
+   /*@media screen and (min-width: 1024px) {
       position: relative;
       top: unset;
       right: unset;
       transform: none;
       margin-right: initial;
       text-align: center;
-   }
+   }*/
 
    i {
       color: var(--aquamarine-green-color);
