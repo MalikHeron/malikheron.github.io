@@ -17,27 +17,41 @@
    }
 
    .nav-container {
-      position: fixed;
+      /*position: fixed;
       margin-right: 2%;
       top: 45%;
       right: 0;
       transform: translateY(-50%);
       background-color: transparent;
       display: block;
+      z-index: 1;*/
+
+      position: fixed;
+      display: flex;
+      width: fit-content;
+      background-color: var(--fair-black-color);
+      padding: 0.5em;
+      top: auto;
+      bottom: -1%;
+      left: 50%;
+      margin-right: 0;
+      right: 0;
+      transform: translate(-50%, -50%);
+      border-radius: 8px;
       z-index: 1;
 
-      @media screen and (max-width: 1024px) {
+      /*@media screen and (min-width: 1024px) {
          display: flex;
          width: fit-content;
          background-color: var(--fair-black-color);
          padding: 0.5em;
          top: auto;
-         bottom: 1%;
+         bottom: -2%;
          left: 50%;
          margin-right: 0;
          transform: translate(-50%, -50%);
          border-radius: 8px;
-      }
+      }*/
 
       @media screen and (max-width: 600px) {
          display: none;
@@ -46,10 +60,9 @@
 
    .active {
       content: "";
-      color: var(--jet-black-color);
       background-color: var(--aquamarine-green-color);
       position: absolute;
-      border-radius: 3px;
+      border-radius: 8px;
 
       @media screen and (max-width: 1024px) {
          border-radius: 8px;
@@ -62,10 +75,11 @@
 
    .tab {
       font-size: 1.1em;
-      font-weight: bold;
       position: relative;
       width: max-content;
-      padding: 0.1em;
+      padding: 0.2em;
+      padding-left: 0.5em;
+      padding-right: 0.5em;
       cursor: pointer;
       list-style: none;
       color: white;
@@ -77,19 +91,21 @@
 
       &::before {
          content: "";
+         display: none;
          width: 60px;
-         height: 1px;
+         height: 2px;
          background-color: var(--aquamarine-green-color);
          position: absolute;
+         border-radius: 8px;
          top: 50%;
          left: -60px;
          transform: scaleX(0.5);
          transform-origin: bottom left;
          transition: transform 0.5s ease-out;
 
-         @media screen and (max-width: 1024px) {
+         /*@media screen and (max-width: 1024px) {
             display: none;
-         }
+         }*/
       }
 
       &:hover::before {
@@ -99,6 +115,7 @@
 
       &.active {
          color: var(--jet-black-color);
+         font-weight: bold;
       }
 
       &.active::before {
