@@ -19,6 +19,7 @@ function ExperienceSection() {
                      <li>Prolog</li>
                      <li>Python</li>
                      <li>SQL</li>
+                     <li>TypeScript</li>
                   </ul>
                </div>
                <div className="col">
