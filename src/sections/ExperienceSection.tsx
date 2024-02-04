@@ -4,36 +4,42 @@ function ExperienceSection() {
    return (
       <section id='experience' className='ExperienceSection'>
          <h1>Experience</h1>
-         <div className="row g-1 content">
-            <div className="row g-1">
-               <h2 className='row'>Languages</h2>
-               <p className='description'>
-                  I am dedicated to expanding my proficiency in a diverse
-                  range of programming languages within my areas of interest
-                  in development. I have experience in:
-               </p>
-            </div>
-            <ul className='tags'>
-               <li>C</li>
-               <li>C++</li>
-               <li>CSS</li>
-               <li>HTML</li>
-               <li>Java</li>
-               <li>Kotlin</li>
-               <li>Python</li>
-               <li>SQL</li>
-               <li>XML</li>
-            </ul>
-
-            <div className="row g-1">
-               <h2 className='row'>Focus</h2>
-               <p className='description'>
-                  I am currently focused on mobile and web development, while
-                  continuously expanding my knowledge in UX and UI design. I
-                  believe that having a strong understanding of user experience
-                  and user interface design is crucial in creating successful and
-                  user-friendly applications.
-               </p>
+         <div className="content mt-2">
+            {/* Skills */}
+            <div className="row g-2">
+               <div className="col">
+                  <h5>Languages</h5>
+                  <ul className='tags'>
+                     <li>C++</li>
+                     <li>CSS/Sass</li>
+                     <li>HTML</li>
+                     <li>Java</li>
+                     <li>JavaScript</li>
+                     <li>Kotlin</li>
+                     <li>Prolog</li>
+                     <li>Python</li>
+                     <li>SQL</li>
+                  </ul>
+               </div>
+               <div className="col">
+                  <h5>Frameworks</h5>
+                  <ul className='tags'>
+                     <li>Bootstrap</li>
+                     <li>Express</li>
+                     <li>React</li>
+                  </ul>
+               </div>
+               <div className="col">
+                  <h5>Tools</h5>
+                  <ul className='tags'>
+                     <li>Android Studio</li>
+                     <li>Git</li>
+                     <li>IntelliJ IDEA</li>
+                     <li>PyCharm</li>
+                     <li>Visual Studio Code</li>
+                     <li>WebStorm</li>
+                  </ul>
+               </div>
             </div>
          </div>
          <a className='resume' href="/assets/resume.pdf" target="_blank">View Resume</a>

@@ -21,6 +21,7 @@ body,
    --anti-flash-white-color: #F0F0F0;
    --aquamarine-green-color: #4CE0B3;
    --jet-black-color: #2F2D2E;
+   --silver-color: #CDCDCD;
    --semi-transparent: rgba(0, 0, 0, 9);
 }
 
@@ -86,8 +87,10 @@ section {
       display: block;
       font-weight: bold;
       font-size: 2.5em;
-      margin-block-start: 0.1em;
-      margin-block-end: 0.1em;
+
+      @media screen and (max-width: 600px) {
+         font-size: 2em;
+      }
    }
 
    h2 {
@@ -113,16 +116,6 @@ section {
       margin-block-start: 1em;
       margin-block-end: 1em;
       color: white;
-   }
-
-   ul {
-      display: flex;
-      flex-direction: column;
-      flex-wrap: wrap;
-      width: clamp(100px, 300px, 500px);
-      height: 100px;
-      list-style-type: disc;
-      margin-block-start: 0;
    }
 
    input,
