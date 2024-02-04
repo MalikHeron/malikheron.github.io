@@ -1,17 +1,19 @@
 .ExperienceSection {
 
+   h2 {
+      font-size: 1.2em;
+      font-family: Inter, system-ui;
+   }
+
    .content {
       width: 70%;
 
       .content-header {
          display: flex;
       }
+
       @media screen and (max-width: 1024px) {
          max-width: 100%;
-      }
-
-      @media screen and (max-width: 600px) {
-         margin-bottom: 1em;
       }
    }
 

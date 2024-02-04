@@ -8,7 +8,7 @@ function ExperienceSection() {
             {/* Skills */}
             <div className="row g-2">
                <div className="col">
-                  <h5>Languages</h5>
+                  <h2>Languages</h2>
                   <ul className='tags'>
                      <li>C++</li>
                      <li>CSS/Sass</li>
@@ -23,7 +23,7 @@ function ExperienceSection() {
                   </ul>
                </div>
                <div className="col">
-                  <h5>Frameworks</h5>
+                  <h2>Frameworks</h2>
                   <ul className='tags'>
                      <li>Bootstrap</li>
                      <li>Express</li>
@@ -31,7 +31,7 @@ function ExperienceSection() {
                   </ul>
                </div>
                <div className="col">
-                  <h5>Tools</h5>
+                  <h2>Tools</h2>
                   <ul className='tags'>
                      <li>Android Studio</li>
                      <li>Git</li>
