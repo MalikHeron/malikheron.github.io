@@ -45,8 +45,8 @@
       //margin-right: 2%;
       //bottom: 10%;
       //right: 0;
-      background-color: var(--aquamarine-green-color);
-      color: var(--jet-black-color);
+      //background-color: var(--aquamarine-green-color);
+      color: var(--anti-flash-white-color);
       padding: 0.5em;
       padding-right: 0.8em;
       border: none;
@@ -70,17 +70,18 @@
 
       &:hover {
          cursor: pointer;
+         color: var(--aquamarine-green-color);
 
          .arrow i {
-            transform: translate(5px);
-            transition: transform 0.25s ease-out;
+            transform: translate(8px);
+            transition: transform 0.1s ease-in-out;
          }
       }
 
       &:active {
-         box-shadow: 0 5px 4px 0 #00000040;
-         transition-duration: 0.2s;
-         transform: translateY(4px);
+         //box-shadow: 0 5px 4px 0 #00000040;
+         //transition-duration: 0.2s;
+         //transform: translateY(4px);
       }
    }
 }
