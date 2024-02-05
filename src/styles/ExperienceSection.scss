@@ -34,6 +34,11 @@
       }
    }
 
+   .arrow i {
+      margin-left: 0.5em;
+      transition: transform 0.25s ease-in;
+   }
+
    .resume {
       //position: fixed;
       font-size: 1em;
@@ -43,6 +48,7 @@
       background-color: var(--aquamarine-green-color);
       color: var(--jet-black-color);
       padding: 0.5em;
+      padding-right: 0.8em;
       border: none;
       border-radius: 8px;
       cursor: pointer;
@@ -61,6 +67,15 @@
          z-index: 0;
          margin-top: 1em;
       }*/
+
+      &:hover {
+         cursor: pointer;
+
+         .arrow i {
+            transform: translate(5px);
+            transition: transform 0.25s ease-out;
+         }
+      }
 
       &:active {
          box-shadow: 0 5px 4px 0 #00000040;
