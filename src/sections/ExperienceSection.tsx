@@ -6,7 +6,7 @@ function ExperienceSection() {
          <h1>Experience</h1>
          <div className="content mt-2">
             {/* Skills */}
-            <div className="row g-2">
+            <div className="row">
                <div className="col">
                   <h2>Languages</h2>
                   <ul className='tags'>
@@ -43,7 +43,12 @@ function ExperienceSection() {
                </div>
             </div>
          </div>
-         <a className='resume' href="/assets/resume.pdf" target="_blank">View Resume</a>
+         <a className='resume' href="/assets/resume.pdf" target="_blank">
+            View Resume
+            <span className='arrow'>
+               <i className="fa-solid fa-arrow-right"></i>
+            </span>
+         </a>
       </section>
    );
 }
