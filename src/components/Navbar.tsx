@@ -68,11 +68,11 @@ function Navbar() {
    return (
       <div className='Navbar' >
          <nav id='navbar' className="nav-container">
-            <li id="homeTab" className='tab active' onClick={() => handleClick("home")}>HOME</li>
-            <li id="aboutTab" className='tab' onClick={() => handleClick("about")}>ABOUT</li>
-            <li id="experienceTab" className='tab' onClick={() => handleClick("experience")}>EXPERIENCE</li>
-            <li id="projectsTab" className='tab' onClick={() => handleClick("projects")}>PROJECTS</li>
-            <li id="contactTab" className='tab' onClick={() => handleClick("contact")}>CONTACT</li>
+            <li id="homeTab" className='tab active' onClick={() => handleClick("home")}>Home</li>
+            <li id="aboutTab" className='tab' onClick={() => handleClick("about")}>About</li>
+            <li id="experienceTab" className='tab' onClick={() => handleClick("experience")}>Experience</li>
+            <li id="projectsTab" className='tab' onClick={() => handleClick("projects")}>Projects</li>
+            <li id="contactTab" className='tab' onClick={() => handleClick("contact")}>Contact</li>
          </nav>
          <nav className="navbar fixed-top bg-body-tertiary">
             <div className="container-fluid">

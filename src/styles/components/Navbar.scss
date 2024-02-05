@@ -89,7 +89,7 @@
          padding: 0.5em;
       }
 
-      &::before {
+      /*&::before {
          content: "";
          display: none;
          width: 60px;
@@ -103,15 +103,15 @@
          transform-origin: bottom left;
          transition: transform 0.5s ease-out;
 
-         /*@media screen and (max-width: 1024px) {
+         @media screen and (max-width: 1024px) {
             display: none;
-         }*/
+         }
       }
 
       &:hover::before {
          transform: scaleX(1);
          transform-origin: bottom left;
-      }
+      }*/
 
       &.active {
          color: var(--jet-black-color);
