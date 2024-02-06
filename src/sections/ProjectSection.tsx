@@ -9,6 +9,7 @@ interface Project {
    description: string;
    tags: string[];
    link: string;
+   ai: boolean;
 }
 
 export function ProjectSection() {
@@ -40,15 +41,22 @@ export function ProjectSection() {
                <div className='project-card' key={`${index}-${project.id}`}>
                   <img className='icon' src={`assets/${project.icon}`} alt={project.title} />
                   <div className='content'>
-                     <div className='card-header'>
+                     <div className={`card-header ${project.link !== ('' || undefined) ? 'link' : ''}`}>
                         <a className='title' href={project.link} target='_blank'>{project.title}</a>
-                        <span className='arrow'>
-                           <i className="fa-solid fa-arrow-right"></i>
-                        </span>
+                        {project.link !== ('' || undefined) ?
+                           <span className='arrow'>
+                              <i className="fa-solid fa-arrow-right"></i>
+                           </span> : null
+                        }
                      </div>
                      <p className='card-description'>{project.description}</p>
                      <ul className='card-tags'>
                         {project.tags.map(tag => <li key={tag}>{tag}</li>)}
+                        {project.ai === true ?
+                           <span>
+                              <i className='bi bi-stars' />
+                           </span> : null
+                        }
                      </ul>
                   </div>
                </div>

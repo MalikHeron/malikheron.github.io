@@ -72,17 +72,19 @@
          text-decoration: none;
       }
 
-      &:hover {
-         cursor: pointer;
+      &.link {
+         &:hover {
+            cursor: pointer;
 
-         .title,
-         .arrow i {
-            color: lightgrey;
-         }
-
-         .arrow i {
-            transform: translate(5px);
-            transition: transform 0.25s ease-out;
+            .title,
+            .arrow i {
+               color: lightgrey;
+            }
+   
+            .arrow i {
+               transform: translate(5px);
+               transition: transform 0.25s ease-out;
+            }
          }
       }
    }
