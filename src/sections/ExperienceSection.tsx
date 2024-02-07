@@ -43,7 +43,7 @@ function ExperienceSection() {
                </div>
             </div>
          </div>
-         <a className='resume' href="/assets/resume.pdf" target="_blank">
+         <a className='resume' href="/resume.pdf" target="_blank">
             View Résumé
             <span className='arrow'>
                <i className="fa-solid fa-arrow-right"></i>

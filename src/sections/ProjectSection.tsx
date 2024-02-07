@@ -39,7 +39,7 @@ export function ProjectSection() {
          <div className='project-list'>
             {projects.map((project, index) => (
                <div className='project-card' key={`${index}-${project.id}`}>
-                  <img className='icon' src={`assets/${project.icon}`} alt={project.title} />
+                  <img className='icon' src={`src/assets/${project.icon}`} alt={project.title} />
                   <div className='content'>
                      <div className={`card-header ${project.link !== ('' || undefined) ? 'link' : ''}`}>
                         <a className='title' href={project.link} target='_blank'>{project.title}</a>
