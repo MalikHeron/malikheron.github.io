@@ -26,7 +26,7 @@ function ContactSection() {
                />
                {/* Email Address */}
                <input
-                  type="text"
+                  type="email"
                   className="form-control"
                   name="email"
                   id="email"
