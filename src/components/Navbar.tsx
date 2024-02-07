@@ -77,7 +77,7 @@ function Navbar() {
          <nav className="navbar fixed-top bg-body-tertiary">
             <div className="container-fluid">
                <a className="navbar-brand" onClick={() => handleClick("home")}>
-                  <img src="assets/logo_fire.png" alt="Logo" width="40" />
+                  <img src="logo.png" alt="Logo" width="40" />
                </a>
                <h5 className='sectionHeader' />
                <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
