@@ -9,7 +9,7 @@ function SocialLinks() {
          <a href="https://github.com/MalikHeron" target="_blank"><i
             className="fa-brands fa-github"></i>
          </a>
-         <a href="https://www.linkedin.com/in/malik-heron-18b961158/" target="_blank">
+         <a href="https://www.linkedin.com/in/malikheron/" target="_blank">
             <i className="fa-brands fa-linkedin"></i>
          </a>
          <a href="mailto:malik.heron2001@gmail.com" target="_blank"><i
