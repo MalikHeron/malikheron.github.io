@@ -10,7 +10,6 @@ function ExperienceSection() {
                <div className="col">
                   <h2>Languages</h2>
                   <ul className='tags'>
-                     <li>C++</li>
                      <li>CSS/Sass</li>
                      <li>HTML</li>
                      <li>Java</li>
@@ -27,7 +26,7 @@ function ExperienceSection() {
                   <ul className='tags'>
                      <li>Bootstrap</li>
                      <li>Express</li>
-                     <li>React</li>
+                     <li>ReactJS</li>
                   </ul>
                </div>
                <div className="col">
@@ -43,7 +42,7 @@ function ExperienceSection() {
                </div>
             </div>
          </div>
-         <a className='resume' href="/resume.pdf" target="_blank">
+         <a className='resume' href="https://bit.ly/3UBiee6" target="_blank">
             View Résumé
             <span className='arrow'>
                <i className="fa-solid fa-arrow-right"></i>
