@@ -22,7 +22,7 @@ function ExperienceSection() {
                   </ul>
                </div>
                <div className="col">
-                  <h2>Frameworks</h2>
+                  <h2>Libraries & Frameworks</h2>
                   <ul className='tags'>
                      <li>Bootstrap</li>
                      <li>Express</li>
@@ -33,8 +33,11 @@ function ExperienceSection() {
                   <h2>Tools</h2>
                   <ul className='tags'>
                      <li>Android Studio</li>
+                     <li>Firebase</li>
                      <li>Git</li>
+                     <li>GitHub</li>
                      <li>IntelliJ IDEA</li>
+                     <li>NodeJS</li>
                      <li>PyCharm</li>
                      <li>Visual Studio Code</li>
                      <li>WebStorm</li>
