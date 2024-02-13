@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {initializeApp} from "firebase/app";
 import {collection, getDocs, getFirestore} from "@firebase/firestore";
 
-import style from './stylesheets/projects.module.css';
+import style from '../styles/projects.module.css';
 
 // Firebase configuration
 const firebaseConfig = {

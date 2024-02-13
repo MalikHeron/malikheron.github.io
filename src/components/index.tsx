@@ -2,15 +2,15 @@ import React, {useEffect} from 'react';
 import type {FC} from 'react';
 import {Projects} from './projects';
 
-import navigate from './stylesheets/navigation.module.css';
-import home from './stylesheets/home.module.css';
-import experience from './stylesheets/experience.module.css';
-import projects from './stylesheets/projects.module.css';
-import about from './stylesheets/about.module.css';
-import contact from './stylesheets/contact.module.css';
-import form from './stylesheets/form.module.css';
-import socials from './stylesheets/socials.module.css';
-import style from "./stylesheets/projects.module.css";
+import navigate from '../styles/navigation.module.css';
+import home from '../styles/home.module.css';
+import experience from '../styles/experience.module.css';
+import projects from '../styles/projects.module.css';
+import about from '../styles/about.module.css';
+import contact from '../styles/contact.module.css';
+import form from '../styles/form.module.css';
+import socials from '../styles/socials.module.css';
+import style from "../styles/projects.module.css";
 
 interface Props {
     className?: string;
