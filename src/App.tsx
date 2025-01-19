@@ -1,17 +1,17 @@
-import ContactSection from '@sections/ContactSection';
-import ProjectSection from '@sections/ProjectSection';
-import ExperienceSection from '@sections/ExperienceSection';
-import AboutSection from '@sections/AboutSection';
-import HomeSection from '@sections/HomeSection';
+import ContactSection from '@sections/Contact';
+import ProjectSection from '@sections/Project';
+import ExperienceSection from '@sections/Experience';
+import AboutSection from '@sections/About';
+import HomeSection from '@sections/Home';
 
 export function App() {
-   return (
-      <>
-         <HomeSection />
-         <AboutSection />
-         <ExperienceSection />
-         <ProjectSection />
-         <ContactSection />
-      </>
-   );
+  return (
+    <>
+      <HomeSection />
+      <AboutSection />
+      <ExperienceSection />
+      <ProjectSection />
+      <ContactSection />
+    </>
+  );
 };

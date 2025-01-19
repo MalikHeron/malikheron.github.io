@@ -14,12 +14,12 @@ import { App } from './App';
 //import PageNotFound from '@pages/PageNotFound';
 
 function Router() {
-   return (
-      <BrowserRouter>
-         <Navbar />
-         <App />
-      </BrowserRouter>
-   )
+  return (
+    <BrowserRouter>
+      <Navbar />
+      <App />
+    </BrowserRouter>
+  )
 }
 
 export default Router
