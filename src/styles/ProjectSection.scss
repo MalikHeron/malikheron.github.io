@@ -18,7 +18,7 @@
          }
 
          &::-webkit-scrollbar-track {
-            background: var(--jet-black-color);
+            background: var(--nite-color);
          }
 
          &::-webkit-scrollbar-thumb {
@@ -39,7 +39,7 @@
       flex-direction: row;
       align-items: center;
       padding: 1em;
-      background-color: var(--fair-black-color);
+      background-color: var(--eerie-black-color);
       border-radius: 10px;
       box-shadow: 0 0 2px #00000040;
 
@@ -107,7 +107,7 @@
          max-height: fit-content;
          list-style: none;
          background-color: var(--aquamarine-green-color);
-         color: var(--jet-black-color);
+         color: var(--nite-color);
          padding: 4px 12px;
          border-radius: 15px;
          font-size: 0.8em;

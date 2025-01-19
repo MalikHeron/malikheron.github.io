@@ -41,9 +41,9 @@ export function ProjectSection() {
                <div className='project-card' key={`${index}-${project.id}`}>
                   <img className='icon' src={`${project.icon}`} alt={project.title} />
                   <div className='content'>
-                     <div className={`card-header ${project.link !== ('' || undefined) ? 'link' : ''}`}>
+                     <div className={`card-header ${project.link !== undefined ? 'link' : ''}`}>
                         <a className='title' href={project.link} target='_blank'>{project.title}</a>
-                        {project.link !== ('' || undefined) ?
+                        {project.link !== undefined ?
                            <span className='arrow'>
                               <i className="fa-solid fa-arrow-right"></i>
                            </span> : null

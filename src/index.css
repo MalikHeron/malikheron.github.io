@@ -13,7 +13,7 @@ body,
 
    color-scheme: light dark;
    color: rgba(255, 255, 255, 0.87);
-   background-color: var(--jet-black-color);
+   background-color: var(--nite-color);
 
    --fair-black-color: #3B393A;
    --turquoise-green-color: #2AB38A;
@@ -21,6 +21,10 @@ body,
    --anti-flash-white-color: #F0F0F0;
    --aquamarine-green-color: #4CE0B3;
    --jet-black-color: #2F2D2E;
+   --nite-color: #151414;
+   --verdigris-color: #17BEBB;
+   --golden-yellow-color: #FFC107;
+   --eerie-black-color: #1f1e1e;
    --silver-color: #CDCDCD;
    --semi-transparent: rgba(0, 0, 0, 9);
 }
@@ -121,7 +125,7 @@ section {
    input,
    textarea {
       font-family: "Inter", system-ui;
-      background-color: var(--fair-black-color);
+      background-color: var(--eerie-black-color);
       color: white;
    }
 }
@@ -139,7 +143,7 @@ footer p {
    }
 
    ::-webkit-scrollbar-track {
-      background: var(--jet-black-color);
+      background: var(--nite-color);
    }
 
    ::-webkit-scrollbar-thumb {
