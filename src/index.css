@@ -1,176 +1,158 @@
-html,
-body,
-#root {
-  margin: 0;
-  padding: 0;
-  min-height: 100vh;
-  width: 100vw;
-  height: auto;
-  overflow-y: auto;
-  overflow-x: hidden;
-  font-family: "Inter", system-ui;
-  box-sizing: border-box;
+@import "tailwindcss";
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: var(--nite-color);
-
-  --fair-black-color: #3B393A;
-  --turquoise-green-color: #2AB38A;
-  --poppy-red-color: #D14141;
-  --anti-flash-white-color: #F0F0F0;
-  --aquamarine-green-color: #4CE0B3;
-  --jet-black-color: #2F2D2E;
-  --nite-color: #151414;
-  --verdigris-color: #17BEBB;
-  --golden-yellow-color: #FFC107;
-  --eerie-black-color: #1f1e1e;
-  --silver-color: #CDCDCD;
-  --semi-transparent: rgba(0, 0, 0, 9);
+@theme {
+  --color-fair-black: #3B393A;
+  --color-turquoise-green: #2AB38A;
+  --color-poppy-red: #D14141;
+  --color-red: #D14141;
+  --color-orange: #FF6B35;
+  --color-accent: #D14141;
+  --color-anti-flash-white: #F0F0F0;
+  --color-aquamarine-green: #4CE0B3;
+  --color-jet-black: #2F2D2E;
+  --color-silver: #CDCDCD;
+  
+  --font-lora: Lora, serif;
+  --font-inter: Inter, sans-serif;
+  --font-kaushan: 'Kaushan Script', cursive;
+  --font-lilita: 'Lilita One', cursive;
+  --font-mono: 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', monospace;
 }
 
-#root {
-  position: relative;
-  width: 100vw;
-  height: 100vh;
-  overflow-x: hidden;
-  overflow-y: auto;
-  scroll-snap-type: y mandatory;
-  scroll-snap-stop: always;
-  scroll-behavior: smooth;
-
-  @media screen and (max-width: 600px) {
-    scroll-snap-type: none;
-    scroll-snap-stop: normal;
-    scroll-behavior: auto;
-  }
-}
-
-button:not(:disabled) {
-  cursor: pointer;
-  -webkit-user-select: none;
-  user-select: none;
-}
-
-label {
-  cursor: pointer;
-  -webkit-user-select: none;
-  user-select: none;
-}
-
-section {
-  position: relative;
-  margin-left: 5%;
-  margin-right: 5%;
-  max-height: 100vh;
-  max-width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  height: 100vh;
-  scroll-snap-align: start;
-  align-items: center;
-
-  /*@media screen and (max-width: 1024px) {
-      align-items: center;
-      margin-right: 10%;
-      margin-left: 10%;
-   }*/
-
-  @media screen and (max-width: 600px) {
+@layer base {
+  html,
+  body,
+  #root {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    width: 100vw;
     height: auto;
-    margin: auto;
-    max-width: 90%;
-    margin-bottom: 5em;
+    overflow-y: auto;
+    overflow-x: hidden;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+    box-sizing: border-box;
+    color: rgba(255, 255, 255, 0.87);
+    background-color: #0f0f0f;
   }
 
-  h1 {
-    color: var(--aquamarine-green-color);
-    font-family: Lora, system-ui;
-    display: block;
-    font-weight: bold;
-    font-size: 2.5em;
+  #root {
+    position: relative;
+    width: 100vw;
+    min-height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+  }
 
-    @media screen and (max-width: 600px) {
-      font-size: 2em;
+  button:not(:disabled) {
+    cursor: pointer;
+    -webkit-user-select: none;
+    user-select: none;
+  }
+
+  section {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  @media screen and (min-width: 600px) {
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #0f0f0f;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: rgba(209, 65, 65, 0.5);
+      border-radius: 50px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: rgba(209, 65, 65, 0.7);
     }
   }
+}
 
-  h2 {
-    font-size: 1.8em;
-    font-family: Lora, system-ui;
-    font-weight: normal;
-    margin-block-start: 0.5em;
-    margin-block-end: 0.3em;
-    color: white;
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
   }
-
-  h3 {
-    display: block;
-    font-size: 1.17em;
-    margin-block-start: 0.1em;
-    margin-block-end: 1em;
-    font-weight: bold;
-    color: white;
-  }
-
-  p {
-    display: block;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    color: white;
-  }
-
-  input,
-  textarea {
-    font-family: "Inter", system-ui;
-    background-color: var(--eerie-black-color);
-    color: white;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-footer p {
-  /*position: fixed;
-   bottom: 0;
-   right: 2%;*/
-  text-align: center;
-}
-
-@media screen and (min-width: 600px) {
-  ::-webkit-scrollbar {
-    width: 2px;
+@keyframes fadeIn {
+  from {
+    opacity: 0;
   }
-
-  ::-webkit-scrollbar-track {
-    background: var(--nite-color);
-  }
-
-  ::-webkit-scrollbar-thumb {
-    background: #ffffff;
-    border-radius: 50px;
-  }
-
-  ::-webkit-scrollbar-thumb:hover {
-    background: #ffffff;
+  to {
+    opacity: 1;
   }
 }
 
-/*@media only screen and (max-width: 1024px) {
-   footer p {
-      position: relative;
-      bottom: unset;
-      right: unset;
-      text-align: center;
-   }
-}*/
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
 
-@media (prefers-color-scheme: dark) {
-  a:hover {
-    color: var(--sophie-blue);
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@layer utilities {
+  .animate-fade-in-up {
+    animation: fadeInUp 0.6s ease-out forwards;
   }
 
-  button {
-    background-color: #f9f9f9;
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+
+  .animate-slide-in-left {
+    animation: slideInLeft 0.6s ease-out forwards;
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.5s ease-out forwards;
+  }
+
+  .opacity-0 {
+    opacity: 0;
+  }
+
+  .animate-delay-100 {
+    animation-delay: 0.1s;
+  }
+
+  .animate-delay-200 {
+    animation-delay: 0.2s;
+  }
+
+  .animate-delay-300 {
+    animation-delay: 0.3s;
+  }
+
+  .animate-delay-400 {
+    animation-delay: 0.4s;
   }
 }
