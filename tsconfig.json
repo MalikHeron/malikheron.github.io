@@ -33,9 +33,6 @@
          "@components/*": [
             "src/components/*"
          ],
-         "@styles/*": [
-            "src/styles/*"
-         ],
          "@sections/*": [
             "src/sections/*"
          ],
