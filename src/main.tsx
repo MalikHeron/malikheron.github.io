@@ -2,31 +2,52 @@ import { initializeApp } from "firebase/app";
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import './index.css'
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap/dist/js/bootstrap.esm.min.js'
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import Router from "./Router";
+import AppLayout from "./AppLayout";
 
-// Firebase configuration
+// Firebase configuration from environment variables
 const firebaseConfig = {
-  apiKey: "AIzaSyDDdsXP7o7Ap-Oei6fqyLIkJERhv1uFP9I",
-  authDomain: "website-porfolio.firebaseapp.com",
-  projectId: "website-porfolio",
-  storageBucket: "website-porfolio.appspot.com",
-  messagingSenderId: "327817652165",
-  appId: "1:327817652165:web:cb9d001f27ff79c367cdac",
-  measurementId: "G-EBWB49R5HG"
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID,
+  measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID,
 };
 
+// Validate that all required environment variables are present
+const requiredEnvVars = [
+  'VITE_FIREBASE_API_KEY',
+  'VITE_FIREBASE_AUTH_DOMAIN',
+  'VITE_FIREBASE_PROJECT_ID',
+  'VITE_FIREBASE_STORAGE_BUCKET',
+  'VITE_FIREBASE_MESSAGING_SENDER_ID',
+  'VITE_FIREBASE_APP_ID',
+];
+
+const missingVars = requiredEnvVars.filter(
+  (varName) => !import.meta.env[varName]
+);
+
+if (missingVars.length > 0) {
+  console.error(
+    `Missing required environment variables: ${missingVars.join(', ')}\n` +
+    'Please create a .env file based on .env.example'
+  );
+}
+
 // Initialize Firebase
-initializeApp(firebaseConfig);
+if (!missingVars.length) {
+  initializeApp(firebaseConfig);
+}
 // init aos
 AOS.init();
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <Router />
+    <AppLayout />
   </React.StrictMode>
 )
